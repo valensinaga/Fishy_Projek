@@ -158,6 +158,7 @@
             // panelKanan
             // 
             panelKanan.BackColor = Color.White;
+            panelKanan.BackgroundImage = Properties.Resources.login_kanan2;
             panelKanan.Controls.Add(lblError);
             panelKanan.Controls.Add(btnLogin);
             panelKanan.Controls.Add(txtPassword);
@@ -283,6 +284,7 @@
             // panelSidebar
             // 
             panelSidebar.BackColor = Color.MidnightBlue;
+            panelSidebar.BackgroundImage = Properties.Resources.dashboard;
             panelSidebar.Controls.Add(btnLogout);
             panelSidebar.Controls.Add(btnMaster);
             panelSidebar.Controls.Add(btnLaporan);
@@ -1223,6 +1225,7 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.White;
+            panelHeader.BackgroundImage = Properties.Resources.header;
             panelHeader.Controls.Add(lblPageTitle);
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
