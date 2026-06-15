@@ -314,5 +314,7 @@ namespace Fishy_Projek
             TampilkanPanel(panelInputSuhu, btnInputSuhu, "Input Suhu");
             LoadRuanganComboBox();
         }
+
+       
     }
 }
