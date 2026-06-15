@@ -314,5 +314,37 @@ namespace Fishy_Projek
             TampilkanPanel(panelInputSuhu, btnInputSuhu, "Input Suhu");
             LoadRuanganComboBox();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                btnMaximize.Text = "□";
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                btnMaximize.Text = "❐";
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            var konfirmasi = MessageBox.Show(
+       "Yakin ingin keluar?",
+       "Konfirmasi",
+       MessageBoxButtons.YesNo,
+       MessageBoxIcon.Question);
+
+            if (konfirmasi == DialogResult.Yes)
+                Application.Exit();
+        }
     }
 }

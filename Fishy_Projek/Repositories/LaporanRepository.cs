@@ -39,9 +39,9 @@ namespace Fishy_Projek.Repositories
             return list;
         }
 
-        public List<MutasiStok> GetRiwayatMutasi(string filter)
+        public List<MutasiView> GetRiwayatMutasi(string filter)
         {
-            var list = new List<MutasiStok>();
+            var list = new List<MutasiView>();
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
@@ -67,7 +67,7 @@ namespace Fishy_Projek.Repositories
                 if (filter != "SEMUA") cmd.Parameters.AddWithValue("filter", filter);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
-                    list.Add(new MutasiStok
+                    list.Add(new MutasiView
                     {
                         IdMutasi = reader.GetInt32(0),
                         IdStok = reader.GetInt32(1),
