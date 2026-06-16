@@ -30,36 +30,59 @@ namespace Fishy_Projek
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
+            // 1. Validasi awal
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 lblError.Text = "Username dan password tidak boleh kosong!";
                 return;
             }
 
-            _userLogin = _opsRepo.Login(username, password);
-
-            if (_userLogin != null)
+            try
             {
-                lblError.Text = "";
-                lblNamaUser.Text = "Halo, " + _userLogin.Nama;
-                lblRoleUser.Text = _userLogin.IdRole == 1 ? "Manajer" : "Operator";
+                // 2. Tambahkan indikator agar tahu sistem sedang memproses
+                Cursor = Cursors.WaitCursor;
 
-                _userLogin.AturHakAksesMenu(this);
+                _userLogin = _opsRepo.Login(username, password);
 
-                panelLogin.Visible = false;
-                panelSidebar.Visible = true;
-                panelKonten.Visible = true;
+                if (_userLogin != null)
+                {
+                    lblError.Text = "";
+                    lblNamaUser.Text = "Halo, " + _userLogin.Nama;
+                    lblRoleUser.Text = _userLogin.IdRole == 1 ? "Manajer" : "Operator";
 
-                if (_userLogin.IdRole == 1)
-                    TampilkanPanel(panelDashboard, btnDashboard, "Dashboard");
-                else
-                    TampilkanPanel(panelStok, btnStok, "Stok & Ruangan");
+                    // 1. Sembunyikan Login, Munculkan Sidebar & Konten
+                    panelLogin.Visible = false;
+                    panelSidebar.Visible = true;
+                    panelKonten.Visible = true;
 
-                LoadDashboard();
+                    // 2. PASTI-KAN panel ini muncul di depan
+                    panelSidebar.BringToFront();
+                    panelKonten.BringToFront();
+
+                    // 3. Logika pindah panel: Ini bagian terpenting agar tidak kosong
+                    if (_userLogin.IdRole == 1)
+                    {
+                        // Tampilkan Dashboard untuk Manajer
+                        TampilkanPanel(panelDashboard, btnDashboard, "Dashboard");
+                        LoadDashboard(); // Panggil fungsi ini agar datanya terisi!
+                    }
+                    else
+                    {
+                        // Tampilkan Stok untuk Operator
+                        TampilkanPanel(panelStok, btnStok, "Stok & Ruangan");
+                        LoadStok(); // Panggil fungsi ini agar datanya terisi!
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblError.Text = "Username atau password salah!";
+                // 3. Menangkap error database agar tidak bikin aplikasi stuck
+                MessageBox.Show("Terjadi kesalahan sistem: " + ex.Message, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // 4. Pastikan kursor balik normal apapun hasilnya
+                Cursor = Cursors.Default;
             }
         }
 

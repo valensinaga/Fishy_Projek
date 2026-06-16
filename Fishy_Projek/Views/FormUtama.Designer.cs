@@ -155,9 +155,9 @@
             // 
             panelLogin.Controls.Add(panelKanan);
             panelLogin.Controls.Add(panelKiri);
-            panelLogin.Location = new Point(0, 35);
+            panelLogin.Location = new Point(0, 36);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(1200, 665);
+            panelLogin.Size = new Size(1200, 664);
             panelLogin.TabIndex = 0;
             // 
             // panelKanan
@@ -171,10 +171,11 @@
             panelKanan.Controls.Add(txtUsername);
             panelKanan.Controls.Add(lblUsername);
             panelKanan.Controls.Add(lblWelcome);
+            panelKanan.Dock = DockStyle.Fill;
             panelKanan.Location = new Point(420, 0);
             panelKanan.Margin = new Padding(2);
             panelKanan.Name = "panelKanan";
-            panelKanan.Size = new Size(420, 420);
+            panelKanan.Size = new Size(780, 664);
             panelKanan.TabIndex = 1;
             // 
             // lblError
@@ -266,10 +267,11 @@
             panelKiri.BackColor = Color.SteelBlue;
             panelKiri.Controls.Add(lblTagline);
             panelKiri.Controls.Add(lblAppName);
+            panelKiri.Dock = DockStyle.Left;
             panelKiri.Location = new Point(0, 0);
             panelKiri.Margin = new Padding(2);
             panelKiri.Name = "panelKiri";
-            panelKiri.Size = new Size(420, 420);
+            panelKiri.Size = new Size(420, 664);
             panelKiri.TabIndex = 0;
             // 
             // lblTagline
@@ -311,12 +313,12 @@
             panelSidebar.Controls.Add(lblRoleUser);
             panelSidebar.Controls.Add(lblNamaUser);
             panelSidebar.Controls.Add(lblLogo);
-            panelSidebar.ForeColor = Color.White;
-            panelSidebar.Location = new Point(0, 35);
-            panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(220, 665);
-            panelSidebar.TabIndex = 2;
             panelSidebar.Dock = DockStyle.Left;
+            panelSidebar.ForeColor = Color.White;
+            panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Name = "panelSidebar";
+            panelSidebar.Size = new Size(220, 700);
+            panelSidebar.TabIndex = 2;
             panelSidebar.Visible = false;
             // 
             // btnLogout
@@ -496,11 +498,11 @@
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelHeader);
-            panelKonten.Location = new Point(220, 35);
-            panelKonten.Name = "panelKonten";
-            panelKonten.Size = new Size(686, 420);
-            panelKonten.TabIndex = 2;
             panelKonten.Dock = DockStyle.Fill;
+            panelKonten.Location = new Point(220, 0);
+            panelKonten.Name = "panelKonten";
+            panelKonten.Size = new Size(980, 700);
+            panelKonten.TabIndex = 2;
             panelKonten.Visible = false;
             // 
             // panelMaster
@@ -510,7 +512,7 @@
             panelMaster.Location = new Point(0, 36);
             panelMaster.Margin = new Padding(2);
             panelMaster.Name = "panelMaster";
-            panelMaster.Size = new Size(686, 384);
+            panelMaster.Size = new Size(842, 462);
             panelMaster.TabIndex = 0;
             panelMaster.Visible = false;
             // 

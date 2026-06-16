@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Npgsql;
 using Fishy_Projek.Models;
+using Fishy_Projek.Helpers;
 
 namespace Fishy_Projek.Repositories
 {
@@ -12,24 +13,42 @@ namespace Fishy_Projek.Repositories
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                var cmd = new NpgsqlCommand(
-                    "SELECT id_user, nama, password, id_role FROM public.users WHERE nama = @username AND password = @password", conn);
-                cmd.Parameters.AddWithValue("username", username);
-                cmd.Parameters.AddWithValue("password", password);
-                var reader = cmd.ExecuteReader();
-                if (reader.Read())
+
+                // PASTIKAN URUTAN SELECT INI SAMA DENGAN KODINGAN DI BAWAH
+                // 0: id_user (INT), 1: nama (STR), 2: password (STR), 3: id_role (INT), 4: username (STR)
+                var sql = "SELECT id_user, nama, password, id_role, username FROM public.users WHERE username = @username AND password = @password";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
-                    int idRole = reader.GetInt32(3);
-                    User user = idRole == 1 ? (User)new Manager() : new Operator();
-                    user.IdUser = reader.GetInt32(0);
-                    user.Nama = reader.GetString(1);
-                    user.Username = reader.GetString(1);
-                    user.Password = reader.GetString(2);
-                    user.IdRole = idRole;
-                    return user;
+                    cmd.Parameters.AddWithValue("username", username);
+                    cmd.Parameters.AddWithValue("password", password);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Membaca data sesuai urutan SELECT di atas
+                            int idUser = reader.GetInt32(0);     // 0: id_user
+                            string nama = reader.GetString(1);   // 1: nama
+                            string pass = reader.GetString(2);   // 2: password
+                            int idRole = reader.GetInt32(3);     // 3: id_role
+                            string user = reader.GetString(4);   // 4: username
+
+                            // Membuat objek user
+                            User loggedInUser = idRole == 1 ? (User)new Manager() : new Operator();
+
+                            loggedInUser.IdUser = idUser;
+                            loggedInUser.Nama = nama;
+                            loggedInUser.Username = user;
+                            loggedInUser.Password = pass;
+                            loggedInUser.IdRole = idRole;
+
+                            return loggedInUser;
+                        }
+                    }
                 }
-                return null;
             }
+            return null;
         }
 
         public void TerimaStok(string idIkan, string idRuang, double jumlahKg, int idUser)

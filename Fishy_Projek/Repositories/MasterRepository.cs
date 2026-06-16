@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Npgsql;
 using Fishy_Projek.Models;
+using Fishy_Projek.Helpers;
 
 namespace Fishy_Projek.Repositories
 {
