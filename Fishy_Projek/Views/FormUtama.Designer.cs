@@ -117,6 +117,10 @@
             lblTotalUnit = new Label();
             panelHeader = new Panel();
             lblPageTitle = new Label();
+            panelTitleBar = new Panel();
+            btnClose = new Button();
+            btnMaximize = new Button();
+            btnMinimize = new Button();
             panelLogin.SuspendLayout();
             panelKanan.SuspendLayout();
             panelKiri.SuspendLayout();
@@ -144,16 +148,16 @@
             cardKapasitas.SuspendLayout();
             cardTotalUnit.SuspendLayout();
             panelHeader.SuspendLayout();
+            panelTitleBar.SuspendLayout();
             SuspendLayout();
             // 
             // panelLogin
             // 
             panelLogin.Controls.Add(panelKanan);
             panelLogin.Controls.Add(panelKiri);
-            panelLogin.Location = new Point(0, 0);
-            panelLogin.Margin = new Padding(2, 2, 2, 2);
+            panelLogin.Location = new Point(0, 35);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(840, 420);
+            panelLogin.Size = new Size(1200, 665);
             panelLogin.TabIndex = 0;
             // 
             // panelKanan
@@ -308,10 +312,9 @@
             panelSidebar.Controls.Add(lblNamaUser);
             panelSidebar.Controls.Add(lblLogo);
             panelSidebar.ForeColor = Color.White;
-            panelSidebar.Location = new Point(0, 0);
-            panelSidebar.Margin = new Padding(2, 2, 2, 2);
+            panelSidebar.Location = new Point(0, 35);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(154, 420);
+            panelSidebar.Size = new Size(220, 665);
             panelSidebar.TabIndex = 2;
             panelSidebar.Visible = false;
             // 
@@ -492,8 +495,7 @@
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelHeader);
-            panelKonten.Location = new Point(154, 0);
-            panelKonten.Margin = new Padding(2, 2, 2, 2);
+            panelKonten.Location = new Point(220, 35);
             panelKonten.Name = "panelKonten";
             panelKonten.Size = new Size(686, 420);
             panelKonten.TabIndex = 2;
@@ -1333,14 +1335,69 @@
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard";
             // 
-            // button1
-  
+            // panelTitleBar
+            // 
+            panelTitleBar.BackColor = Color.MidnightBlue;
+            panelTitleBar.Controls.Add(btnClose);
+            panelTitleBar.Controls.Add(btnMaximize);
+            panelTitleBar.Controls.Add(btnMinimize);
+            panelTitleBar.Location = new Point(0, 0);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.Size = new Size(1200, 35);
+            panelTitleBar.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = Color.White;
+            btnClose.Location = new Point(1155, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(45, 35);
+            btnClose.TabIndex = 2;
+            btnClose.Text = "✕";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Cursor = Cursors.Hand;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMaximize.ForeColor = Color.White;
+            btnMaximize.Location = new Point(1110, 0);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(45, 35);
+            btnMaximize.TabIndex = 1;
+            btnMaximize.Text = "□";
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Cursor = Cursors.Hand;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMinimize.ForeColor = Color.White;
+            btnMinimize.Location = new Point(1065, 0);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(45, 35);
+            btnMinimize.TabIndex = 0;
+            btnMinimize.Text = "─";
+            btnMinimize.UseVisualStyleBackColor = true;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
             // FormUtama
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(840, 420);
+            ClientSize = new Size(1200, 700);
+            Controls.Add(panelTitleBar);
             Controls.Add(panelKonten);
             Controls.Add(panelSidebar);
             Controls.Add(panelLogin);
@@ -1390,6 +1447,7 @@
             cardTotalUnit.PerformLayout();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
+            panelTitleBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1484,6 +1542,9 @@
         private DataGridView dgvRuang;
         private Button btnTambahStok;
         private Label label19;
-      
+        private Panel panelTitleBar;
+        private Button btnMaximize;
+        private Button btnMinimize;
+        private Button btnClose;
     }
 }
