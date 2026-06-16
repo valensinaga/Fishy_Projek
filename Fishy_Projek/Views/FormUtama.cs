@@ -23,6 +23,9 @@ namespace Fishy_Projek
             panelLogin.Visible = true;
             panelSidebar.Visible = false;
             panelKonten.Visible = false;
+
+            
+            panelTitleBar.BringToFront();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,6 +38,7 @@ namespace Fishy_Projek
             {
                 lblError.Text = "Username dan password tidak boleh kosong!";
                 return;
+                panelTitleBar.BringToFront();
             }
 
             try
@@ -149,6 +153,7 @@ namespace Fishy_Projek
         {
             TampilkanPanel(panelMaster, btnMaster, "Master Data");
             LoadMaster();
+            panelTitleBar.BringToFront();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
