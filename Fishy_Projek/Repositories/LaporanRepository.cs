@@ -31,7 +31,6 @@ namespace Fishy_Projek.Repositories
             return list;
         }
 
-        public List<MutasiView> GetRiwayatMutasi(string filter)
       
         public List<MutasiView> GetRiwayatMutasi(string filter)
         {

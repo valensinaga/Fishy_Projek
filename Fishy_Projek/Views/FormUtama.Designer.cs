@@ -155,9 +155,16 @@
             // 
             panelLogin.Controls.Add(panelKanan);
             panelLogin.Controls.Add(panelKiri);
+
+            panelLogin.Location = new Point(0, 0);
+            panelLogin.Margin = new Padding(2, 2, 2, 2);
+            panelLogin.Name = "panelLogin";
+            panelLogin.Size = new Size(840, 420);
+
             panelLogin.Location = new Point(0, 35);
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(1200, 665);
+
             panelLogin.TabIndex = 0;
             // 
             // panelKanan
@@ -312,9 +319,16 @@
             panelSidebar.Controls.Add(lblNamaUser);
             panelSidebar.Controls.Add(lblLogo);
             panelSidebar.ForeColor = Color.White;
+<<<<<<< HEAD
+            panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Margin = new Padding(2, 2, 2, 2);
+            panelSidebar.Name = "panelSidebar";
+            panelSidebar.Size = new Size(154, 420);
+=======
             panelSidebar.Location = new Point(0, 35);
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(220, 665);
+>>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             panelSidebar.TabIndex = 2;
             panelSidebar.Visible = false;
             // 
@@ -495,7 +509,12 @@
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelHeader);
+<<<<<<< HEAD
+            panelKonten.Location = new Point(154, 0);
+            panelKonten.Margin = new Padding(2, 2, 2, 2);
+=======
             panelKonten.Location = new Point(220, 35);
+>>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             panelKonten.Name = "panelKonten";
             panelKonten.Size = new Size(686, 420);
             panelKonten.TabIndex = 2;
@@ -1335,6 +1354,10 @@
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard";
             // 
+<<<<<<< HEAD
+            // button1
+  
+=======
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.MidnightBlue;
@@ -1391,13 +1414,18 @@
             btnMinimize.UseVisualStyleBackColor = true;
             btnMinimize.Click += btnMinimize_Click;
             // 
+>>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             // FormUtama
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
+<<<<<<< HEAD
+            ClientSize = new Size(840, 420);
+=======
             ClientSize = new Size(1200, 700);
             Controls.Add(panelTitleBar);
+>>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             Controls.Add(panelKonten);
             Controls.Add(panelSidebar);
             Controls.Add(panelLogin);
@@ -1542,9 +1570,13 @@
         private DataGridView dgvRuang;
         private Button btnTambahStok;
         private Label label19;
+<<<<<<< HEAD
+      
+=======
         private Panel panelTitleBar;
         private Button btnMaximize;
         private Button btnMinimize;
         private Button btnClose;
+>>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
     }
 }
