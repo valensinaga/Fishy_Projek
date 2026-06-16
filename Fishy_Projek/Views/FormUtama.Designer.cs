@@ -316,6 +316,7 @@
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(220, 665);
             panelSidebar.TabIndex = 2;
+            panelSidebar.Dock = DockStyle.Left;
             panelSidebar.Visible = false;
             // 
             // btnLogout
@@ -499,6 +500,7 @@
             panelKonten.Name = "panelKonten";
             panelKonten.Size = new Size(686, 420);
             panelKonten.TabIndex = 2;
+            panelKonten.Dock = DockStyle.Fill;
             panelKonten.Visible = false;
             // 
             // panelMaster

@@ -346,5 +346,12 @@ namespace Fishy_Projek
             if (konfirmasi == DialogResult.Yes)
                 Application.Exit();
         }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            panelTitleBar.Width = this.Width;
+        }
+
     }
 }
