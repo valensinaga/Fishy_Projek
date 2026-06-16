@@ -155,16 +155,9 @@
             // 
             panelLogin.Controls.Add(panelKanan);
             panelLogin.Controls.Add(panelKiri);
-
-            panelLogin.Location = new Point(0, 0);
-            panelLogin.Margin = new Padding(2, 2, 2, 2);
-            panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(840, 420);
-
             panelLogin.Location = new Point(0, 35);
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(1200, 665);
-
             panelLogin.TabIndex = 0;
             // 
             // panelKanan
@@ -179,7 +172,7 @@
             panelKanan.Controls.Add(lblUsername);
             panelKanan.Controls.Add(lblWelcome);
             panelKanan.Location = new Point(420, 0);
-            panelKanan.Margin = new Padding(2, 2, 2, 2);
+            panelKanan.Margin = new Padding(2);
             panelKanan.Name = "panelKanan";
             panelKanan.Size = new Size(420, 420);
             panelKanan.TabIndex = 1;
@@ -203,7 +196,7 @@
             btnLogin.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(56, 252);
-            btnLogin.Margin = new Padding(2, 2, 2, 2);
+            btnLogin.Margin = new Padding(2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(203, 27);
             btnLogin.TabIndex = 5;
@@ -216,7 +209,7 @@
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(56, 210);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(204, 24);
@@ -239,7 +232,7 @@
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(56, 165);
-            txtUsername.Margin = new Padding(2, 2, 2, 2);
+            txtUsername.Margin = new Padding(2);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(204, 24);
             txtUsername.TabIndex = 2;
@@ -274,7 +267,7 @@
             panelKiri.Controls.Add(lblTagline);
             panelKiri.Controls.Add(lblAppName);
             panelKiri.Location = new Point(0, 0);
-            panelKiri.Margin = new Padding(2, 2, 2, 2);
+            panelKiri.Margin = new Padding(2);
             panelKiri.Name = "panelKiri";
             panelKiri.Size = new Size(420, 420);
             panelKiri.TabIndex = 0;
@@ -319,16 +312,9 @@
             panelSidebar.Controls.Add(lblNamaUser);
             panelSidebar.Controls.Add(lblLogo);
             panelSidebar.ForeColor = Color.White;
-<<<<<<< HEAD
-            panelSidebar.Location = new Point(0, 0);
-            panelSidebar.Margin = new Padding(2, 2, 2, 2);
-            panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(154, 420);
-=======
             panelSidebar.Location = new Point(0, 35);
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(220, 665);
->>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             panelSidebar.TabIndex = 2;
             panelSidebar.Visible = false;
             // 
@@ -341,7 +327,7 @@
             btnLogout.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Salmon;
             btnLogout.Location = new Point(0, 384);
-            btnLogout.Margin = new Padding(2, 2, 2, 2);
+            btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(14, 0, 0, 0);
             btnLogout.Size = new Size(154, 30);
@@ -360,7 +346,7 @@
             btnMaster.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMaster.ForeColor = Color.SlateGray;
             btnMaster.Location = new Point(0, 228);
-            btnMaster.Margin = new Padding(2, 2, 2, 2);
+            btnMaster.Margin = new Padding(2);
             btnMaster.Name = "btnMaster";
             btnMaster.Padding = new Padding(14, 0, 0, 0);
             btnMaster.Size = new Size(154, 30);
@@ -379,7 +365,7 @@
             btnLaporan.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLaporan.ForeColor = Color.SlateGray;
             btnLaporan.Location = new Point(0, 198);
-            btnLaporan.Margin = new Padding(2, 2, 2, 2);
+            btnLaporan.Margin = new Padding(2);
             btnLaporan.Name = "btnLaporan";
             btnLaporan.Padding = new Padding(14, 0, 0, 0);
             btnLaporan.Size = new Size(154, 30);
@@ -398,7 +384,7 @@
             btnPengiriman.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPengiriman.ForeColor = Color.SlateGray;
             btnPengiriman.Location = new Point(0, 168);
-            btnPengiriman.Margin = new Padding(2, 2, 2, 2);
+            btnPengiriman.Margin = new Padding(2);
             btnPengiriman.Name = "btnPengiriman";
             btnPengiriman.Padding = new Padding(14, 0, 0, 0);
             btnPengiriman.Size = new Size(154, 30);
@@ -417,7 +403,7 @@
             btnInputSuhu.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInputSuhu.ForeColor = Color.SlateGray;
             btnInputSuhu.Location = new Point(0, 138);
-            btnInputSuhu.Margin = new Padding(2, 2, 2, 2);
+            btnInputSuhu.Margin = new Padding(2);
             btnInputSuhu.Name = "btnInputSuhu";
             btnInputSuhu.Padding = new Padding(14, 0, 0, 0);
             btnInputSuhu.Size = new Size(154, 30);
@@ -436,7 +422,7 @@
             btnStok.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStok.ForeColor = Color.SlateGray;
             btnStok.Location = new Point(0, 108);
-            btnStok.Margin = new Padding(2, 2, 2, 2);
+            btnStok.Margin = new Padding(2);
             btnStok.Name = "btnStok";
             btnStok.Padding = new Padding(14, 0, 0, 0);
             btnStok.Size = new Size(154, 30);
@@ -454,7 +440,7 @@
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDashboard.Location = new Point(0, 78);
-            btnDashboard.Margin = new Padding(2, 2, 2, 2);
+            btnDashboard.Margin = new Padding(2);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.Padding = new Padding(14, 0, 0, 0);
             btnDashboard.Size = new Size(154, 30);
@@ -509,12 +495,7 @@
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelHeader);
-<<<<<<< HEAD
-            panelKonten.Location = new Point(154, 0);
-            panelKonten.Margin = new Padding(2, 2, 2, 2);
-=======
             panelKonten.Location = new Point(220, 35);
->>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             panelKonten.Name = "panelKonten";
             panelKonten.Size = new Size(686, 420);
             panelKonten.TabIndex = 2;
@@ -525,7 +506,7 @@
             panelMaster.Controls.Add(tabMaster);
             panelMaster.Controls.Add(label18);
             panelMaster.Location = new Point(0, 36);
-            panelMaster.Margin = new Padding(2, 2, 2, 2);
+            panelMaster.Margin = new Padding(2);
             panelMaster.Name = "panelMaster";
             panelMaster.Size = new Size(686, 384);
             panelMaster.TabIndex = 0;
@@ -537,7 +518,7 @@
             tabMaster.Controls.Add(tabGudang);
             tabMaster.Controls.Add(tabRuang);
             tabMaster.Location = new Point(14, 36);
-            tabMaster.Margin = new Padding(2, 2, 2, 2);
+            tabMaster.Margin = new Padding(2);
             tabMaster.Name = "tabMaster";
             tabMaster.SelectedIndex = 0;
             tabMaster.Size = new Size(658, 336);
@@ -548,9 +529,9 @@
             tabIkan.Controls.Add(btnTambahIkan);
             tabIkan.Controls.Add(dgvIkan);
             tabIkan.Location = new Point(4, 24);
-            tabIkan.Margin = new Padding(2, 2, 2, 2);
+            tabIkan.Margin = new Padding(2);
             tabIkan.Name = "tabIkan";
-            tabIkan.Padding = new Padding(2, 2, 2, 2);
+            tabIkan.Padding = new Padding(2);
             tabIkan.Size = new Size(650, 308);
             tabIkan.TabIndex = 0;
             tabIkan.Text = "Data Ikan";
@@ -565,7 +546,7 @@
             btnTambahIkan.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahIkan.ForeColor = Color.White;
             btnTambahIkan.Location = new Point(7, 252);
-            btnTambahIkan.Margin = new Padding(2, 2, 2, 2);
+            btnTambahIkan.Margin = new Padding(2);
             btnTambahIkan.Name = "btnTambahIkan";
             btnTambahIkan.Size = new Size(91, 21);
             btnTambahIkan.TabIndex = 1;
@@ -579,7 +560,7 @@
             dgvIkan.BorderStyle = BorderStyle.None;
             dgvIkan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIkan.Location = new Point(7, 6);
-            dgvIkan.Margin = new Padding(2, 2, 2, 2);
+            dgvIkan.Margin = new Padding(2);
             dgvIkan.Name = "dgvIkan";
             dgvIkan.ReadOnly = true;
             dgvIkan.RowHeadersVisible = false;
@@ -592,9 +573,9 @@
             tabGudang.Controls.Add(btnTambahGudang);
             tabGudang.Controls.Add(dgvGudang);
             tabGudang.Location = new Point(4, 24);
-            tabGudang.Margin = new Padding(2, 2, 2, 2);
+            tabGudang.Margin = new Padding(2);
             tabGudang.Name = "tabGudang";
-            tabGudang.Padding = new Padding(2, 2, 2, 2);
+            tabGudang.Padding = new Padding(2);
             tabGudang.Size = new Size(650, 308);
             tabGudang.TabIndex = 1;
             tabGudang.Text = "Data Gudang";
@@ -609,7 +590,7 @@
             btnTambahGudang.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahGudang.ForeColor = Color.White;
             btnTambahGudang.Location = new Point(7, 252);
-            btnTambahGudang.Margin = new Padding(2, 2, 2, 2);
+            btnTambahGudang.Margin = new Padding(2);
             btnTambahGudang.Name = "btnTambahGudang";
             btnTambahGudang.Size = new Size(105, 21);
             btnTambahGudang.TabIndex = 3;
@@ -623,7 +604,7 @@
             dgvGudang.BorderStyle = BorderStyle.None;
             dgvGudang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGudang.Location = new Point(7, 6);
-            dgvGudang.Margin = new Padding(2, 2, 2, 2);
+            dgvGudang.Margin = new Padding(2);
             dgvGudang.Name = "dgvGudang";
             dgvGudang.ReadOnly = true;
             dgvGudang.RowHeadersVisible = false;
@@ -636,9 +617,9 @@
             tabRuang.Controls.Add(btnTambahRuang);
             tabRuang.Controls.Add(dgvRuang);
             tabRuang.Location = new Point(4, 24);
-            tabRuang.Margin = new Padding(2, 2, 2, 2);
+            tabRuang.Margin = new Padding(2);
             tabRuang.Name = "tabRuang";
-            tabRuang.Padding = new Padding(2, 2, 2, 2);
+            tabRuang.Padding = new Padding(2);
             tabRuang.Size = new Size(650, 308);
             tabRuang.TabIndex = 2;
             tabRuang.Text = "Data Ruang Cooler";
@@ -653,7 +634,7 @@
             btnTambahRuang.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahRuang.ForeColor = Color.White;
             btnTambahRuang.Location = new Point(7, 252);
-            btnTambahRuang.Margin = new Padding(2, 2, 2, 2);
+            btnTambahRuang.Margin = new Padding(2);
             btnTambahRuang.Name = "btnTambahRuang";
             btnTambahRuang.Size = new Size(112, 21);
             btnTambahRuang.TabIndex = 5;
@@ -667,7 +648,7 @@
             dgvRuang.BorderStyle = BorderStyle.None;
             dgvRuang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRuang.Location = new Point(7, 6);
-            dgvRuang.Margin = new Padding(2, 2, 2, 2);
+            dgvRuang.Margin = new Padding(2);
             dgvRuang.Name = "dgvRuang";
             dgvRuang.ReadOnly = true;
             dgvRuang.RowHeadersVisible = false;
@@ -695,7 +676,7 @@
             panelLaporan.Controls.Add(label17);
             panelLaporan.Controls.Add(label16);
             panelLaporan.Location = new Point(0, 36);
-            panelLaporan.Margin = new Padding(2, 2, 2, 2);
+            panelLaporan.Margin = new Padding(2);
             panelLaporan.Name = "panelLaporan";
             panelLaporan.Size = new Size(686, 384);
             panelLaporan.TabIndex = 0;
@@ -708,7 +689,7 @@
             dgvLaporan.BorderStyle = BorderStyle.None;
             dgvLaporan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLaporan.Location = new Point(14, 87);
-            dgvLaporan.Margin = new Padding(2, 2, 2, 2);
+            dgvLaporan.Margin = new Padding(2);
             dgvLaporan.Name = "dgvLaporan";
             dgvLaporan.ReadOnly = true;
             dgvLaporan.RowHeadersVisible = false;
@@ -725,7 +706,7 @@
             btnFilter.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFilter.ForeColor = Color.White;
             btnFilter.Location = new Point(164, 57);
-            btnFilter.Margin = new Padding(2, 2, 2, 2);
+            btnFilter.Margin = new Padding(2);
             btnFilter.Name = "btnFilter";
             btnFilter.Size = new Size(84, 21);
             btnFilter.TabIndex = 0;
@@ -739,7 +720,7 @@
             cmbFilterMutasi.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbFilterMutasi.FormattingEnabled = true;
             cmbFilterMutasi.Location = new Point(14, 57);
-            cmbFilterMutasi.Margin = new Padding(2, 2, 2, 2);
+            cmbFilterMutasi.Margin = new Padding(2);
             cmbFilterMutasi.Name = "cmbFilterMutasi";
             cmbFilterMutasi.Size = new Size(141, 25);
             cmbFilterMutasi.TabIndex = 0;
@@ -784,7 +765,7 @@
             panelPengiriman.Controls.Add(label11);
             panelPengiriman.Controls.Add(label10);
             panelPengiriman.Location = new Point(0, 36);
-            panelPengiriman.Margin = new Padding(2, 2, 2, 2);
+            panelPengiriman.Margin = new Padding(2);
             panelPengiriman.Name = "panelPengiriman";
             panelPengiriman.Size = new Size(686, 384);
             panelPengiriman.TabIndex = 0;
@@ -809,7 +790,7 @@
             btnProsesKirim.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProsesKirim.ForeColor = Color.White;
             btnProsesKirim.Location = new Point(14, 276);
-            btnProsesKirim.Margin = new Padding(2, 2, 2, 2);
+            btnProsesKirim.Margin = new Padding(2);
             btnProsesKirim.Name = "btnProsesKirim";
             btnProsesKirim.Size = new Size(203, 27);
             btnProsesKirim.TabIndex = 0;
@@ -822,7 +803,7 @@
             txtKuantitasKirim.BorderStyle = BorderStyle.FixedSingle;
             txtKuantitasKirim.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtKuantitasKirim.Location = new Point(14, 237);
-            txtKuantitasKirim.Margin = new Padding(2, 2, 2, 2);
+            txtKuantitasKirim.Margin = new Padding(2);
             txtKuantitasKirim.Name = "txtKuantitasKirim";
             txtKuantitasKirim.Size = new Size(204, 24);
             txtKuantitasKirim.TabIndex = 0;
@@ -845,7 +826,7 @@
             cmbStokKirim.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbStokKirim.FormattingEnabled = true;
             cmbStokKirim.Location = new Point(14, 192);
-            cmbStokKirim.Margin = new Padding(2, 2, 2, 2);
+            cmbStokKirim.Margin = new Padding(2);
             cmbStokKirim.Name = "cmbStokKirim";
             cmbStokKirim.Size = new Size(204, 25);
             cmbStokKirim.TabIndex = 0;
@@ -867,7 +848,7 @@
             txtNoArmada.BorderStyle = BorderStyle.FixedSingle;
             txtNoArmada.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNoArmada.Location = new Point(14, 147);
-            txtNoArmada.Margin = new Padding(2, 2, 2, 2);
+            txtNoArmada.Margin = new Padding(2);
             txtNoArmada.Name = "txtNoArmada";
             txtNoArmada.Size = new Size(204, 24);
             txtNoArmada.TabIndex = 0;
@@ -889,7 +870,7 @@
             txtTujuan.BorderStyle = BorderStyle.FixedSingle;
             txtTujuan.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTujuan.Location = new Point(14, 102);
-            txtTujuan.Margin = new Padding(2, 2, 2, 2);
+            txtTujuan.Margin = new Padding(2);
             txtTujuan.Name = "txtTujuan";
             txtTujuan.Size = new Size(204, 24);
             txtTujuan.TabIndex = 0;
@@ -912,7 +893,7 @@
             txtIdPengiriman.BorderStyle = BorderStyle.FixedSingle;
             txtIdPengiriman.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtIdPengiriman.Location = new Point(14, 57);
-            txtIdPengiriman.Margin = new Padding(2, 2, 2, 2);
+            txtIdPengiriman.Margin = new Padding(2);
             txtIdPengiriman.Name = "txtIdPengiriman";
             txtIdPengiriman.ReadOnly = true;
             txtIdPengiriman.Size = new Size(204, 24);
@@ -956,7 +937,7 @@
             panelInputSuhu.Controls.Add(label6);
             panelInputSuhu.Controls.Add(label5);
             panelInputSuhu.Location = new Point(0, 36);
-            panelInputSuhu.Margin = new Padding(2, 2, 2, 2);
+            panelInputSuhu.Margin = new Padding(2);
             panelInputSuhu.Name = "panelInputSuhu";
             panelInputSuhu.Size = new Size(686, 384);
             panelInputSuhu.TabIndex = 0;
@@ -980,7 +961,7 @@
             btnSimpanSuhu.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSimpanSuhu.ForeColor = Color.White;
             btnSimpanSuhu.Location = new Point(14, 252);
-            btnSimpanSuhu.Margin = new Padding(2, 2, 2, 2);
+            btnSimpanSuhu.Margin = new Padding(2);
             btnSimpanSuhu.Name = "btnSimpanSuhu";
             btnSimpanSuhu.Size = new Size(203, 27);
             btnSimpanSuhu.TabIndex = 0;
@@ -993,7 +974,7 @@
             txtCatatanSuhu.BorderStyle = BorderStyle.FixedSingle;
             txtCatatanSuhu.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCatatanSuhu.Location = new Point(14, 192);
-            txtCatatanSuhu.Margin = new Padding(2, 2, 2, 2);
+            txtCatatanSuhu.Margin = new Padding(2);
             txtCatatanSuhu.Multiline = true;
             txtCatatanSuhu.Name = "txtCatatanSuhu";
             txtCatatanSuhu.Size = new Size(204, 49);
@@ -1017,7 +998,7 @@
             cmbGradeMutu.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbGradeMutu.FormattingEnabled = true;
             cmbGradeMutu.Location = new Point(14, 147);
-            cmbGradeMutu.Margin = new Padding(2, 2, 2, 2);
+            cmbGradeMutu.Margin = new Padding(2);
             cmbGradeMutu.Name = "cmbGradeMutu";
             cmbGradeMutu.Size = new Size(204, 25);
             cmbGradeMutu.TabIndex = 0;
@@ -1039,7 +1020,7 @@
             txtSuhuAktual.BorderStyle = BorderStyle.FixedSingle;
             txtSuhuAktual.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSuhuAktual.Location = new Point(14, 102);
-            txtSuhuAktual.Margin = new Padding(2, 2, 2, 2);
+            txtSuhuAktual.Margin = new Padding(2);
             txtSuhuAktual.Name = "txtSuhuAktual";
             txtSuhuAktual.Size = new Size(204, 24);
             txtSuhuAktual.TabIndex = 0;
@@ -1062,7 +1043,7 @@
             cmbRuanganSuhu.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbRuanganSuhu.FormattingEnabled = true;
             cmbRuanganSuhu.Location = new Point(14, 57);
-            cmbRuanganSuhu.Margin = new Padding(2, 2, 2, 2);
+            cmbRuanganSuhu.Margin = new Padding(2);
             cmbRuanganSuhu.Name = "cmbRuanganSuhu";
             cmbRuanganSuhu.Size = new Size(204, 25);
             cmbRuanganSuhu.TabIndex = 0;
@@ -1097,7 +1078,7 @@
             panelStok.Controls.Add(label19);
             panelStok.Controls.Add(dgvStok);
             panelStok.Location = new Point(0, 36);
-            panelStok.Margin = new Padding(2, 2, 2, 2);
+            panelStok.Margin = new Padding(2);
             panelStok.Name = "panelStok";
             panelStok.Size = new Size(686, 384);
             panelStok.TabIndex = 0;
@@ -1112,7 +1093,7 @@
             btnTambahStok.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahStok.ForeColor = Color.White;
             btnTambahStok.Location = new Point(539, 12);
-            btnTambahStok.Margin = new Padding(2, 2, 2, 2);
+            btnTambahStok.Margin = new Padding(2);
             btnTambahStok.Name = "btnTambahStok";
             btnTambahStok.Size = new Size(105, 21);
             btnTambahStok.TabIndex = 6;
@@ -1139,7 +1120,7 @@
             dgvStok.BorderStyle = BorderStyle.None;
             dgvStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStok.Location = new Point(14, 42);
-            dgvStok.Margin = new Padding(2, 2, 2, 2);
+            dgvStok.Margin = new Padding(2);
             dgvStok.Name = "dgvStok";
             dgvStok.ReadOnly = true;
             dgvStok.RowHeadersVisible = false;
@@ -1156,7 +1137,7 @@
             panelDashboard.Controls.Add(cardKapasitas);
             panelDashboard.Controls.Add(cardTotalUnit);
             panelDashboard.Location = new Point(0, 36);
-            panelDashboard.Margin = new Padding(2, 2, 2, 2);
+            panelDashboard.Margin = new Padding(2);
             panelDashboard.Name = "panelDashboard";
             panelDashboard.Size = new Size(686, 384);
             panelDashboard.TabIndex = 1;
@@ -1168,7 +1149,7 @@
             dgvKondisiRuangan.BorderStyle = BorderStyle.None;
             dgvKondisiRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKondisiRuangan.Location = new Point(14, 240);
-            dgvKondisiRuangan.Margin = new Padding(2, 2, 2, 2);
+            dgvKondisiRuangan.Margin = new Padding(2);
             dgvKondisiRuangan.Name = "dgvKondisiRuangan";
             dgvKondisiRuangan.ReadOnly = true;
             dgvKondisiRuangan.RowHeadersVisible = false;
@@ -1183,7 +1164,7 @@
             dgvRingkasanStok.BorderStyle = BorderStyle.None;
             dgvRingkasanStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRingkasanStok.Location = new Point(14, 78);
-            dgvRingkasanStok.Margin = new Padding(2, 2, 2, 2);
+            dgvRingkasanStok.Margin = new Padding(2);
             dgvRingkasanStok.Name = "dgvRingkasanStok";
             dgvRingkasanStok.ReadOnly = true;
             dgvRingkasanStok.RowHeadersVisible = false;
@@ -1197,7 +1178,7 @@
             cardPeringatan.Controls.Add(lblPeringatan);
             cardPeringatan.Controls.Add(label4);
             cardPeringatan.Location = new Point(497, 12);
-            cardPeringatan.Margin = new Padding(2, 2, 2, 2);
+            cardPeringatan.Margin = new Padding(2);
             cardPeringatan.Name = "cardPeringatan";
             cardPeringatan.Size = new Size(147, 54);
             cardPeringatan.TabIndex = 0;
@@ -1232,7 +1213,7 @@
             cardSuhu.Controls.Add(label3);
             cardSuhu.Controls.Add(lblSuhu);
             cardSuhu.Location = new Point(336, 12);
-            cardSuhu.Margin = new Padding(2, 2, 2, 2);
+            cardSuhu.Margin = new Padding(2);
             cardSuhu.Name = "cardSuhu";
             cardSuhu.Size = new Size(147, 54);
             cardSuhu.TabIndex = 0;
@@ -1267,7 +1248,7 @@
             cardKapasitas.Controls.Add(lblKapasitas);
             cardKapasitas.Controls.Add(label2);
             cardKapasitas.Location = new Point(175, 12);
-            cardKapasitas.Margin = new Padding(2, 2, 2, 2);
+            cardKapasitas.Margin = new Padding(2);
             cardKapasitas.Name = "cardKapasitas";
             cardKapasitas.Size = new Size(147, 54);
             cardKapasitas.TabIndex = 0;
@@ -1302,7 +1283,7 @@
             cardTotalUnit.Controls.Add(label1);
             cardTotalUnit.Controls.Add(lblTotalUnit);
             cardTotalUnit.Location = new Point(14, 12);
-            cardTotalUnit.Margin = new Padding(2, 2, 2, 2);
+            cardTotalUnit.Margin = new Padding(2);
             cardTotalUnit.Name = "cardTotalUnit";
             cardTotalUnit.Size = new Size(147, 54);
             cardTotalUnit.TabIndex = 1;
@@ -1334,10 +1315,9 @@
             // 
             panelHeader.BackColor = Color.White;
             panelHeader.BackgroundImage = Properties.Resources.header;
-
             panelHeader.Controls.Add(lblPageTitle);
             panelHeader.Location = new Point(0, 0);
-            panelHeader.Margin = new Padding(2, 2, 2, 2);
+            panelHeader.Margin = new Padding(2);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(686, 36);
             panelHeader.TabIndex = 0;
@@ -1354,10 +1334,6 @@
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard";
             // 
-<<<<<<< HEAD
-            // button1
-  
-=======
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.MidnightBlue;
@@ -1414,23 +1390,18 @@
             btnMinimize.UseVisualStyleBackColor = true;
             btnMinimize.Click += btnMinimize_Click;
             // 
->>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             // FormUtama
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-<<<<<<< HEAD
-            ClientSize = new Size(840, 420);
-=======
             ClientSize = new Size(1200, 700);
             Controls.Add(panelTitleBar);
->>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
             Controls.Add(panelKonten);
             Controls.Add(panelSidebar);
             Controls.Add(panelLogin);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FormUtama";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Fishy";
@@ -1570,13 +1541,9 @@
         private DataGridView dgvRuang;
         private Button btnTambahStok;
         private Label label19;
-<<<<<<< HEAD
-      
-=======
         private Panel panelTitleBar;
         private Button btnMaximize;
         private Button btnMinimize;
         private Button btnClose;
->>>>>>> 636fc908f2c6e1b1bc81c48599184da494c3dd2b
     }
 }
