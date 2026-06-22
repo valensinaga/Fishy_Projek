@@ -13,7 +13,7 @@ namespace Fishy_Projek.Models
     //    public string NamaOperator { get; set; }
     //    public string AsalTujuan { get; set; } // Nama Nelayan atau UMKM
     //}
-
+    
     public class MutasiView 
     {
         

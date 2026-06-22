@@ -63,6 +63,16 @@ namespace Fishy_Projek.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _42432421485151040 {
+            get {
+                object obj = ResourceManager.GetObject("42432421485151040", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_projek_ikan_motif {
             get {
                 object obj = ResourceManager.GetObject("bg_projek_ikan_motif", resourceCulture);

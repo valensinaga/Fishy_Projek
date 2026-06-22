@@ -1,109 +1,138 @@
-﻿using System;
-using System.Collections.Generic;
-using Npgsql;
+﻿using Fishy_Projek.Helpers;
 using Fishy_Projek.Models;
-using Fishy_Projek.Helpers;
+using Npgsql;
+using System;
+using System.Collections.Generic;
 
 namespace Fishy_Projek.Repositories
 {
     public class LaporanRepository
     {
-
-        public List<Stok> GetRingkasanStok()
-        {
-            var list = new List<Stok>();
-            using (var conn = DbHelper.GetConnection())
-            {
-                conn.Open();
-                var cmd = new NpgsqlCommand("SELECT * FROM vw_ringkasan_stok", conn);
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    list.Add(new Stok
-                    {
-                        IdStok = reader.GetInt32(0),
-                        IdIkan = reader.GetString(1),
-                        NamaIkan = reader.GetString(2),
-                        NamaGudang = reader.GetString(3),
-                        IdRuang = reader.GetString(4),
-                        NamaRuang = reader.GetString(5),
-                        KuantitasKg = reader.GetDouble(6)
-                    });
-            }
-            return list;
-        }
-
-
-        public List<MutasiView> GetRiwayatMutasi(string filter)
+        public List<MutasiView> GetRingkasanStok()
         {
             var list = new List<MutasiView>();
-
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-
-                // 1. Tulis query dengan nama kolom eksplisit agar urutan indeks (0-9) terjamin
-                string query = @"
-            SELECT 
-                kode_batch_masuk,   -- 0
-                nama_ikan,          -- 1
-                penyuplai_nelayan,  -- 2
-                waktu_masuk,        -- 3
-                kuantitas_awal_kg,  -- 4
-                sisa_stok_kg,       -- 5
-                surat_jalan_keluar, -- 6 (Bisa Null)
-                tujuan_distribusi,  -- 7 (Bisa Null)
-                kuantitas_keluar_kg,-- 8 (Bisa Null)
-                waktu_keluar        -- 9 (Bisa Null)
-            FROM vw_keterlacakan_batch";
-
-                // 2. Filter Dinamis
-                if (!string.IsNullOrEmpty(filter) && filter != "SEMUA")
+                using (var cmd = new NpgsqlCommand(@"
+                    SELECT bm.id_masuk, i.nama_ikan, pe.nama_pihak,
+                           bm.kuantitas_awal_kg, bm.sisa_stok_kg, bm.waktu_masuk
+                    FROM batch_masuk bm
+                    JOIN ikan i ON bm.id_ikan = i.id_ikan
+                    JOIN pihak_eksternal pe ON bm.id_pihak = pe.id_pihak", conn))
                 {
-                    query += " WHERE nama_ikan = @filter";
-                }
-
-                using (var cmd = new NpgsqlCommand(query, conn))
-                {
-                    if (!string.IsNullOrEmpty(filter) && filter != "SEMUA")
-                    {
-                        cmd.Parameters.AddWithValue("filter", filter);
-                    }
-
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            // 3. Mapping Objek dengan Pengecekan DBNull
-                            var item = new MutasiView
+                            list.Add(new MutasiView
                             {
-                                // Kolom 0-5 (Data Inbound - Diasumsikan selalu memiliki nilai)
-                                KodeBatchMasuk = reader.GetString(0),
-                                NamaIkan = reader.GetString(1),
-                                PenyuplaiNelayan = reader.GetString(2),
-                                WaktuMasuk = reader.GetDateTime(3),
-                                KuantitasAwalKg = reader.GetDouble(4),
-                                SisaStokKg = reader.GetDouble(5),
-
-                                // Kolom 6-9 (Data Outbound - Wajib divalidasi IsDBNull)
-                                SuratJalanKeluar = reader.IsDBNull(6) ? "-" : reader.GetString(6),
-                                TujuanDistribusi = reader.IsDBNull(7) ? "-" : reader.GetString(7),
-
-                                KuantitasKeluarKg = reader.IsDBNull(8)
-                                                    ? (double?)null
-                                                    : reader.GetDouble(8),
-
-                                WaktuKeluar = reader.IsDBNull(9)
-                                              ? (DateTime?)null
-                                              : reader.GetDateTime(9)
-                            };
-
-                            list.Add(item);
+                                KodeBatchMasuk = reader["id_masuk"].ToString(),
+                                NamaIkan = reader["nama_ikan"].ToString(),
+                                PenyuplaiNelayan = reader["nama_pihak"].ToString(),
+                                WaktuMasuk = Convert.ToDateTime(reader["waktu_masuk"]),
+                                KuantitasAwalKg = Convert.ToDouble(reader["kuantitas_awal_kg"]),
+                                SisaStokKg = Convert.ToDouble(reader["sisa_stok_kg"])
+                            });
                         }
                     }
                 }
             }
-
             return list;
+        }
+
+        public List<MutasiView> GetRiwayatMutasi(string filter)
+        {
+            var list = new List<MutasiView>();
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(@"
+                    SELECT bm.id_masuk, i.nama_ikan, pe.nama_pihak,
+                           bm.kuantitas_awal_kg, bm.sisa_stok_kg, bm.waktu_masuk
+                    FROM batch_masuk bm
+                    JOIN ikan i ON bm.id_ikan = i.id_ikan
+                    JOIN pihak_eksternal pe ON bm.id_pihak = pe.id_pihak", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new MutasiView
+                            {
+                                KodeBatchMasuk = reader["id_masuk"].ToString(),
+                                NamaIkan = reader["nama_ikan"].ToString(),
+                                PenyuplaiNelayan = reader["nama_pihak"].ToString(),
+                                WaktuMasuk = Convert.ToDateTime(reader["waktu_masuk"]),
+                                KuantitasAwalKg = Convert.ToDouble(reader["kuantitas_awal_kg"]),
+                                SisaStokKg = Convert.ToDouble(reader["sisa_stok_kg"])
+                            });
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
+        public double GetTotalStokRuang(string idRuang)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT fn_total_stok_ruang_batch(@id_ruang)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_ruang", idRuang);
+                    var result = cmd.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToDouble(result) : 0;
+                }
+            }
+        }
+
+        public double GetSisaKapasitasRuang(string idRuang)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT fn_sisa_kapasitas_ruang(@id_ruang)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_ruang", idRuang);
+                    var result = cmd.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToDouble(result) : 0;
+                }
+            }
+        }
+
+        public string GetStatusSuhuRuang(string idRuang, double suhuInput)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT fn_status_suhu_ruang(@id_ruang, @suhu)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_ruang", idRuang);
+                    cmd.Parameters.AddWithValue("suhu", suhuInput);
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? "Tidak diketahui";
+                }
+            }
+        }
+
+        public double GetTotalTerkirimBatch(string idMasuk)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT fn_total_terkirim_batch(@id_masuk)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_masuk", idMasuk);
+                    var result = cmd.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToDouble(result) : 0;
+                }
+            }
         }
     }
 }

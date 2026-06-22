@@ -23,9 +23,32 @@ namespace Fishy_Projek
             panelLogin.Visible = true;
             panelSidebar.Visible = false;
             panelKonten.Visible = false;
-
-            
             panelTitleBar.BringToFront();
+
+            panelDashboard.Parent = panelKonten;
+            panelStok.Parent = panelKonten;
+            panelInputSuhu.Parent = panelKonten;
+            panelPengiriman.Parent = panelKonten;
+            panelLaporan.Parent = panelKonten;
+            panelMaster.Parent = panelKonten;
+
+            // --- TAMBAHKAN BARIS INI UNTUK MENGAMANKAN TABEL YANG HILANG ---
+            // 1. Paksa tabel masuk ke kandang panelnya
+            dgvStok.Parent = panelStok;
+            dgvLaporan.Parent = panelLaporan;
+
+
+            // 2. Paksa tabelnya muncul ke depan
+            dgvStok.BringToFront();
+
+            // 3. Paksa ukurannya memenuhi panel putih tersebut
+            dgvStok.Dock = DockStyle.Fill;
+
+            // (Lakukan hal yang sama untuk tabel di panel lain kalau ada yang hilang)
+            dgvLaporan.Parent = panelLaporan;
+            dgvLaporan.Dock = DockStyle.Fill;
+            dgvLaporan.BringToFront();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -100,21 +123,24 @@ namespace Fishy_Projek
             panelMaster.Visible = false;
 
             btnDashboard.BackColor = Color.Transparent;
-            btnDashboard.ForeColor = Color.SlateGray;
+            btnDashboard.ForeColor = Color.MidnightBlue;
             btnStok.BackColor = Color.Transparent;
-            btnStok.ForeColor = Color.SlateGray;
+            btnStok.ForeColor = Color.MidnightBlue;
             btnInputSuhu.BackColor = Color.Transparent;
-            btnInputSuhu.ForeColor = Color.SlateGray;
+            btnInputSuhu.ForeColor = Color.MidnightBlue;
             btnPengiriman.BackColor = Color.Transparent;
-            btnPengiriman.ForeColor = Color.SlateGray;
+            btnPengiriman.ForeColor = Color.MidnightBlue;
             btnLaporan.BackColor = Color.Transparent;
-            btnLaporan.ForeColor = Color.SlateGray;
+            btnLaporan.ForeColor = Color.MidnightBlue;
             btnMaster.BackColor = Color.Transparent;
-            btnMaster.ForeColor = Color.SlateGray;
+            btnMaster.ForeColor = Color.MidnightBlue;
+
+            panelTitleBar.BringToFront();
+            panelSidebar.BringToFront();
 
             panel.Visible = true;
-            tombolAktif.BackColor = Color.SteelBlue;
-            tombolAktif.ForeColor = Color.White;
+            tombolAktif.BackColor = Color.LightCyan;
+            tombolAktif.ForeColor = Color.MidnightBlue;
             lblPageTitle.Text = judul;
         }
 
@@ -184,7 +210,7 @@ namespace Fishy_Projek
                 lblTotalUnit.Text = stokList.Count.ToString();
 
                 double totalKg = 0;
-                foreach (var s in stokList) totalKg += s.KuantitasKg;
+                foreach (var s in stokList) totalKg += s.KuantitasAwalKg;
                 lblKapasitas.Text = totalKg.ToString("N0") + " kg";
 
                 dgvRingkasanStok.DataSource = stokList;
@@ -285,10 +311,19 @@ namespace Fishy_Projek
 
                 _opsRepo.InputSuhu(idRuang, suhu, grade, catatan, _userLogin.IdUser);
 
-                lblStatusSuhu.ForeColor = Color.Green;
-                lblStatusSuhu.Text = "Data suhu berhasil disimpan!";
-                txtSuhuAktual.Clear();
-                txtCatatanSuhu.Clear();
+
+                string statusSuhu = _laporanRepo.GetStatusSuhuRuang(idRuang, suhu);
+
+                if (statusSuhu.Contains("PERINGATAN"))
+                {
+                    lblStatusSuhu.ForeColor = Color.Red;
+                    lblStatusSuhu.Text = "Tersimpan! ⚠️ " + statusSuhu;
+                }
+                else
+                {
+                    lblStatusSuhu.ForeColor = Color.Green;
+                    lblStatusSuhu.Text = "Tersimpan! ✅ " + statusSuhu;
+                }
             }
             catch (Exception ex)
             {
@@ -381,5 +416,9 @@ namespace Fishy_Projek
             panelTitleBar.Width = this.Width;
         }
 
+        private void panelStok_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
