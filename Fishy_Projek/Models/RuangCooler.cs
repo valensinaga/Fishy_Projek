@@ -5,6 +5,6 @@
         public string IdRuang { get; set; }
         public int IdGudang { get; set; }
         public string NamaRuang { get; set; }
-        public double KapasitasTon { get; set; }
+        public double KapasitasKg { get; set; }
     }
 }

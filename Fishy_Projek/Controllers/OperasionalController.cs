@@ -15,16 +15,16 @@ namespace Fishy_Projek.Controllers
             _repo.SimpanBatchIkan(b);
         }
 
-        public void ProsesIkanMasuk(string idIkan, string idRuang, double kuantitasMasuk, int idUser)
+        public void ProsesIkanMasuk(string idMasuk, string idIkan, int idPihak, string idRuang, double kuantitasMasuk, int idUser)
         {
-            _repo.EksekusiStoredProcedureTerimaStok(idIkan, idRuang, kuantitasMasuk, idUser);
+            _repo.EksekusiStoredProcedureTerimaStok(idMasuk, idIkan, idPihak, idRuang, kuantitasMasuk, idUser);
         }
 
-        public bool ProsesKirimBarang(string idPengiriman, int idUser, string tujuan, string noArmada, int idStok, double kuantitasKirim, out string statusNotifikasi)
+        public bool ProsesKirimBarang(string idPengiriman, string idMasuk, int idPihak, string noArmada, double kuantitasKirim, int idUser, out string statusNotifikasi)
         {
             try
             {
-                _repo.EksekusiStoredProcedurePengiriman(idPengiriman, idUser, tujuan, noArmada, idStok, kuantitasKirim);
+                _repo.EksekusiStoredProcedurePengiriman(idPengiriman, idMasuk, idPihak, noArmada, kuantitasKirim, idUser);
                 statusNotifikasi = "Sukses! Pengiriman berhasil diproses.";
                 return true;
             }
