@@ -9,6 +9,7 @@ namespace Fishy_Projek
 {
     public partial class FormUtama : Form
     {
+        private TextBox txtIdMasuk = new TextBox();
         private User _userLogin;
         private LaporanRepository _laporanRepo = new LaporanRepository();
         private MasterRepository _masterRepo = new MasterRepository();
@@ -33,6 +34,8 @@ namespace Fishy_Projek
             panelLaporan.Parent = panelKonten;
             panelMaster.Parent = panelKonten;
 
+
+
             // --- TAMBAHKAN BARIS INI UNTUK MENGAMANKAN TABEL YANG HILANG ---
             // 1. Paksa tabel masuk ke kandang panelnya
             dgvStok.Parent = panelStok;
@@ -46,6 +49,19 @@ namespace Fishy_Projek
             dgvStok.Dock = DockStyle.Fill;
 
             // (Lakukan hal yang sama untuk tabel di panel lain kalau ada yang hilang)
+
+            txtIdMasuk.Name = "txtIdMasuk";
+            txtIdMasuk.Location = new Point(150, 200); // Sesuaikan angka ini agar pas di panel Pengiriman
+            txtIdMasuk.Size = new Size(200, 30);
+
+            // Masukkan ke dalam panelPengiriman
+            panelPengiriman.Controls.Add(txtIdMasuk);
+
+            // Tambahkan label biar operator tahu itu buat apa
+            Label lblIdMasuk = new Label();
+            lblIdMasuk.Text = "ID Batch Masuk:";
+            lblIdMasuk.Location = new Point(20, 200);
+            panelPengiriman.Controls.Add(lblIdMasuk);
 
         }
 
@@ -257,9 +273,9 @@ namespace Fishy_Projek
             try
             {
                 var stokList = _laporanRepo.GetRingkasanStok();
-                cmbStokKirim.DataSource = stokList;
                 cmbStokKirim.DisplayMember = "NamaIkan";
-                cmbStokKirim.ValueMember = "IdIkan";
+                cmbStokKirim.ValueMember = "IdIkan"; // Karena IdIkan adalah string
+                cmbStokKirim.DataSource = stokList;
             }
             catch (Exception ex)
             {
@@ -413,17 +429,21 @@ namespace Fishy_Projek
         {
             try
             {
-                string idPengiriman = txtIdPengiriman.Text;
-                string tujuan = txtTujuan.Text;
+                string idKeluar = txtIdPengiriman.Text;
+                string idMasuk = txtIdMasuk.Text; // Tambahkan TextBox txtIdMasuk di Design
+                int idPihak = int.Parse(txtTujuan.Text); // ID UMKM/Tujuan
                 string armada = txtNoArmada.Text;
-                int idStok = (int)cmbStokKirim.SelectedValue;
                 double kuantitas = double.Parse(txtKuantitasKirim.Text);
 
-                _opsRepo.ProsesKirim(idPengiriman, _userLogin.IdUser, tujuan, armada, idStok, kuantitas);
+                // Memanggil fungsi baru di Repository yang sudah kita buat sebelumnya
+                _opsRepo.ProsesPengiriman(idKeluar, idMasuk, idPihak, armada, kuantitas, _userLogin.IdUser);
 
                 lblStatusKirim.ForeColor = Color.Green;
                 lblStatusKirim.Text = "Pengiriman berhasil diproses!";
+
+                // Bersihkan form
                 txtIdPengiriman.Text = "TX-" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                txtIdMasuk.Clear();
                 txtTujuan.Clear();
                 txtNoArmada.Clear();
                 txtKuantitasKirim.Clear();

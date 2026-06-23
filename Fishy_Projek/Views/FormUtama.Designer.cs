@@ -214,7 +214,7 @@
             txtPassword.Location = new Point(80, 350);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(291, 32);
+            txtPassword.Size = new Size(291, 24);
             txtPassword.TabIndex = 4;
             // 
             // lblPassword
@@ -224,7 +224,7 @@
             lblPassword.ForeColor = Color.DimGray;
             lblPassword.Location = new Point(80, 325);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(98, 25);
+            lblPassword.Size = new Size(69, 17);
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
@@ -234,7 +234,7 @@
             txtUsername.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(80, 275);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(291, 32);
+            txtUsername.Size = new Size(291, 24);
             txtUsername.TabIndex = 2;
             // 
             // lblUsername
@@ -244,7 +244,7 @@
             lblUsername.ForeColor = Color.DimGray;
             lblUsername.Location = new Point(80, 250);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(102, 25);
+            lblUsername.Size = new Size(73, 17);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "Username";
             // 
@@ -255,7 +255,7 @@
             lblWelcome.ForeColor = Color.MidnightBlue;
             lblWelcome.Location = new Point(80, 150);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(319, 46);
+            lblWelcome.Size = new Size(222, 31);
             lblWelcome.TabIndex = 0;
             lblWelcome.Text = "Selamat Datang";
             // 
@@ -277,7 +277,7 @@
             lblTagline.ForeColor = Color.LightSkyBlue;
             lblTagline.Location = new Point(80, 330);
             lblTagline.Name = "lblTagline";
-            lblTagline.Size = new Size(436, 26);
+            lblTagline.Size = new Size(297, 18);
             lblTagline.TabIndex = 1;
             lblTagline.Text = "Cold Chain Fish Storage Monitoring System";
             lblTagline.TextAlign = ContentAlignment.MiddleCenter;
@@ -289,7 +289,7 @@
             lblAppName.ForeColor = Color.White;
             lblAppName.Location = new Point(130, 250);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(278, 64);
+            lblAppName.Size = new Size(189, 44);
             lblAppName.TabIndex = 0;
             lblAppName.Text = "🐟 FISHY";
             // 
@@ -326,7 +326,7 @@
             lblPageTitle.ForeColor = Color.DarkSlateGray;
             lblPageTitle.Location = new Point(20, 25);
             lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(258, 37);
+            lblPageTitle.Size = new Size(175, 26);
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard Page";
             // 
@@ -364,7 +364,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(14, 10);
             label1.Name = "label1";
-            label1.Size = new Size(77, 20);
+            label1.Size = new Size(53, 13);
             label1.TabIndex = 0;
             label1.Text = "Total Unit";
             // 
@@ -375,7 +375,7 @@
             lblTotalUnit.ForeColor = Color.White;
             lblTotalUnit.Location = new Point(14, 32);
             lblTotalUnit.Name = "lblTotalUnit";
-            lblTotalUnit.Size = new Size(0, 52);
+            lblTotalUnit.Size = new Size(0, 36);
             lblTotalUnit.TabIndex = 0;
             // 
             // cardKapasitas
@@ -395,7 +395,7 @@
             lblKapasitas.ForeColor = Color.White;
             lblKapasitas.Location = new Point(14, 32);
             lblKapasitas.Name = "lblKapasitas";
-            lblKapasitas.Size = new Size(47, 52);
+            lblKapasitas.Size = new Size(33, 36);
             lblKapasitas.TabIndex = 0;
             lblKapasitas.Text = "0";
             // 
@@ -406,7 +406,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(14, 10);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
+            label2.Size = new Size(81, 13);
             label2.TabIndex = 0;
             label2.Text = "Kapasitas Terisi";
             // 
@@ -428,7 +428,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(14, 10);
             label3.Name = "label3";
-            label3.Size = new Size(119, 20);
+            label3.Size = new Size(79, 13);
             label3.TabIndex = 0;
             label3.Text = "Suhu Rata-rata";
             // 
@@ -439,7 +439,7 @@
             lblSuhu.ForeColor = Color.White;
             lblSuhu.Location = new Point(14, 32);
             lblSuhu.Name = "lblSuhu";
-            lblSuhu.Size = new Size(47, 52);
+            lblSuhu.Size = new Size(33, 36);
             lblSuhu.TabIndex = 0;
             lblSuhu.Text = "0";
             // 
@@ -462,7 +462,7 @@
             lblPeringatan.Location = new Point(14, 32);
             lblPeringatan.Margin = new Padding(4, 0, 4, 0);
             lblPeringatan.Name = "lblPeringatan";
-            lblPeringatan.Size = new Size(53, 56);
+            lblPeringatan.Size = new Size(37, 37);
             lblPeringatan.TabIndex = 0;
             lblPeringatan.Text = "0";
             // 
@@ -474,7 +474,7 @@
             label4.Location = new Point(14, 10);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(81, 18);
+            label4.Size = new Size(59, 13);
             label4.TabIndex = 0;
             label4.Text = "Peringatan";
             // 
@@ -485,7 +485,7 @@
             lblRingkasanStokTitle.ForeColor = Color.MidnightBlue;
             lblRingkasanStokTitle.Location = new Point(20, 150);
             lblRingkasanStokTitle.Name = "lblRingkasanStokTitle";
-            lblRingkasanStokTitle.Size = new Size(192, 30);
+            lblRingkasanStokTitle.Size = new Size(126, 20);
             lblRingkasanStokTitle.TabIndex = 0;
             lblRingkasanStokTitle.Text = "Ringkasan Stok";
             // 
@@ -511,7 +511,7 @@
             lblKondisiRuanganTitle.ForeColor = Color.MidnightBlue;
             lblKondisiRuanganTitle.Location = new Point(20, 375);
             lblKondisiRuanganTitle.Name = "lblKondisiRuanganTitle";
-            lblKondisiRuanganTitle.Size = new Size(211, 30);
+            lblKondisiRuanganTitle.Size = new Size(138, 20);
             lblKondisiRuanganTitle.TabIndex = 0;
             lblKondisiRuanganTitle.Text = "Kondisi Ruangan";
             // 
@@ -567,7 +567,7 @@
             label19.Location = new Point(20, 25);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";
-            label19.Size = new Size(259, 35);
+            label19.Size = new Size(180, 23);
             label19.TabIndex = 6;
             label19.Text = "Stok dan Ruangan";
             // 
@@ -612,7 +612,7 @@
             label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(20, 20);
             label5.Name = "label5";
-            label5.Size = new Size(436, 32);
+            label5.Size = new Size(301, 24);
             label5.TabIndex = 0;
             label5.Text = "Input Pengecekan Suhu Harian";
             // 
@@ -623,7 +623,7 @@
             label6.ForeColor = Color.DimGray;
             label6.Location = new Point(20, 90);
             label6.Name = "label6";
-            label6.Size = new Size(132, 25);
+            label6.Size = new Size(96, 17);
             label6.TabIndex = 0;
             label6.Text = "Pilih Ruangan";
             // 
@@ -634,7 +634,7 @@
             cmbRuanganSuhu.FormattingEnabled = true;
             cmbRuanganSuhu.Location = new Point(20, 120);
             cmbRuanganSuhu.Name = "cmbRuanganSuhu";
-            cmbRuanganSuhu.Size = new Size(340, 34);
+            cmbRuanganSuhu.Size = new Size(340, 26);
             cmbRuanganSuhu.TabIndex = 0;
             // 
             // label7
@@ -644,7 +644,7 @@
             label7.ForeColor = Color.DimGray;
             label7.Location = new Point(20, 170);
             label7.Name = "label7";
-            label7.Size = new Size(161, 25);
+            label7.Size = new Size(113, 17);
             label7.TabIndex = 0;
             label7.Text = "Suhu Aktual (°C)";
             // 
@@ -654,7 +654,7 @@
             txtSuhuAktual.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSuhuAktual.Location = new Point(20, 200);
             txtSuhuAktual.Name = "txtSuhuAktual";
-            txtSuhuAktual.Size = new Size(340, 32);
+            txtSuhuAktual.Size = new Size(340, 24);
             txtSuhuAktual.TabIndex = 0;
             // 
             // label8
@@ -664,7 +664,7 @@
             label8.ForeColor = Color.DimGray;
             label8.Location = new Point(20, 245);
             label8.Name = "label8";
-            label8.Size = new Size(115, 25);
+            label8.Size = new Size(83, 17);
             label8.TabIndex = 0;
             label8.Text = "Grade Mutu";
             // 
@@ -675,7 +675,7 @@
             cmbGradeMutu.FormattingEnabled = true;
             cmbGradeMutu.Location = new Point(20, 275);
             cmbGradeMutu.Name = "cmbGradeMutu";
-            cmbGradeMutu.Size = new Size(340, 34);
+            cmbGradeMutu.Size = new Size(340, 26);
             cmbGradeMutu.TabIndex = 0;
             // 
             // label9
@@ -685,7 +685,7 @@
             label9.ForeColor = Color.DimGray;
             label9.Location = new Point(20, 320);
             label9.Name = "label9";
-            label9.Size = new Size(81, 25);
+            label9.Size = new Size(57, 17);
             label9.TabIndex = 0;
             label9.Text = "Catatan";
             // 
@@ -775,7 +775,7 @@
             txtKuantitasKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtKuantitasKirim.Location = new Point(20, 395);
             txtKuantitasKirim.Name = "txtKuantitasKirim";
-            txtKuantitasKirim.Size = new Size(340, 32);
+            txtKuantitasKirim.Size = new Size(340, 24);
             txtKuantitasKirim.TabIndex = 0;
             // 
             // label15
@@ -785,7 +785,7 @@
             label15.ForeColor = Color.DimGray;
             label15.Location = new Point(20, 370);
             label15.Name = "label15";
-            label15.Size = new Size(183, 25);
+            label15.Size = new Size(131, 17);
             label15.TabIndex = 0;
             label15.Text = "Kuantitas Kirim (kg)";
             // 
@@ -796,7 +796,7 @@
             cmbStokKirim.FormattingEnabled = true;
             cmbStokKirim.Location = new Point(20, 320);
             cmbStokKirim.Name = "cmbStokKirim";
-            cmbStokKirim.Size = new Size(340, 34);
+            cmbStokKirim.Size = new Size(340, 26);
             cmbStokKirim.TabIndex = 0;
             // 
             // label14
@@ -806,7 +806,7 @@
             label14.ForeColor = Color.DimGray;
             label14.Location = new Point(20, 295);
             label14.Name = "label14";
-            label14.Size = new Size(93, 25);
+            label14.Size = new Size(66, 17);
             label14.TabIndex = 0;
             label14.Text = "Pilih Stok";
             // 
@@ -816,7 +816,7 @@
             txtNoArmada.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNoArmada.Location = new Point(20, 245);
             txtNoArmada.Name = "txtNoArmada";
-            txtNoArmada.Size = new Size(340, 32);
+            txtNoArmada.Size = new Size(340, 24);
             txtNoArmada.TabIndex = 0;
             // 
             // label13
@@ -826,7 +826,7 @@
             label13.ForeColor = Color.DimGray;
             label13.Location = new Point(20, 220);
             label13.Name = "label13";
-            label13.Size = new Size(144, 25);
+            label13.Size = new Size(103, 17);
             label13.TabIndex = 0;
             label13.Text = "Nomor Armada";
             // 
@@ -836,7 +836,7 @@
             txtTujuan.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTujuan.Location = new Point(20, 170);
             txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(340, 32);
+            txtTujuan.Size = new Size(340, 24);
             txtTujuan.TabIndex = 0;
             // 
             // label12
@@ -846,7 +846,7 @@
             label12.ForeColor = Color.DimGray;
             label12.Location = new Point(20, 145);
             label12.Name = "label12";
-            label12.Size = new Size(157, 25);
+            label12.Size = new Size(114, 17);
             label12.TabIndex = 0;
             label12.Text = "Tujuan Distribusi";
             // 
@@ -858,7 +858,7 @@
             txtIdPengiriman.Location = new Point(20, 95);
             txtIdPengiriman.Name = "txtIdPengiriman";
             txtIdPengiriman.ReadOnly = true;
-            txtIdPengiriman.Size = new Size(340, 32);
+            txtIdPengiriman.Size = new Size(340, 24);
             txtIdPengiriman.TabIndex = 0;
             // 
             // label11
@@ -868,7 +868,7 @@
             label11.ForeColor = Color.DimGray;
             label11.Location = new Point(20, 70);
             label11.Name = "label11";
-            label11.Size = new Size(134, 25);
+            label11.Size = new Size(96, 17);
             label11.TabIndex = 0;
             label11.Text = "ID Pengiriman";
             // 
@@ -879,7 +879,7 @@
             label10.ForeColor = Color.MidnightBlue;
             label10.Location = new Point(20, 20);
             label10.Name = "label10";
-            label10.Size = new Size(279, 33);
+            label10.Size = new Size(186, 24);
             label10.TabIndex = 0;
             label10.Text = "Proses Pengiriman";
             // 
@@ -906,7 +906,7 @@
             label16.ForeColor = Color.MidnightBlue;
             label16.Location = new Point(20, 20);
             label16.Name = "label16";
-            label16.Size = new Size(340, 32);
+            label16.Size = new Size(229, 24);
             label16.TabIndex = 0;
             label16.Text = "Laporan Riwayat Mutasi";
             // 
@@ -917,7 +917,7 @@
             label17.ForeColor = Color.DimGray;
             label17.Location = new Point(20, 70);
             label17.Name = "label17";
-            label17.Size = new Size(169, 25);
+            label17.Size = new Size(121, 17);
             label17.TabIndex = 0;
             label17.Text = "Filter Jenis Mutasi";
             // 
@@ -928,7 +928,7 @@
             cmbFilterMutasi.FormattingEnabled = true;
             cmbFilterMutasi.Location = new Point(20, 95);
             cmbFilterMutasi.Name = "cmbFilterMutasi";
-            cmbFilterMutasi.Size = new Size(200, 34);
+            cmbFilterMutasi.Size = new Size(200, 26);
             cmbFilterMutasi.TabIndex = 0;
             // 
             // btnFilter
@@ -967,7 +967,7 @@
             lblGrafikTitle.ForeColor = Color.DimGray;
             lblGrafikTitle.Location = new Point(580, 70);
             lblGrafikTitle.Name = "lblGrafikTitle";
-            lblGrafikTitle.Size = new Size(320, 25);
+            lblGrafikTitle.Size = new Size(300, 17);
             lblGrafikTitle.TabIndex = 0;
             lblGrafikTitle.Text = "Grafik Mutasi Stok: Masuk vs Keluar (Manajer)";
             // 
@@ -996,7 +996,7 @@
             label18.ForeColor = Color.MidnightBlue;
             label18.Location = new Point(20, 20);
             label18.Name = "label18";
-            label18.Size = new Size(224, 40);
+            label18.Size = new Size(152, 29);
             label18.TabIndex = 0;
             label18.Text = "Master Data";
             // 
@@ -1015,10 +1015,10 @@
             // 
             tabIkan.Controls.Add(btnTambahIkan);
             tabIkan.Controls.Add(dgvIkan);
-            tabIkan.Location = new Point(4, 34);
+            tabIkan.Location = new Point(4, 24);
             tabIkan.Name = "tabIkan";
             tabIkan.Padding = new Padding(4, 5, 4, 5);
-            tabIkan.Size = new Size(912, 457);
+            tabIkan.Size = new Size(912, 467);
             tabIkan.TabIndex = 0;
             tabIkan.Text = "Data Ikan";
             tabIkan.UseVisualStyleBackColor = true;
@@ -1056,10 +1056,10 @@
             // 
             tabGudang.Controls.Add(btnTambahGudang);
             tabGudang.Controls.Add(dgvGudang);
-            tabGudang.Location = new Point(4, 34);
+            tabGudang.Location = new Point(4, 24);
             tabGudang.Name = "tabGudang";
             tabGudang.Padding = new Padding(4, 5, 4, 5);
-            tabGudang.Size = new Size(912, 457);
+            tabGudang.Size = new Size(912, 467);
             tabGudang.TabIndex = 1;
             tabGudang.Text = "Data Gudang";
             tabGudang.UseVisualStyleBackColor = true;
@@ -1096,10 +1096,10 @@
             // 
             tabRuang.Controls.Add(btnTambahRuang);
             tabRuang.Controls.Add(dgvRuang);
-            tabRuang.Location = new Point(4, 34);
+            tabRuang.Location = new Point(4, 24);
             tabRuang.Name = "tabRuang";
             tabRuang.Padding = new Padding(4, 5, 4, 5);
-            tabRuang.Size = new Size(912, 457);
+            tabRuang.Size = new Size(912, 467);
             tabRuang.TabIndex = 2;
             tabRuang.Text = "Data Ruang Cooler";
             tabRuang.UseVisualStyleBackColor = true;
@@ -1222,7 +1222,7 @@
             lblNamaUser.Location = new Point(20, 95);
             lblNamaUser.Margin = new Padding(4, 0, 4, 0);
             lblNamaUser.Name = "lblNamaUser";
-            lblNamaUser.Size = new Size(147, 20);
+            lblNamaUser.Size = new Size(100, 13);
             lblNamaUser.TabIndex = 1;
             lblNamaUser.Text = "Halo, [NamaUser]";
             // 
@@ -1234,7 +1234,7 @@
             lblRoleUser.Location = new Point(20, 128);
             lblRoleUser.Margin = new Padding(4, 0, 4, 0);
             lblRoleUser.Name = "lblRoleUser";
-            lblRoleUser.Size = new Size(73, 20);
+            lblRoleUser.Size = new Size(52, 15);
             lblRoleUser.TabIndex = 2;
             lblRoleUser.Text = "Manajer";
             // 
@@ -1322,7 +1322,7 @@
             lblLogo.Location = new Point(45, 15);
             lblLogo.Margin = new Padding(4, 0, 4, 0);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(155, 40);
+            lblLogo.Size = new Size(108, 27);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "🐟 FISHY";
             lblLogo.TextAlign = ContentAlignment.MiddleCenter;
@@ -1386,7 +1386,6 @@
             // 
             // FormUtama
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1200, 700);
