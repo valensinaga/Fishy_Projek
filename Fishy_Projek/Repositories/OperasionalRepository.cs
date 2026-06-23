@@ -158,5 +158,50 @@ namespace Fishy_Projek.Repositories
             }
             return list;
         }
+
+        public void ProsesKirim(string idPengiriman, int idUser, string tujuan, string armada, int idStok, double kuantitas)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                // Ambil id_masuk dari stok
+                string idMasuk = "";
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT id_masuk FROM batch_masuk WHERE sisa_stok_kg > 0 ORDER BY waktu_masuk ASC LIMIT 1", conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result == null)
+                        throw new Exception("Tidak ada stok tersedia untuk dikirim.");
+                    idMasuk = result.ToString();
+                }
+
+                // Cari id_pihak dari tujuan
+                int idPihak = 0;
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT id_pihak FROM pihak_eksternal WHERE nama_pihak = @tujuan LIMIT 1", conn))
+                {
+                    cmd.Parameters.AddWithValue("tujuan", tujuan);
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                        idPihak = Convert.ToInt32(result);
+                }
+
+                // Panggil stored procedure pengiriman
+                using (var cmd = new NpgsqlCommand(
+                    "CALL public.sp_proses_pengiriman(@id_keluar, @id_masuk, @id_pihak, @no_armada, @kuantitas_kirim, @id_user)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_keluar", idPengiriman);
+                    cmd.Parameters.AddWithValue("id_masuk", idMasuk);
+                    cmd.Parameters.AddWithValue("id_pihak", idPihak);
+                    cmd.Parameters.AddWithValue("no_armada", armada);
+                    cmd.Parameters.AddWithValue("kuantitas_kirim", kuantitas);
+                    cmd.Parameters.AddWithValue("id_user", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
+
 }
