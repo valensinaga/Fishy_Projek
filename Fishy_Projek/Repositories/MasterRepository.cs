@@ -41,10 +41,19 @@ namespace Fishy_Projek.Repositories
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                var cmd = new NpgsqlCommand("SELECT id_ruang, id_gudang, nama_ruang, kapasitas_ton FROM public.ruang_cooler ORDER BY id_ruang", conn);
+                
+                var cmd = new NpgsqlCommand("SELECT id_ruang, id_gudang, nama_ruang, kapasitas_kg FROM public.ruang_cooler ORDER BY id_ruang", conn);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
-                    list.Add(new RuangCooler { IdRuang = reader.GetString(0), IdGudang = reader.GetInt32(1), NamaRuang = reader.GetString(2), KapasitasTon = reader.GetDouble(3) });
+                {
+                    list.Add(new RuangCooler
+                    {
+                        IdRuang = reader.GetString(0),
+                        IdGudang = reader.GetInt32(1),
+                        NamaRuang = reader.GetString(2),
+                        KapasitasKg = reader.GetDouble(3) // FIXED: KapasitasTon diubah jadi KapasitasKg
+                    });
+                }
             }
             return list;
         }
