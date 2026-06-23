@@ -36,7 +36,7 @@ namespace Fishy_Projek
             // 1. Paksa tabel masuk ke kandang panelnya
             dgvStok.Parent = panelStok;
             dgvLaporan.Parent = panelLaporan;
-
+           
 
             // 2. Paksa tabelnya muncul ke depan
             dgvStok.BringToFront();
