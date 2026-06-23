@@ -172,7 +172,7 @@
             panelKanan.Controls.Add(lblUsername);
             panelKanan.Controls.Add(lblWelcome);
             panelKanan.Dock = DockStyle.Fill;
-            panelKanan.Location = new Point(350, 0);
+            panelKanan.Location = new Point(500, 0);
             panelKanan.Margin = new Padding(2);
             panelKanan.Name = "panelKanan";
             panelKanan.Size = new Size(700, 723);
@@ -358,7 +358,7 @@
             label19.ForeColor = Color.MidnightBlue;
             label19.Location = new Point(20, 20);
             label19.Name = "label19";
-            label19.Size = new Size(259, 35);
+            label19.Size = new Size(180, 23);
             label19.TabIndex = 6;
             label19.Text = "Stok dan Ruangan";
             // 
@@ -420,7 +420,7 @@
             lblPeringatan.ForeColor = Color.White;
             lblPeringatan.Location = new Point(14, 30);
             lblPeringatan.Name = "lblPeringatan";
-            lblPeringatan.Size = new Size(53, 56);
+            lblPeringatan.Size = new Size(37, 37);
             lblPeringatan.TabIndex = 0;
             lblPeringatan.Text = "0";
             // 
@@ -431,7 +431,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(14, 10);
             label4.Name = "label4";
-            label4.Size = new Size(81, 18);
+            label4.Size = new Size(59, 13);
             label4.TabIndex = 0;
             label4.Text = "Peringatan";
             // 
@@ -444,272 +444,6 @@
             cardSuhu.Name = "cardSuhu";
             cardSuhu.Size = new Size(210, 90);
             cardSuhu.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Berlin Sans FB", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(14, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(110, 18);
-            label3.TabIndex = 0;
-            label3.Text = "Suhu Rata-rata";
-            // 
-            // lblSuhu
-            // 
-            lblSuhu.AutoSize = true;
-            lblSuhu.Font = new Font("Berlin Sans FB", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSuhu.ForeColor = Color.White;
-            lblSuhu.Location = new Point(14, 30);
-            lblSuhu.Name = "lblSuhu";
-            lblSuhu.Size = new Size(53, 56);
-            lblSuhu.TabIndex = 0;
-            lblSuhu.Text = "0";
-            // 
-            // cardKapasitas
-            // 
-            cardKapasitas.BackColor = Color.DarkViolet;
-            cardKapasitas.Controls.Add(lblKapasitas);
-            cardKapasitas.Controls.Add(label2);
-            cardKapasitas.Location = new Point(250, 20);
-            cardKapasitas.Name = "cardKapasitas";
-            cardKapasitas.Size = new Size(210, 90);
-            cardKapasitas.TabIndex = 0;
-            // 
-            // lblKapasitas
-            // 
-            lblKapasitas.AutoSize = true;
-            lblKapasitas.Font = new Font("Berlin Sans FB", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblKapasitas.ForeColor = Color.White;
-            lblKapasitas.Location = new Point(14, 30);
-            lblKapasitas.Name = "lblKapasitas";
-            lblKapasitas.Size = new Size(53, 56);
-            lblKapasitas.TabIndex = 0;
-            lblKapasitas.Text = "0";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Berlin Sans FB", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(14, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(108, 18);
-            label2.TabIndex = 0;
-            label2.Text = "Kapasitas Terisi";
-            // 
-            // cardTotalUnit
-            // 
-            cardTotalUnit.BackColor = Color.SteelBlue;
-            cardTotalUnit.Controls.Add(label1);
-            cardTotalUnit.Controls.Add(lblTotalUnit);
-            cardTotalUnit.Location = new Point(20, 20);
-            cardTotalUnit.Name = "cardTotalUnit";
-            cardTotalUnit.Size = new Size(210, 90);
-            cardTotalUnit.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Berlin Sans FB", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(14, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 18);
-            label1.TabIndex = 0;
-            label1.Text = "Total Unit";
-            // 
-            // lblTotalUnit
-            // 
-            lblTotalUnit.AutoSize = true;
-            lblTotalUnit.Font = new Font("Berlin Sans FB", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalUnit.ForeColor = Color.White;
-            lblTotalUnit.Location = new Point(14, 30);
-            lblTotalUnit.Name = "lblTotalUnit";
-            lblTotalUnit.Size = new Size(0, 56);
-            lblTotalUnit.TabIndex = 0;
-            // 
-            // panelHeader
-            // 
-            panelHeader.BackColor = Color.Transparent;
-            panelHeader.BackgroundImage = Properties.Resources._42432421485151040;
-            panelHeader.Controls.Add(lblPageTitle);
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(980, 80);
-            panelHeader.TabIndex = 0;
-            // 
-            // lblPageTitle
-            // 
-            lblPageTitle.AutoSize = true;
-            lblPageTitle.Font = new Font("Berlin Sans FB", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPageTitle.ForeColor = Color.DarkSlateGray;
-            lblPageTitle.Location = new Point(13, 37);
-            lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(241, 35);
-            lblPageTitle.TabIndex = 0;
-            lblPageTitle.Text = "Dashboard Page";
-            // 
-            // panelPengiriman
-            // 
-            panelPengiriman.Controls.Add(lblStatusKirim);
-            panelPengiriman.Controls.Add(btnProsesKirim);
-            panelPengiriman.Controls.Add(txtKuantitasKirim);
-            panelPengiriman.Controls.Add(label15);
-            panelPengiriman.Controls.Add(cmbStokKirim);
-            panelPengiriman.Controls.Add(label14);
-            panelPengiriman.Controls.Add(txtNoArmada);
-            panelPengiriman.Controls.Add(label13);
-            panelPengiriman.Controls.Add(txtTujuan);
-            panelPengiriman.Controls.Add(label12);
-            panelPengiriman.Controls.Add(txtIdPengiriman);
-            panelPengiriman.Controls.Add(label11);
-            panelPengiriman.Controls.Add(label10);
-            panelPengiriman.Location = new Point(219, 42);
-            panelPengiriman.Name = "panelPengiriman";
-            panelPengiriman.Size = new Size(980, 675);
-            panelPengiriman.TabIndex = 0;
-            panelPengiriman.Visible = false;
-            // 
-            // lblStatusKirim
-            // 
-            lblStatusKirim.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatusKirim.ForeColor = Color.Green;
-            lblStatusKirim.Location = new Point(20, 515);
-            lblStatusKirim.Name = "lblStatusKirim";
-            lblStatusKirim.Size = new Size(290, 20);
-            lblStatusKirim.TabIndex = 0;
-            // 
-            // btnProsesKirim
-            // 
-            btnProsesKirim.BackColor = Color.Teal;
-            btnProsesKirim.Cursor = Cursors.Hand;
-            btnProsesKirim.FlatAppearance.BorderSize = 0;
-            btnProsesKirim.FlatStyle = FlatStyle.Flat;
-            btnProsesKirim.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProsesKirim.ForeColor = Color.White;
-            btnProsesKirim.Location = new Point(20, 460);
-            btnProsesKirim.Name = "btnProsesKirim";
-            btnProsesKirim.Size = new Size(290, 45);
-            btnProsesKirim.TabIndex = 0;
-            btnProsesKirim.Text = "PROSES PENGIRIMAN";
-            btnProsesKirim.UseVisualStyleBackColor = false;
-            btnProsesKirim.Click += btnProsesKirim_Click;
-            // 
-            // txtKuantitasKirim
-            // 
-            txtKuantitasKirim.BorderStyle = BorderStyle.FixedSingle;
-            txtKuantitasKirim.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtKuantitasKirim.Location = new Point(20, 395);
-            txtKuantitasKirim.Name = "txtKuantitasKirim";
-            txtKuantitasKirim.Size = new Size(291, 32);
-            txtKuantitasKirim.TabIndex = 0;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.DimGray;
-            label15.Location = new Point(20, 370);
-            label15.Name = "label15";
-            label15.Size = new Size(177, 23);
-            label15.TabIndex = 0;
-            label15.Text = "Kuantitas Kirim (kg)";
-            // 
-            // cmbStokKirim
-            // 
-            cmbStokKirim.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStokKirim.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbStokKirim.FormattingEnabled = true;
-            cmbStokKirim.Location = new Point(20, 320);
-            cmbStokKirim.Name = "cmbStokKirim";
-            cmbStokKirim.Size = new Size(290, 32);
-            cmbStokKirim.TabIndex = 0;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.DimGray;
-            label14.Location = new Point(20, 295);
-            label14.Name = "label14";
-            label14.Size = new Size(86, 23);
-            label14.TabIndex = 0;
-            label14.Text = "Pilih Stok";
-            // 
-            // txtNoArmada
-            // 
-            txtNoArmada.BorderStyle = BorderStyle.FixedSingle;
-            txtNoArmada.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNoArmada.Location = new Point(20, 245);
-            txtNoArmada.Name = "txtNoArmada";
-            txtNoArmada.Size = new Size(291, 32);
-            txtNoArmada.TabIndex = 0;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.DimGray;
-            label13.Location = new Point(20, 220);
-            label13.Name = "label13";
-            label13.Size = new Size(141, 23);
-            label13.TabIndex = 0;
-            label13.Text = "Nomor Armada";
-            // 
-            // txtTujuan
-            // 
-            txtTujuan.BorderStyle = BorderStyle.FixedSingle;
-            txtTujuan.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTujuan.Location = new Point(20, 170);
-            txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(291, 32);
-            txtTujuan.TabIndex = 0;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.DimGray;
-            label12.Location = new Point(20, 145);
-            label12.Name = "label12";
-            label12.Size = new Size(146, 23);
-            label12.TabIndex = 0;
-            label12.Text = "Tujuan Distribusi";
-            // 
-            // txtIdPengiriman
-            // 
-            txtIdPengiriman.BackColor = Color.WhiteSmoke;
-            txtIdPengiriman.BorderStyle = BorderStyle.FixedSingle;
-            txtIdPengiriman.Font = new Font("Berlin Sans FB", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIdPengiriman.Location = new Point(20, 95);
-            txtIdPengiriman.Name = "txtIdPengiriman";
-            txtIdPengiriman.ReadOnly = true;
-            txtIdPengiriman.Size = new Size(291, 32);
-            txtIdPengiriman.TabIndex = 0;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Berlin Sans FB", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(20, 70);
-            label11.Name = "label11";
-            label11.Size = new Size(127, 23);
-            label11.TabIndex = 0;
-            label11.Text = "ID Pengiriman";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.MidnightBlue;
-            label10.Location = new Point(20, 20);
-            label10.Name = "label10";
-            label10.Size = new Size(273, 37);
-            label10.TabIndex = 0;
-            label10.Text = "Proses Pengiriman";
             // 
             // label3
             // 
@@ -1030,8 +764,8 @@
             tabIkan.Location = new Point(4, 24);
             tabIkan.Margin = new Padding(2);
             tabIkan.Name = "tabIkan";
-            tabIkan.Padding = new Padding(3, 3, 3, 3);
-            tabIkan.Size = new Size(932, 522);
+            tabIkan.Padding = new Padding(3);
+            tabIkan.Size = new Size(650, 308);
             tabIkan.TabIndex = 0;
             tabIkan.Text = "Data Ikan";
             tabIkan.UseVisualStyleBackColor = true;
@@ -1074,8 +808,8 @@
             tabGudang.Location = new Point(4, 24);
             tabGudang.Margin = new Padding(2);
             tabGudang.Name = "tabGudang";
-            tabGudang.Padding = new Padding(3, 3, 3, 3);
-            tabGudang.Size = new Size(932, 522);
+            tabGudang.Padding = new Padding(3);
+            tabGudang.Size = new Size(650, 308);
             tabGudang.TabIndex = 1;
             tabGudang.Text = "Data Gudang";
             tabGudang.UseVisualStyleBackColor = true;
@@ -1117,8 +851,8 @@
             tabRuang.Location = new Point(4, 24);
             tabRuang.Margin = new Padding(2);
             tabRuang.Name = "tabRuang";
-            tabRuang.Padding = new Padding(3, 3, 3, 3);
-            tabRuang.Size = new Size(932, 522);
+            tabRuang.Padding = new Padding(3);
+            tabRuang.Size = new Size(650, 308);
             tabRuang.TabIndex = 2;
             tabRuang.Text = "Data Ruang Cooler";
             tabRuang.UseVisualStyleBackColor = true;
@@ -1470,7 +1204,7 @@
             lblRoleUser.Font = new Font("Berlin Sans FB", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRoleUser.Location = new Point(16, 125);
             lblRoleUser.Name = "lblRoleUser";
-            lblRoleUser.Size = new Size(73, 20);
+            lblRoleUser.Size = new Size(52, 15);
             lblRoleUser.TabIndex = 2;
             lblRoleUser.Text = "Manajer";
             // 
@@ -1553,7 +1287,7 @@
             lblLogo.Font = new Font("Berlin Sans FB", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogo.Location = new Point(34, 5);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(155, 40);
+            lblLogo.Size = new Size(108, 27);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "🐟 FISHY";
             lblLogo.TextAlign = ContentAlignment.MiddleCenter;
@@ -1641,7 +1375,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1200, 758);
+            ClientSize = new Size(840, 455);
             Controls.Add(panelTitleBar);
             Controls.Add(panelKonten);
             Controls.Add(panelSidebar);
