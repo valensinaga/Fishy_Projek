@@ -134,5 +134,56 @@ namespace Fishy_Projek.Repositories
                 }
             }
         }
+
+        // Data buat grafik "Ikan Masuk vs Keluar" di Laporan (khusus Manajer).
+        // Mengumpulkan total kg masuk & keluar per tanggal, jumlahHari terakhir.
+        public List<GrafikMutasiHarian> GetGrafikMutasiHarian(int jumlahHari = 14)
+        {
+            var list = new List<GrafikMutasiHarian>();
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(@"
+                    SELECT
+                        tanggal,
+                        SUM(masuk_kg)  AS total_masuk_kg,
+                        SUM(keluar_kg) AS total_keluar_kg
+                    FROM (
+                        SELECT
+                            DATE(waktu_masuk)   AS tanggal,
+                            kuantitas_awal_kg   AS masuk_kg,
+                            0::double precision AS keluar_kg
+                        FROM batch_masuk
+                        WHERE waktu_masuk >= (CURRENT_DATE - (@jumlah_hari * INTERVAL '1 day'))
+
+                        UNION ALL
+
+                        SELECT
+                            DATE(waktu_keluar)   AS tanggal,
+                            0::double precision  AS masuk_kg,
+                            kuantitas_keluar_kg  AS keluar_kg
+                        FROM batch_keluar
+                        WHERE waktu_keluar >= (CURRENT_DATE - (@jumlah_hari * INTERVAL '1 day'))
+                    ) gabungan
+                    GROUP BY tanggal
+                    ORDER BY tanggal", conn))
+                {
+                    cmd.Parameters.AddWithValue("jumlah_hari", jumlahHari);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new GrafikMutasiHarian
+                            {
+                                Tanggal = Convert.ToDateTime(reader["tanggal"]),
+                                TotalMasukKg = Convert.ToDouble(reader["total_masuk_kg"]),
+                                TotalKeluarKg = Convert.ToDouble(reader["total_keluar_kg"])
+                            });
+                        }
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

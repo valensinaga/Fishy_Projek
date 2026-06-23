@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Fishy_Projek.Models;
@@ -36,7 +37,7 @@ namespace Fishy_Projek
             // 1. Paksa tabel masuk ke kandang panelnya
             dgvStok.Parent = panelStok;
             dgvLaporan.Parent = panelLaporan;
-           
+
 
             // 2. Paksa tabelnya muncul ke depan
             dgvStok.BringToFront();
@@ -45,9 +46,6 @@ namespace Fishy_Projek
             dgvStok.Dock = DockStyle.Fill;
 
             // (Lakukan hal yang sama untuk tabel di panel lain kalau ada yang hilang)
-            dgvLaporan.Parent = panelLaporan;
-            dgvLaporan.Dock = DockStyle.Fill;
-            dgvLaporan.BringToFront();
 
         }
 
@@ -279,10 +277,89 @@ namespace Fishy_Projek
 
                 var mutasiList = _laporanRepo.GetRiwayatMutasi("SEMUA");
                 dgvLaporan.DataSource = mutasiList;
+
+                // Grafik mutasi cuma muncul buat Manajer (IdRole == 1)
+                bool isManajer = _userLogin != null && _userLogin.IdRole == 1;
+                lblGrafikTitle.Visible = isManajer;
+                formsPlotMutasi.Visible = isManajer;
+
+                // Operator: tabel pakai lebar penuh karena chart disembunyikan
+                dgvLaporan.Width = isManajer ? 540 : 920;
+
+                if (isManajer)
+                {
+                    LoadGrafikMutasi();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error load laporan: " + ex.Message);
+            }
+        }
+
+        private void LoadGrafikMutasi()
+        {
+            try
+            {
+                var data = _laporanRepo.GetGrafikMutasiHarian(14);
+
+                formsPlotMutasi.Plot.Clear();
+
+                var bars = new List<ScottPlot.Bar>();
+                var ticks = new List<ScottPlot.Tick>();
+
+                double posisi = 0;
+                foreach (var d in data)
+                {
+                    bars.Add(new ScottPlot.Bar
+                    {
+                        Position = posisi,
+                        Value = d.TotalMasukKg,
+                        FillColor = ScottPlot.Colors.SteelBlue
+                    });
+                    bars.Add(new ScottPlot.Bar
+                    {
+                        Position = posisi + 1,
+                        Value = d.TotalKeluarKg,
+                        FillColor = ScottPlot.Colors.IndianRed
+                    });
+
+                    ticks.Add(new ScottPlot.Tick(posisi + 0.5, d.Tanggal.ToString("dd/MM")));
+
+                    posisi += 3; // jarak antar grup tanggal
+                }
+
+                formsPlotMutasi.Plot.Add.Bars(bars);
+
+                formsPlotMutasi.Plot.Axes.Bottom.TickGenerator =
+                    new ScottPlot.TickGenerators.NumericManual(ticks.ToArray());
+                formsPlotMutasi.Plot.Axes.Bottom.TickLabelStyle.Rotation = 45;
+                formsPlotMutasi.Plot.Axes.Margins(bottom: 0.15);
+
+                formsPlotMutasi.Plot.Title("Mutasi Stok: Masuk vs Keluar (kg)");
+                formsPlotMutasi.Plot.Axes.Bottom.Label.Text = "Tanggal";
+                formsPlotMutasi.Plot.Axes.Left.Label.Text = "Kg";
+
+                // Legend manual karena warnanya per-jenis, bukan per-series otomatis
+                formsPlotMutasi.Plot.Legend.IsVisible = true;
+                formsPlotMutasi.Plot.Legend.Alignment = ScottPlot.Alignment.UpperLeft;
+                formsPlotMutasi.Plot.Legend.ManualItems.Clear();
+                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem
+                {
+                    LabelText = "Masuk",
+                    FillColor = ScottPlot.Colors.SteelBlue
+                });
+                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem
+                {
+                    LabelText = "Keluar",
+                    FillColor = ScottPlot.Colors.IndianRed
+                });
+
+                formsPlotMutasi.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error load grafik mutasi: " + ex.Message);
             }
         }
 

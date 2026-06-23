@@ -96,6 +96,8 @@
             cmbFilterMutasi = new ComboBox();
             btnFilter = new Button();
             dgvLaporan = new DataGridView();
+            lblGrafikTitle = new Label();
+            formsPlotMutasi = new ScottPlot.WinForms.FormsPlot();
             panelMaster = new Panel();
             label18 = new Label();
             tabMaster = new TabControl();
@@ -888,6 +890,8 @@
             panelLaporan.Controls.Add(cmbFilterMutasi);
             panelLaporan.Controls.Add(btnFilter);
             panelLaporan.Controls.Add(dgvLaporan);
+            panelLaporan.Controls.Add(lblGrafikTitle);
+            panelLaporan.Controls.Add(formsPlotMutasi);
             panelLaporan.Location = new Point(0, 80);
             panelLaporan.Margin = new Padding(4, 5, 4, 5);
             panelLaporan.Name = "panelLaporan";
@@ -953,8 +957,26 @@
             dgvLaporan.ReadOnly = true;
             dgvLaporan.RowHeadersVisible = false;
             dgvLaporan.RowHeadersWidth = 62;
-            dgvLaporan.Size = new Size(920, 420);
+            dgvLaporan.Size = new Size(540, 420);
             dgvLaporan.TabIndex = 0;
+            // 
+            // lblGrafikTitle
+            // 
+            lblGrafikTitle.AutoSize = true;
+            lblGrafikTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrafikTitle.ForeColor = Color.DimGray;
+            lblGrafikTitle.Location = new Point(580, 70);
+            lblGrafikTitle.Name = "lblGrafikTitle";
+            lblGrafikTitle.Size = new Size(320, 25);
+            lblGrafikTitle.TabIndex = 0;
+            lblGrafikTitle.Text = "Grafik Mutasi Stok: Masuk vs Keluar (Manajer)";
+            // 
+            // formsPlotMutasi
+            // 
+            formsPlotMutasi.Location = new Point(580, 145);
+            formsPlotMutasi.Name = "formsPlotMutasi";
+            formsPlotMutasi.Size = new Size(360, 420);
+            formsPlotMutasi.TabIndex = 0;
             // 
             // panelMaster
             // 
@@ -1365,7 +1387,7 @@
             // FormUtama
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1200, 700);
             Controls.Add(panelTitleBar);
@@ -1492,6 +1514,8 @@
         private ComboBox cmbFilterMutasi;
         private Label label18;
         private DataGridView dgvLaporan;
+        private Label lblGrafikTitle;
+        private ScottPlot.WinForms.FormsPlot formsPlotMutasi;
         private TabControl tabMaster;
         private TabPage tabIkan;
         private TabPage tabGudang;
