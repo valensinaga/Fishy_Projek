@@ -51,46 +51,48 @@ namespace Fishy_Projek.Repositories
             return null;
         }
 
-        public void TerimaStok(string idIkan, string idRuang, double jumlahKg, int idUser)
+        public void TerimaStok(string idMasuk, string idIkan, int idPihak, string idRuang, double kuantitasKg, int idUser)
         {
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
                 var cmd = new NpgsqlCommand(
-                    "CALL public.sp_terima_stok(@idIkan, @idRuang, @jumlah, @idUser)", conn);
-                cmd.Parameters.AddWithValue("idIkan", idIkan);
-                cmd.Parameters.AddWithValue("idRuang", idRuang);
-                cmd.Parameters.AddWithValue("jumlah", jumlahKg);
-                cmd.Parameters.AddWithValue("idUser", idUser);
+                    "CALL public.sp_terima_stok(@id_masuk, @id_pihak, @id_ikan, @id_ruang, @jumlah, @id_user)", conn);
+                cmd.Parameters.AddWithValue("id_masuk", idMasuk);
+                cmd.Parameters.AddWithValue("id_pihak", idPihak);
+                cmd.Parameters.AddWithValue("id_ikan", idIkan);
+                cmd.Parameters.AddWithValue("id_ruang", idRuang);
+                cmd.Parameters.AddWithValue("jumlah",kuantitasKg);
+                cmd.Parameters.AddWithValue("id_user", idUser);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public void EksekusiStoredProcedureTerimaStok(string idIkan, string idRuang, double jumlahKg, int idUser)
+        public void EksekusiStoredProcedureTerimaStok(string idMasuk, string idIkan, int idPihak, string idRuang, double kuantitasKg, int idUser)
         {
-            TerimaStok(idIkan, idRuang, jumlahKg, idUser);
+            TerimaStok(idMasuk, idIkan, idPihak, idRuang, kuantitasKg, idUser);
         }
 
-        public void ProsesKirim(string idPengiriman, int idUser, string tujuan, string noArmada, int idStok, double kuantitas)
+        public void ProsesPengiriman(string idKeluar, string idMasuk, int idPihak, string noArmada, double kuantitasKirim, int idUser)
         {
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
                 var cmd = new NpgsqlCommand(
-                    "CALL public.sp_proses_pengiriman(@idPengiriman, @idUser, @tujuan, @armada, @idStok, @kuantitas)", conn);
-                cmd.Parameters.AddWithValue("idPengiriman", idPengiriman);
-                cmd.Parameters.AddWithValue("idUser", idUser);
-                cmd.Parameters.AddWithValue("tujuan", tujuan);
-                cmd.Parameters.AddWithValue("armada", noArmada);
-                cmd.Parameters.AddWithValue("idStok", idStok);
-                cmd.Parameters.AddWithValue("kuantitas", kuantitas);
+                    "CALL public.sp_proses_pengiriman(@id_keluar, @id_masuk, @id_pihak, @no_armada, @kuantitas_kirim, @id_user)", conn);
+                cmd.Parameters.AddWithValue("id_keluar", idKeluar);
+                cmd.Parameters.AddWithValue("id_masuk", idMasuk);
+                cmd.Parameters.AddWithValue("id_pihak", idPihak);
+                cmd.Parameters.AddWithValue("no_armada", noArmada);
+                cmd.Parameters.AddWithValue("kuantitas_kirim", kuantitasKirim);
+                cmd.Parameters.AddWithValue("id_user", idUser);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public void EksekusiStoredProcedurePengiriman(string idPengiriman, int idUser, string tujuan, string noArmada, int idStok, double kuantitas)
+        public void EksekusiStoredProcedurePengiriman(string idKeluar, string idMasuk, int idPihak, string noArmada, double kuantitasKirim, int idUser)
         {
-            ProsesKirim(idPengiriman, idUser, tujuan, noArmada, idStok, kuantitas);
+            ProsesPengiriman(idKeluar, idMasuk, idPihak, noArmada, kuantitasKirim, idUser);
         }
 
         public void InputSuhu(string idRuang, double suhuAktual, string gradeMutu, string catatan, int idUser)
@@ -120,16 +122,26 @@ namespace Fishy_Projek.Repositories
             {
                 conn.Open();
                 var cmd = new NpgsqlCommand(
-                    @"SELECT s.id_stok, s.id_ikan, s.id_ruang, s.kuantitas_kg,
-                      i.nama_ikan, rc.nama_ruang, g.nama_gudang,
-                      i.suhu_ideal, i.batas_suhu
-                      FROM public.stok s
-                      JOIN public.ikan i ON s.id_ikan = i.id_ikan
-                      JOIN public.ruang_cooler rc ON s.id_ruang = rc.id_ruang
-                      JOIN public.gudang g ON rc.id_gudang = g.id_gudang
-                      ORDER BY s.id_stok", conn);
+                    @"SELECT 
+                        0 AS id_stok,                     -- Index 0 (Int32)
+                        bm.id_ikan,                       -- Index 1 (String)
+                        bm.id_ruang,                      -- Index 2 (String)
+                        SUM(bm.sisa_stok_kg) AS kuantitas_kg, -- Index 3 (Double)
+                        i.nama_ikan,                      -- Index 4 (String)
+                        rc.nama_ruang,                    -- Index 5 (String)
+                        g.nama_gudang,                    -- Index 6 (String)
+                        MAX(i.suhu_ideal) AS suhu_ideal,  -- Index 7 (Double)
+                        MAX(i.batas_suhu) AS batas_suhu   -- Index 8 (Double)
+                      FROM batch_masuk bm
+                      JOIN ikan i ON bm.id_ikan = i.id_ikan
+                      JOIN ruang_cooler rc ON bm.id_ruang = rc.id_ruang
+                      JOIN gudang g ON rc.id_gudang = g.id_gudang
+                      WHERE bm.sisa_stok_kg > 0
+                      GROUP BY bm.id_ikan, bm.id_ruang, i.nama_ikan, rc.nama_ruang, g.nama_gudang", conn);
+
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
+                {
                     list.Add(new Stok
                     {
                         IdStok = reader.GetInt32(0),
@@ -142,8 +154,54 @@ namespace Fishy_Projek.Repositories
                         SuhuIdeal = reader.GetDouble(7),
                         BatasSuhu = reader.GetDouble(8)
                     });
+                }
             }
             return list;
         }
+
+        public void ProsesKirim(string idPengiriman, int idUser, string tujuan, string armada, int idStok, double kuantitas)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+
+                // Ambil id_masuk dari stok
+                string idMasuk = "";
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT id_masuk FROM batch_masuk WHERE sisa_stok_kg > 0 ORDER BY waktu_masuk ASC LIMIT 1", conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result == null)
+                        throw new Exception("Tidak ada stok tersedia untuk dikirim.");
+                    idMasuk = result.ToString();
+                }
+
+                // Cari id_pihak dari tujuan
+                int idPihak = 0;
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT id_pihak FROM pihak_eksternal WHERE nama_pihak = @tujuan LIMIT 1", conn))
+                {
+                    cmd.Parameters.AddWithValue("tujuan", tujuan);
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                        idPihak = Convert.ToInt32(result);
+                }
+
+                // Panggil stored procedure pengiriman
+                using (var cmd = new NpgsqlCommand(
+                    "CALL public.sp_proses_pengiriman(@id_keluar, @id_masuk, @id_pihak, @no_armada, @kuantitas_kirim, @id_user)", conn))
+                {
+                    cmd.Parameters.AddWithValue("id_keluar", idPengiriman);
+                    cmd.Parameters.AddWithValue("id_masuk", idMasuk);
+                    cmd.Parameters.AddWithValue("id_pihak", idPihak);
+                    cmd.Parameters.AddWithValue("no_armada", armada);
+                    cmd.Parameters.AddWithValue("kuantitas_kirim", kuantitas);
+                    cmd.Parameters.AddWithValue("id_user", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
+
 }

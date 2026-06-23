@@ -259,7 +259,7 @@ namespace Fishy_Projek
                 var stokList = _laporanRepo.GetRingkasanStok();
                 cmbStokKirim.DataSource = stokList;
                 cmbStokKirim.DisplayMember = "NamaIkan";
-                cmbStokKirim.ValueMember = "IdStok";
+                cmbStokKirim.ValueMember = "IdIkan";
             }
             catch (Exception ex)
             {
