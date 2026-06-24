@@ -1354,7 +1354,7 @@
             btnMaster.FlatStyle = FlatStyle.Flat;
             btnMaster.Font = new Font("Berlin Sans FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMaster.ForeColor = Color.MidnightBlue;
-            btnMaster.Location = new Point(0, 445);
+            btnMaster.Location = new Point(0, 444);
             btnMaster.Margin = new Padding(4, 5, 4, 5);
             btnMaster.Name = "btnMaster";
             btnMaster.Padding = new Padding(29, 0, 0, 0);
