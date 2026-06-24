@@ -562,6 +562,11 @@ namespace Fishy_Projek
                 MessageBox.Show("Gagal menyimpan data: " + ex.Message, "Error Sistem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void but_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

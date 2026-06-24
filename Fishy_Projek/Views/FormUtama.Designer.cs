@@ -173,7 +173,6 @@
             lblRingkasanStokTitle = new Label();
             dgvRingkasanStok = new DataGridView();
             lblKondisiRuanganTitle = new Label();
-            dgvKondisiRuangan = new DataGridView();
             panelStok = new Panel();
             btnTambahStok = new Button();
             label19 = new Label();
@@ -249,7 +248,6 @@
             cardSuhu.SuspendLayout();
             cardPeringatan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).BeginInit();
             panelStok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStok).BeginInit();
             panelInputSuhu.SuspendLayout();
@@ -319,7 +317,7 @@
             txtPassword.Location = new Point(80, 350);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(291, 24);
+            txtPassword.Size = new Size(291, 32);
             txtPassword.TabIndex = 4;
             // 
             // lblPassword
@@ -329,7 +327,7 @@
             lblPassword.ForeColor = Color.DimGray;
             lblPassword.Location = new Point(80, 325);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(69, 17);
+            lblPassword.Size = new Size(98, 25);
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
@@ -339,7 +337,7 @@
             txtUsername.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(80, 275);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(291, 24);
+            txtUsername.Size = new Size(291, 32);
             txtUsername.TabIndex = 2;
             // 
             // lblUsername
@@ -349,7 +347,7 @@
             lblUsername.ForeColor = Color.DimGray;
             lblUsername.Location = new Point(80, 250);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(73, 17);
+            lblUsername.Size = new Size(102, 25);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "Username";
             // 
@@ -360,7 +358,7 @@
             lblWelcome.ForeColor = Color.MidnightBlue;
             lblWelcome.Location = new Point(80, 150);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(222, 31);
+            lblWelcome.Size = new Size(319, 46);
             lblWelcome.TabIndex = 0;
             lblWelcome.Text = "Selamat Datang";
             // 
@@ -382,7 +380,7 @@
             lblTagline.ForeColor = Color.LightSkyBlue;
             lblTagline.Location = new Point(80, 330);
             lblTagline.Name = "lblTagline";
-            lblTagline.Size = new Size(297, 18);
+            lblTagline.Size = new Size(436, 26);
             lblTagline.TabIndex = 1;
             lblTagline.Text = "Cold Chain Fish Storage Monitoring System";
             lblTagline.TextAlign = ContentAlignment.MiddleCenter;
@@ -394,7 +392,7 @@
             lblAppName.ForeColor = Color.White;
             lblAppName.Location = new Point(130, 250);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(189, 44);
+            lblAppName.Size = new Size(278, 64);
             lblAppName.TabIndex = 0;
             lblAppName.Text = "🐟 FISHY";
             // 
@@ -433,7 +431,7 @@
             tabMaster.Location = new Point(20, 70);
             tabMaster.Name = "tabMaster";
             tabMaster.SelectedIndex = 0;
-            tabMaster.Size = new Size(920, 495);
+            tabMaster.Size = new Size(920, 522);
             tabMaster.TabIndex = 1;
             // 
             // tabIkan
@@ -463,181 +461,184 @@
             tabIkan.Controls.Add(txtNamaIkan);
             tabIkan.Controls.Add(dgvIkan);
             tabIkan.Controls.Add(txtIdIkan);
-            tabIkan.Location = new Point(4, 24);
+            tabIkan.Location = new Point(4, 34);
             tabIkan.Name = "tabIkan";
             tabIkan.Padding = new Padding(4, 5, 4, 5);
-            tabIkan.Size = new Size(912, 467);
+            tabIkan.Size = new Size(912, 484);
             tabIkan.TabIndex = 0;
             tabIkan.Text = "Data Ikan";
             tabIkan.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(366, 398);
+            textBox3.Location = new Point(400, 382);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(109, 23);
+            textBox3.Size = new Size(109, 31);
             textBox3.TabIndex = 23;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(366, 361);
+            textBox2.Location = new Point(400, 345);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(109, 23);
+            textBox2.Size = new Size(109, 31);
             textBox2.TabIndex = 22;
             // 
             // lblBatasSuhuUpdt
             // 
             lblBatasSuhuUpdt.AutoSize = true;
-            lblBatasSuhuUpdt.Location = new Point(292, 401);
+            lblBatasSuhuUpdt.Location = new Point(294, 383);
             lblBatasSuhuUpdt.Name = "lblBatasSuhuUpdt";
-            lblBatasSuhuUpdt.Size = new Size(65, 15);
+            lblBatasSuhuUpdt.Size = new Size(99, 25);
             lblBatasSuhuUpdt.TabIndex = 21;
             lblBatasSuhuUpdt.Text = "Batas Suhu";
             // 
             // lblSuhuIdealUpdt
             // 
             lblSuhuIdealUpdt.AutoSize = true;
-            lblSuhuIdealUpdt.Location = new Point(292, 364);
+            lblSuhuIdealUpdt.Location = new Point(294, 346);
             lblSuhuIdealUpdt.Name = "lblSuhuIdealUpdt";
-            lblSuhuIdealUpdt.Size = new Size(62, 15);
+            lblSuhuIdealUpdt.Size = new Size(95, 25);
             lblSuhuIdealUpdt.TabIndex = 20;
             lblSuhuIdealUpdt.Text = "Suhu Ideal";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(366, 328);
+            textBox1.Location = new Point(400, 312);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 23);
+            textBox1.Size = new Size(109, 31);
             textBox1.TabIndex = 19;
             // 
             // lblNamaIkanUpdt
             // 
             lblNamaIkanUpdt.AutoSize = true;
-            lblNamaIkanUpdt.Location = new Point(292, 331);
+            lblNamaIkanUpdt.Location = new Point(294, 313);
             lblNamaIkanUpdt.Name = "lblNamaIkanUpdt";
-            lblNamaIkanUpdt.Size = new Size(64, 15);
+            lblNamaIkanUpdt.Size = new Size(97, 25);
             lblNamaIkanUpdt.TabIndex = 18;
             lblNamaIkanUpdt.Text = "Nama Ikan";
             // 
             // but
             // 
-            but.Location = new Point(637, 328);
+            but.BackColor = Color.Red;
+            but.Location = new Point(663, 326);
             but.Name = "but";
-            but.Size = new Size(107, 23);
+            but.Size = new Size(121, 35);
             but.TabIndex = 17;
-            but.Text = "Hapus Data Ikan";
-            but.UseVisualStyleBackColor = true;
+            but.Text = "Hapus";
+            but.UseVisualStyleBackColor = false;
+            but.Click += but_Click;
             // 
             // btnUpdateIkan
             // 
-            btnUpdateIkan.Location = new Point(366, 430);
+            btnUpdateIkan.BackColor = Color.Yellow;
+            btnUpdateIkan.Location = new Point(400, 431);
             btnUpdateIkan.Name = "btnUpdateIkan";
-            btnUpdateIkan.Size = new Size(122, 23);
+            btnUpdateIkan.Size = new Size(121, 35);
             btnUpdateIkan.TabIndex = 16;
-            btnUpdateIkan.Text = "Update Data Ikan";
-            btnUpdateIkan.UseVisualStyleBackColor = true;
+            btnUpdateIkan.Text = "Update";
+            btnUpdateIkan.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(366, 295);
+            comboBox1.Location = new Point(400, 279);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(109, 23);
+            comboBox1.Size = new Size(109, 33);
             comboBox1.TabIndex = 15;
             // 
             // lblIdIkanUpdt
             // 
             lblIdIkanUpdt.AutoSize = true;
-            lblIdIkanUpdt.Location = new Point(292, 299);
+            lblIdIkanUpdt.Location = new Point(294, 281);
             lblIdIkanUpdt.Name = "lblIdIkanUpdt";
-            lblIdIkanUpdt.Size = new Size(42, 15);
+            lblIdIkanUpdt.Size = new Size(66, 25);
             lblIdIkanUpdt.TabIndex = 14;
             lblIdIkanUpdt.Text = "Id Ikan";
             // 
             // lblIdIkanHapus
             // 
             lblIdIkanHapus.AutoSize = true;
-            lblIdIkanHapus.Location = new Point(556, 299);
+            lblIdIkanHapus.Location = new Point(596, 283);
             lblIdIkanHapus.Name = "lblIdIkanHapus";
-            lblIdIkanHapus.Size = new Size(42, 15);
+            lblIdIkanHapus.Size = new Size(66, 25);
             lblIdIkanHapus.TabIndex = 13;
             lblIdIkanHapus.Text = "Id Ikan";
             // 
             // cbIdIkanHapus
             // 
             cbIdIkanHapus.FormattingEnabled = true;
-            cbIdIkanHapus.Location = new Point(623, 295);
+            cbIdIkanHapus.Location = new Point(663, 279);
             cbIdIkanHapus.Name = "cbIdIkanHapus";
-            cbIdIkanHapus.Size = new Size(121, 23);
+            cbIdIkanHapus.Size = new Size(121, 33);
             cbIdIkanHapus.TabIndex = 12;
             // 
             // lblHapusIkan
             // 
             lblHapusIkan.AutoSize = true;
-            lblHapusIkan.Location = new Point(642, 265);
+            lblHapusIkan.Location = new Point(659, 246);
             lblHapusIkan.Name = "lblHapusIkan";
-            lblHapusIkan.Size = new Size(93, 15);
+            lblHapusIkan.Size = new Size(143, 25);
             lblHapusIkan.TabIndex = 11;
             lblHapusIkan.Text = "Hapus Data Ikan";
             // 
             // lblUpdateIkan
             // 
             lblUpdateIkan.AutoSize = true;
-            lblUpdateIkan.Location = new Point(378, 265);
+            lblUpdateIkan.Location = new Point(381, 246);
             lblUpdateIkan.Name = "lblUpdateIkan";
-            lblUpdateIkan.Size = new Size(97, 15);
+            lblUpdateIkan.Size = new Size(150, 25);
             lblUpdateIkan.TabIndex = 10;
             lblUpdateIkan.Text = "Update Data Ikan";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(80, 261);
+            label23.Location = new Point(112, 249);
             label23.Name = "label23";
-            label23.Size = new Size(102, 15);
+            label23.Size = new Size(154, 25);
             label23.TabIndex = 9;
             label23.Text = "Tambah Data Ikan";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(37, 396);
+            label22.Location = new Point(45, 386);
             label22.Name = "label22";
-            label22.Size = new Size(65, 15);
+            label22.Size = new Size(99, 25);
             label22.TabIndex = 4;
             label22.Text = "Batas Suhu";
             // 
             // txtBatasSuhu
             // 
-            txtBatasSuhu.Location = new Point(125, 393);
+            txtBatasSuhu.Location = new Point(146, 383);
             txtBatasSuhu.Name = "txtBatasSuhu";
-            txtBatasSuhu.Size = new Size(100, 23);
+            txtBatasSuhu.Size = new Size(100, 31);
             txtBatasSuhu.TabIndex = 8;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(37, 364);
+            label21.Location = new Point(45, 354);
             label21.Name = "label21";
-            label21.Size = new Size(62, 15);
+            label21.Size = new Size(95, 25);
             label21.TabIndex = 2;
             label21.Text = "Suhu Ideal";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(37, 331);
+            label20.Location = new Point(45, 321);
             label20.Name = "label20";
-            label20.Size = new Size(64, 15);
+            label20.Size = new Size(97, 25);
             label20.TabIndex = 2;
             label20.Text = "Nama Ikan";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(37, 298);
+            label18.Location = new Point(45, 288);
             label18.Name = "label18";
-            label18.Size = new Size(42, 15);
+            label18.Size = new Size(66, 25);
             label18.TabIndex = 3;
             label18.Text = "Id Ikan";
             // 
@@ -647,28 +648,28 @@
             btnTambahIkan.Cursor = Cursors.Hand;
             btnTambahIkan.FlatAppearance.BorderSize = 0;
             btnTambahIkan.FlatStyle = FlatStyle.Flat;
-            btnTambahIkan.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahIkan.Font = new Font("Segoe UI", 9F);
             btnTambahIkan.ForeColor = Color.White;
-            btnTambahIkan.Location = new Point(73, 424);
+            btnTambahIkan.Location = new Point(131, 431);
             btnTambahIkan.Name = "btnTambahIkan";
-            btnTambahIkan.Size = new Size(157, 35);
+            btnTambahIkan.Size = new Size(121, 35);
             btnTambahIkan.TabIndex = 1;
-            btnTambahIkan.Text = "+ Tambah Ikan";
+            btnTambahIkan.Text = "Tambah";
             btnTambahIkan.UseVisualStyleBackColor = false;
             btnTambahIkan.Click += btnTambahIkan_Click;
             // 
             // txtSuhuIdeal
             // 
-            txtSuhuIdeal.Location = new Point(125, 361);
+            txtSuhuIdeal.Location = new Point(146, 351);
             txtSuhuIdeal.Name = "txtSuhuIdeal";
-            txtSuhuIdeal.Size = new Size(100, 23);
+            txtSuhuIdeal.Size = new Size(100, 31);
             txtSuhuIdeal.TabIndex = 6;
             // 
             // txtNamaIkan
             // 
-            txtNamaIkan.Location = new Point(125, 328);
+            txtNamaIkan.Location = new Point(146, 318);
             txtNamaIkan.Name = "txtNamaIkan";
-            txtNamaIkan.Size = new Size(100, 23);
+            txtNamaIkan.Size = new Size(100, 31);
             txtNamaIkan.TabIndex = 7;
             // 
             // dgvIkan
@@ -687,9 +688,9 @@
             // 
             // txtIdIkan
             // 
-            txtIdIkan.Location = new Point(125, 293);
+            txtIdIkan.Location = new Point(146, 283);
             txtIdIkan.Name = "txtIdIkan";
-            txtIdIkan.Size = new Size(100, 23);
+            txtIdIkan.Size = new Size(100, 31);
             txtIdIkan.TabIndex = 5;
             // 
             // tabUser
@@ -723,9 +724,9 @@
             tabUser.Controls.Add(label47);
             tabUser.Controls.Add(label46);
             tabUser.Controls.Add(dataGridView1);
-            tabUser.Location = new Point(4, 24);
+            tabUser.Location = new Point(4, 34);
             tabUser.Name = "tabUser";
-            tabUser.Size = new Size(912, 467);
+            tabUser.Size = new Size(912, 484);
             tabUser.TabIndex = 3;
             tabUser.Text = "Data User";
             tabUser.UseVisualStyleBackColor = true;
@@ -735,107 +736,110 @@
             comboBox11.FormattingEnabled = true;
             comboBox11.Location = new Point(707, 218);
             comboBox11.Name = "comboBox11";
-            comboBox11.Size = new Size(121, 23);
+            comboBox11.Size = new Size(121, 33);
             comboBox11.TabIndex = 28;
             // 
             // textBox20
             // 
-            textBox20.Location = new Point(396, 381);
+            textBox20.Location = new Point(438, 264);
             textBox20.Name = "textBox20";
-            textBox20.Size = new Size(121, 23);
+            textBox20.Size = new Size(121, 31);
             textBox20.TabIndex = 27;
             // 
             // textBox19
             // 
-            textBox19.Location = new Point(396, 342);
+            textBox19.Location = new Point(438, 342);
             textBox19.Name = "textBox19";
-            textBox19.Size = new Size(121, 23);
+            textBox19.Size = new Size(121, 31);
             textBox19.TabIndex = 26;
             // 
             // textBox18
             // 
-            textBox18.Location = new Point(396, 304);
+            textBox18.Location = new Point(438, 304);
             textBox18.Name = "textBox18";
-            textBox18.Size = new Size(121, 23);
+            textBox18.Size = new Size(121, 31);
             textBox18.TabIndex = 25;
             // 
             // comboBox10
             // 
             comboBox10.FormattingEnabled = true;
-            comboBox10.Location = new Point(396, 261);
+            comboBox10.Location = new Point(438, 383);
             comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(121, 23);
+            comboBox10.Size = new Size(121, 33);
             comboBox10.TabIndex = 24;
             // 
             // comboBox9
             // 
             comboBox9.FormattingEnabled = true;
-            comboBox9.Location = new Point(396, 223);
+            comboBox9.Location = new Point(438, 223);
             comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(121, 23);
+            comboBox9.Size = new Size(121, 33);
             comboBox9.TabIndex = 23;
             // 
             // button8
             // 
-            button8.Location = new Point(720, 375);
+            button8.BackColor = Color.Red;
+            button8.Location = new Point(707, 271);
             button8.Name = "button8";
-            button8.Size = new Size(75, 23);
+            button8.Size = new Size(121, 37);
             button8.TabIndex = 22;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            button8.Text = "Hapus";
+            button8.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
-            button7.Location = new Point(433, 431);
+            button7.BackColor = Color.Yellow;
+            button7.Location = new Point(438, 427);
             button7.Name = "button7";
-            button7.Size = new Size(75, 23);
+            button7.Size = new Size(121, 35);
             button7.TabIndex = 21;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            button7.Text = "Update";
+            button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            button6.Location = new Point(107, 431);
+            button6.BackColor = Color.SteelBlue;
+            button6.Location = new Point(138, 430);
             button6.Name = "button6";
-            button6.Size = new Size(99, 23);
+            button6.Size = new Size(121, 35);
             button6.TabIndex = 20;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            button6.Text = "Tambah";
+            button6.UseVisualStyleBackColor = false;
             // 
             // comboBox8
             // 
             comboBox8.FormattingEnabled = true;
-            comboBox8.Location = new Point(104, 255);
+            comboBox8.Location = new Point(138, 386);
             comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(121, 23);
+            comboBox8.Size = new Size(121, 33);
             comboBox8.TabIndex = 19;
             // 
             // textBox17
             // 
-            textBox17.Location = new Point(106, 380);
+            textBox17.Location = new Point(139, 261);
             textBox17.Name = "textBox17";
-            textBox17.Size = new Size(123, 23);
+            textBox17.Size = new Size(123, 31);
             textBox17.TabIndex = 18;
             // 
             // textBox16
             // 
-            textBox16.Location = new Point(105, 339);
+            textBox16.Location = new Point(139, 342);
             textBox16.Name = "textBox16";
-            textBox16.Size = new Size(120, 23);
+            textBox16.Size = new Size(120, 31);
             textBox16.TabIndex = 17;
             // 
             // textBox15
             // 
-            textBox15.Location = new Point(106, 296);
+            textBox15.Location = new Point(140, 299);
             textBox15.Name = "textBox15";
-            textBox15.Size = new Size(119, 23);
+            textBox15.Size = new Size(119, 31);
             textBox15.TabIndex = 16;
             // 
             // textBox14
             // 
-            textBox14.Location = new Point(105, 215);
+            textBox14.Location = new Point(139, 218);
             textBox14.Name = "textBox14";
-            textBox14.Size = new Size(120, 23);
+            textBox14.Size = new Size(120, 31);
             textBox14.TabIndex = 15;
             // 
             // label59
@@ -843,126 +847,126 @@
             label59.AutoSize = true;
             label59.Location = new Point(636, 223);
             label59.Name = "label59";
-            label59.Size = new Size(44, 15);
+            label59.Size = new Size(68, 25);
             label59.TabIndex = 14;
-            label59.Text = "label59";
+            label59.Text = "Id User";
             // 
             // label58
             // 
             label58.AutoSize = true;
-            label58.Location = new Point(301, 383);
+            label58.Location = new Point(347, 386);
             label58.Name = "label58";
-            label58.Size = new Size(44, 15);
+            label58.Size = new Size(67, 25);
             label58.TabIndex = 13;
-            label58.Text = "label58";
+            label58.Text = "Id Role";
             // 
             // label57
             // 
             label57.AutoSize = true;
-            label57.Location = new Point(301, 345);
+            label57.Location = new Point(343, 345);
             label57.Name = "label57";
-            label57.Size = new Size(44, 15);
+            label57.Size = new Size(87, 25);
             label57.TabIndex = 12;
-            label57.Text = "label57";
+            label57.Text = "Password";
             // 
             // label56
             // 
             label56.AutoSize = true;
-            label56.Location = new Point(301, 308);
+            label56.Location = new Point(343, 307);
             label56.Name = "label56";
-            label56.Size = new Size(44, 15);
+            label56.Size = new Size(59, 25);
             label56.TabIndex = 11;
-            label56.Text = "label56";
+            label56.Text = "Nama";
             // 
             // label55
             // 
             label55.AutoSize = true;
-            label55.Location = new Point(301, 264);
+            label55.Location = new Point(343, 264);
             label55.Name = "label55";
-            label55.Size = new Size(44, 15);
+            label55.Size = new Size(91, 25);
             label55.TabIndex = 10;
-            label55.Text = "label55";
+            label55.Text = "Username";
             // 
             // label54
             // 
             label54.AutoSize = true;
-            label54.Location = new Point(301, 226);
+            label54.Location = new Point(343, 226);
             label54.Name = "label54";
-            label54.Size = new Size(44, 15);
+            label54.Size = new Size(68, 25);
             label54.TabIndex = 9;
-            label54.Text = "label54";
+            label54.Text = "Id User";
             // 
             // label53
             // 
             label53.AutoSize = true;
-            label53.Location = new Point(35, 383);
+            label53.Location = new Point(43, 386);
             label53.Name = "label53";
-            label53.Size = new Size(44, 15);
+            label53.Size = new Size(67, 25);
             label53.TabIndex = 8;
-            label53.Text = "label53";
+            label53.Text = "Id Role";
             // 
             // label52
             // 
             label52.AutoSize = true;
-            label52.Location = new Point(35, 342);
+            label52.Location = new Point(43, 345);
             label52.Name = "label52";
-            label52.Size = new Size(44, 15);
+            label52.Size = new Size(87, 25);
             label52.TabIndex = 7;
-            label52.Text = "label52";
+            label52.Text = "Password";
             // 
             // label51
             // 
             label51.AutoSize = true;
-            label51.Location = new Point(35, 298);
+            label51.Location = new Point(43, 301);
             label51.Name = "label51";
-            label51.Size = new Size(44, 15);
+            label51.Size = new Size(59, 25);
             label51.TabIndex = 6;
-            label51.Text = "label51";
+            label51.Text = "Nama";
             // 
             // label50
             // 
             label50.AutoSize = true;
-            label50.Location = new Point(35, 261);
+            label50.Location = new Point(43, 264);
             label50.Name = "label50";
-            label50.Size = new Size(44, 15);
+            label50.Size = new Size(91, 25);
             label50.TabIndex = 5;
-            label50.Text = "label50";
+            label50.Text = "Username";
             // 
             // label49
             // 
             label49.AutoSize = true;
-            label49.Location = new Point(35, 223);
+            label49.Location = new Point(43, 226);
             label49.Name = "label49";
-            label49.Size = new Size(44, 15);
+            label49.Size = new Size(68, 25);
             label49.TabIndex = 4;
-            label49.Text = "label49";
+            label49.Text = "Id User";
             // 
             // label48
             // 
             label48.AutoSize = true;
-            label48.Location = new Point(751, 195);
+            label48.Location = new Point(696, 179);
             label48.Name = "label48";
-            label48.Size = new Size(44, 15);
+            label48.Size = new Size(145, 25);
             label48.TabIndex = 3;
-            label48.Text = "label48";
+            label48.Text = "Hapus Data User";
             // 
             // label47
             // 
             label47.AutoSize = true;
-            label47.Location = new Point(433, 201);
+            label47.Location = new Point(421, 179);
             label47.Name = "label47";
-            label47.Size = new Size(44, 15);
+            label47.Size = new Size(152, 25);
             label47.TabIndex = 2;
-            label47.Text = "label47";
+            label47.Text = "Update Data User";
             // 
             // label46
             // 
             label46.AutoSize = true;
-            label46.Location = new Point(132, 191);
+            label46.Location = new Point(128, 179);
             label46.Name = "label46";
-            label46.Size = new Size(44, 15);
+            label46.Size = new Size(156, 25);
             label46.TabIndex = 1;
-            label46.Text = "label46";
+            label46.Text = "Tambah Data User";
             // 
             // dataGridView1
             // 
@@ -972,38 +976,49 @@
             dataGridView1.DataSource = operatorBindingSource;
             dataGridView1.Location = new Point(10, 16);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(553, 150);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(886, 150);
             dataGridView1.TabIndex = 0;
             // 
             // idUserDataGridViewTextBoxColumn
             // 
             idUserDataGridViewTextBoxColumn.DataPropertyName = "IdUser";
             idUserDataGridViewTextBoxColumn.HeaderText = "IdUser";
+            idUserDataGridViewTextBoxColumn.MinimumWidth = 8;
             idUserDataGridViewTextBoxColumn.Name = "idUserDataGridViewTextBoxColumn";
+            idUserDataGridViewTextBoxColumn.Width = 150;
             // 
             // namaDataGridViewTextBoxColumn
             // 
             namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
             namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            namaDataGridViewTextBoxColumn.MinimumWidth = 8;
             namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            namaDataGridViewTextBoxColumn.Width = 150;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
             usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
             usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            usernameDataGridViewTextBoxColumn.MinimumWidth = 8;
             usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            usernameDataGridViewTextBoxColumn.Width = 150;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
             passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
             passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            passwordDataGridViewTextBoxColumn.MinimumWidth = 8;
             passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            passwordDataGridViewTextBoxColumn.Width = 150;
             // 
             // idRoleDataGridViewTextBoxColumn
             // 
             idRoleDataGridViewTextBoxColumn.DataPropertyName = "IdRole";
             idRoleDataGridViewTextBoxColumn.HeaderText = "IdRole";
+            idRoleDataGridViewTextBoxColumn.MinimumWidth = 8;
             idRoleDataGridViewTextBoxColumn.Name = "idRoleDataGridViewTextBoxColumn";
+            idRoleDataGridViewTextBoxColumn.Width = 150;
             // 
             // operatorBindingSource
             // 
@@ -1032,10 +1047,10 @@
             tabGudang.Controls.Add(label24);
             tabGudang.Controls.Add(btnTambahGudang);
             tabGudang.Controls.Add(dgvGudang);
-            tabGudang.Location = new Point(4, 24);
+            tabGudang.Location = new Point(4, 34);
             tabGudang.Name = "tabGudang";
             tabGudang.Padding = new Padding(4, 5, 4, 5);
-            tabGudang.Size = new Size(912, 467);
+            tabGudang.Size = new Size(912, 484);
             tabGudang.TabIndex = 1;
             tabGudang.Text = "Data Gudang";
             tabGudang.UseVisualStyleBackColor = true;
@@ -1045,7 +1060,7 @@
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(735, 273);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
+            comboBox3.Size = new Size(121, 33);
             comboBox3.TabIndex = 22;
             // 
             // label33
@@ -1053,7 +1068,7 @@
             label33.AutoSize = true;
             label33.Location = new Point(663, 276);
             label33.Name = "label33";
-            label33.Size = new Size(44, 15);
+            label33.Size = new Size(69, 25);
             label33.TabIndex = 21;
             label33.Text = "label33";
             // 
@@ -1071,7 +1086,7 @@
             label32.AutoSize = true;
             label32.Location = new Point(736, 241);
             label32.Name = "label32";
-            label32.Size = new Size(44, 15);
+            label32.Size = new Size(69, 25);
             label32.TabIndex = 19;
             label32.Text = "label32";
             // 
@@ -1089,21 +1104,21 @@
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(436, 278);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(127, 23);
+            comboBox2.Size = new Size(127, 33);
             comboBox2.TabIndex = 17;
             // 
             // textBox8
             // 
             textBox8.Location = new Point(436, 363);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(127, 23);
+            textBox8.Size = new Size(127, 31);
             textBox8.TabIndex = 16;
             // 
             // textBox7
             // 
             textBox7.Location = new Point(436, 318);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(127, 23);
+            textBox7.Size = new Size(127, 31);
             textBox7.TabIndex = 15;
             // 
             // label31
@@ -1111,7 +1126,7 @@
             label31.AutoSize = true;
             label31.Location = new Point(368, 366);
             label31.Name = "label31";
-            label31.Size = new Size(44, 15);
+            label31.Size = new Size(69, 25);
             label31.TabIndex = 14;
             label31.Text = "label31";
             // 
@@ -1120,7 +1135,7 @@
             label30.AutoSize = true;
             label30.Location = new Point(368, 321);
             label30.Name = "label30";
-            label30.Size = new Size(44, 15);
+            label30.Size = new Size(69, 25);
             label30.TabIndex = 13;
             label30.Text = "label30";
             // 
@@ -1129,7 +1144,7 @@
             label29.AutoSize = true;
             label29.Location = new Point(368, 281);
             label29.Name = "label29";
-            label29.Size = new Size(44, 15);
+            label29.Size = new Size(69, 25);
             label29.TabIndex = 12;
             label29.Text = "label29";
             // 
@@ -1137,21 +1152,21 @@
             // 
             textBox6.Location = new Point(162, 364);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(118, 23);
+            textBox6.Size = new Size(118, 31);
             textBox6.TabIndex = 11;
             // 
             // textBox5
             // 
             textBox5.Location = new Point(162, 318);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(118, 23);
+            textBox5.Size = new Size(118, 31);
             textBox5.TabIndex = 10;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(162, 273);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(118, 23);
+            textBox4.Size = new Size(118, 31);
             textBox4.TabIndex = 9;
             // 
             // label28
@@ -1159,7 +1174,7 @@
             label28.AutoSize = true;
             label28.Location = new Point(99, 364);
             label28.Name = "label28";
-            label28.Size = new Size(44, 15);
+            label28.Size = new Size(69, 25);
             label28.TabIndex = 8;
             label28.Text = "label28";
             // 
@@ -1168,7 +1183,7 @@
             label27.AutoSize = true;
             label27.Location = new Point(99, 321);
             label27.Name = "label27";
-            label27.Size = new Size(44, 15);
+            label27.Size = new Size(69, 25);
             label27.TabIndex = 7;
             label27.Text = "label27";
             // 
@@ -1177,7 +1192,7 @@
             label26.AutoSize = true;
             label26.Location = new Point(99, 281);
             label26.Name = "label26";
-            label26.Size = new Size(44, 15);
+            label26.Size = new Size(69, 25);
             label26.TabIndex = 6;
             label26.Text = "label26";
             // 
@@ -1186,7 +1201,7 @@
             label25.AutoSize = true;
             label25.Location = new Point(436, 241);
             label25.Name = "label25";
-            label25.Size = new Size(44, 15);
+            label25.Size = new Size(69, 25);
             label25.TabIndex = 5;
             label25.Text = "label25";
             // 
@@ -1195,7 +1210,7 @@
             label24.AutoSize = true;
             label24.Location = new Point(162, 236);
             label24.Name = "label24";
-            label24.Size = new Size(44, 15);
+            label24.Size = new Size(69, 25);
             label24.TabIndex = 4;
             label24.Text = "label24";
             // 
@@ -1255,10 +1270,10 @@
             tabRuang.Controls.Add(button3);
             tabRuang.Controls.Add(btnTambahRuang);
             tabRuang.Controls.Add(dgvRuang);
-            tabRuang.Location = new Point(4, 24);
+            tabRuang.Location = new Point(4, 34);
             tabRuang.Name = "tabRuang";
             tabRuang.Padding = new Padding(4, 5, 4, 5);
-            tabRuang.Size = new Size(912, 467);
+            tabRuang.Size = new Size(912, 484);
             tabRuang.TabIndex = 2;
             tabRuang.Text = "Data Ruang Cooler";
             tabRuang.UseVisualStyleBackColor = true;
@@ -1268,7 +1283,7 @@
             comboBox7.FormattingEnabled = true;
             comboBox7.Location = new Point(739, 293);
             comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(121, 23);
+            comboBox7.Size = new Size(121, 33);
             comboBox7.TabIndex = 29;
             // 
             // label45
@@ -1276,7 +1291,7 @@
             label45.AutoSize = true;
             label45.Location = new Point(689, 296);
             label45.Name = "label45";
-            label45.Size = new Size(44, 15);
+            label45.Size = new Size(69, 25);
             label45.TabIndex = 28;
             label45.Text = "label45";
             // 
@@ -1284,14 +1299,14 @@
             // 
             textBox13.Location = new Point(442, 393);
             textBox13.Name = "textBox13";
-            textBox13.Size = new Size(121, 23);
+            textBox13.Size = new Size(121, 31);
             textBox13.TabIndex = 27;
             // 
             // textBox12
             // 
             textBox12.Location = new Point(442, 358);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(121, 23);
+            textBox12.Size = new Size(121, 31);
             textBox12.TabIndex = 26;
             // 
             // comboBox6
@@ -1299,7 +1314,7 @@
             comboBox6.FormattingEnabled = true;
             comboBox6.Location = new Point(442, 320);
             comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(121, 23);
+            comboBox6.Size = new Size(121, 33);
             comboBox6.TabIndex = 25;
             // 
             // comboBox5
@@ -1307,7 +1322,7 @@
             comboBox5.FormattingEnabled = true;
             comboBox5.Location = new Point(442, 283);
             comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(121, 23);
+            comboBox5.Size = new Size(121, 33);
             comboBox5.TabIndex = 24;
             // 
             // label44
@@ -1315,7 +1330,7 @@
             label44.AutoSize = true;
             label44.Location = new Point(383, 391);
             label44.Name = "label44";
-            label44.Size = new Size(44, 15);
+            label44.Size = new Size(69, 25);
             label44.TabIndex = 23;
             label44.Text = "label44";
             // 
@@ -1324,7 +1339,7 @@
             label43.AutoSize = true;
             label43.Location = new Point(383, 358);
             label43.Name = "label43";
-            label43.Size = new Size(44, 15);
+            label43.Size = new Size(69, 25);
             label43.TabIndex = 22;
             label43.Text = "label43";
             // 
@@ -1333,7 +1348,7 @@
             label42.AutoSize = true;
             label42.Location = new Point(383, 323);
             label42.Name = "label42";
-            label42.Size = new Size(44, 15);
+            label42.Size = new Size(69, 25);
             label42.TabIndex = 21;
             label42.Text = "label42";
             // 
@@ -1342,7 +1357,7 @@
             label41.AutoSize = true;
             label41.Location = new Point(383, 286);
             label41.Name = "label41";
-            label41.Size = new Size(44, 15);
+            label41.Size = new Size(69, 25);
             label41.TabIndex = 20;
             label41.Text = "label41";
             // 
@@ -1350,21 +1365,21 @@
             // 
             textBox11.Location = new Point(146, 399);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(120, 23);
+            textBox11.Size = new Size(120, 31);
             textBox11.TabIndex = 19;
             // 
             // textBox10
             // 
             textBox10.Location = new Point(145, 361);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(121, 23);
+            textBox10.Size = new Size(121, 31);
             textBox10.TabIndex = 18;
             // 
             // textBox9
             // 
             textBox9.Location = new Point(145, 285);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(121, 23);
+            textBox9.Size = new Size(121, 31);
             textBox9.TabIndex = 17;
             // 
             // comboBox4
@@ -1372,7 +1387,7 @@
             comboBox4.FormattingEnabled = true;
             comboBox4.Location = new Point(145, 323);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(121, 23);
+            comboBox4.Size = new Size(121, 33);
             comboBox4.TabIndex = 16;
             // 
             // label40
@@ -1380,7 +1395,7 @@
             label40.AutoSize = true;
             label40.Location = new Point(83, 401);
             label40.Name = "label40";
-            label40.Size = new Size(44, 15);
+            label40.Size = new Size(69, 25);
             label40.TabIndex = 15;
             label40.Text = "label40";
             // 
@@ -1389,7 +1404,7 @@
             label39.AutoSize = true;
             label39.Location = new Point(83, 363);
             label39.Name = "label39";
-            label39.Size = new Size(44, 15);
+            label39.Size = new Size(69, 25);
             label39.TabIndex = 14;
             label39.Text = "label39";
             // 
@@ -1398,7 +1413,7 @@
             label38.AutoSize = true;
             label38.Location = new Point(83, 326);
             label38.Name = "label38";
-            label38.Size = new Size(44, 15);
+            label38.Size = new Size(69, 25);
             label38.TabIndex = 13;
             label38.Text = "label38";
             // 
@@ -1407,7 +1422,7 @@
             label37.AutoSize = true;
             label37.Location = new Point(83, 288);
             label37.Name = "label37";
-            label37.Size = new Size(44, 15);
+            label37.Size = new Size(69, 25);
             label37.TabIndex = 12;
             label37.Text = "label37";
             // 
@@ -1416,7 +1431,7 @@
             label36.AutoSize = true;
             label36.Location = new Point(783, 265);
             label36.Name = "label36";
-            label36.Size = new Size(44, 15);
+            label36.Size = new Size(69, 25);
             label36.TabIndex = 11;
             label36.Text = "label36";
             // 
@@ -1425,7 +1440,7 @@
             label35.AutoSize = true;
             label35.Location = new Point(459, 261);
             label35.Name = "label35";
-            label35.Size = new Size(44, 15);
+            label35.Size = new Size(69, 25);
             label35.TabIndex = 10;
             label35.Text = "label35";
             // 
@@ -1434,7 +1449,7 @@
             label34.AutoSize = true;
             label34.Location = new Point(162, 261);
             label34.Name = "label34";
-            label34.Size = new Size(44, 15);
+            label34.Size = new Size(69, 25);
             label34.TabIndex = 9;
             label34.Text = "label34";
             // 
@@ -1510,7 +1525,7 @@
             lblPageTitle.ForeColor = Color.DarkSlateGray;
             lblPageTitle.Location = new Point(20, 25);
             lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(158, 23);
+            lblPageTitle.Size = new Size(241, 35);
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard Page";
             // 
@@ -1523,7 +1538,6 @@
             panelDashboard.Controls.Add(lblRingkasanStokTitle);
             panelDashboard.Controls.Add(dgvRingkasanStok);
             panelDashboard.Controls.Add(lblKondisiRuanganTitle);
-            panelDashboard.Controls.Add(dgvKondisiRuangan);
             panelDashboard.Location = new Point(0, 80);
             panelDashboard.Margin = new Padding(4, 5, 4, 5);
             panelDashboard.Name = "panelDashboard";
@@ -1548,7 +1562,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(14, 10);
             label1.Name = "label1";
-            label1.Size = new Size(53, 13);
+            label1.Size = new Size(77, 20);
             label1.TabIndex = 0;
             label1.Text = "Total Unit";
             // 
@@ -1559,7 +1573,7 @@
             lblTotalUnit.ForeColor = Color.White;
             lblTotalUnit.Location = new Point(14, 32);
             lblTotalUnit.Name = "lblTotalUnit";
-            lblTotalUnit.Size = new Size(0, 36);
+            lblTotalUnit.Size = new Size(0, 52);
             lblTotalUnit.TabIndex = 0;
             // 
             // cardKapasitas
@@ -1579,7 +1593,7 @@
             lblKapasitas.ForeColor = Color.White;
             lblKapasitas.Location = new Point(14, 32);
             lblKapasitas.Name = "lblKapasitas";
-            lblKapasitas.Size = new Size(33, 36);
+            lblKapasitas.Size = new Size(47, 52);
             lblKapasitas.TabIndex = 0;
             lblKapasitas.Text = "0";
             // 
@@ -1590,7 +1604,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(14, 10);
             label2.Name = "label2";
-            label2.Size = new Size(81, 13);
+            label2.Size = new Size(120, 20);
             label2.TabIndex = 0;
             label2.Text = "Kapasitas Terisi";
             // 
@@ -1612,7 +1626,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(14, 10);
             label3.Name = "label3";
-            label3.Size = new Size(79, 13);
+            label3.Size = new Size(119, 20);
             label3.TabIndex = 0;
             label3.Text = "Suhu Rata-rata";
             // 
@@ -1623,7 +1637,7 @@
             lblSuhu.ForeColor = Color.White;
             lblSuhu.Location = new Point(14, 32);
             lblSuhu.Name = "lblSuhu";
-            lblSuhu.Size = new Size(33, 36);
+            lblSuhu.Size = new Size(47, 52);
             lblSuhu.TabIndex = 0;
             lblSuhu.Text = "0";
             // 
@@ -1646,7 +1660,7 @@
             lblPeringatan.Location = new Point(14, 32);
             lblPeringatan.Margin = new Padding(4, 0, 4, 0);
             lblPeringatan.Name = "lblPeringatan";
-            lblPeringatan.Size = new Size(37, 37);
+            lblPeringatan.Size = new Size(53, 56);
             lblPeringatan.TabIndex = 0;
             lblPeringatan.Text = "0";
             // 
@@ -1658,7 +1672,7 @@
             label4.Location = new Point(14, 10);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(59, 13);
+            label4.Size = new Size(81, 18);
             label4.TabIndex = 0;
             label4.Text = "Peringatan";
             // 
@@ -1669,7 +1683,7 @@
             lblRingkasanStokTitle.ForeColor = Color.MidnightBlue;
             lblRingkasanStokTitle.Location = new Point(20, 150);
             lblRingkasanStokTitle.Name = "lblRingkasanStokTitle";
-            lblRingkasanStokTitle.Size = new Size(126, 20);
+            lblRingkasanStokTitle.Size = new Size(192, 30);
             lblRingkasanStokTitle.TabIndex = 0;
             lblRingkasanStokTitle.Text = "Ringkasan Stok";
             // 
@@ -1695,24 +1709,9 @@
             lblKondisiRuanganTitle.ForeColor = Color.MidnightBlue;
             lblKondisiRuanganTitle.Location = new Point(20, 375);
             lblKondisiRuanganTitle.Name = "lblKondisiRuanganTitle";
-            lblKondisiRuanganTitle.Size = new Size(138, 20);
+            lblKondisiRuanganTitle.Size = new Size(211, 30);
             lblKondisiRuanganTitle.TabIndex = 0;
             lblKondisiRuanganTitle.Text = "Kondisi Ruangan";
-            // 
-            // dgvKondisiRuangan
-            // 
-            dgvKondisiRuangan.AllowUserToAddRows = false;
-            dgvKondisiRuangan.BackgroundColor = Color.White;
-            dgvKondisiRuangan.BorderStyle = BorderStyle.None;
-            dgvKondisiRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKondisiRuangan.Location = new Point(20, 405);
-            dgvKondisiRuangan.Margin = new Padding(4, 5, 4, 5);
-            dgvKondisiRuangan.Name = "dgvKondisiRuangan";
-            dgvKondisiRuangan.ReadOnly = true;
-            dgvKondisiRuangan.RowHeadersVisible = false;
-            dgvKondisiRuangan.RowHeadersWidth = 62;
-            dgvKondisiRuangan.Size = new Size(920, 170);
-            dgvKondisiRuangan.TabIndex = 0;
             // 
             // panelStok
             // 
@@ -1751,7 +1750,7 @@
             label19.Location = new Point(20, 25);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";
-            label19.Size = new Size(180, 23);
+            label19.Size = new Size(259, 35);
             label19.TabIndex = 6;
             label19.Text = "Stok dan Ruangan";
             // 
@@ -1796,7 +1795,7 @@
             label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(20, 20);
             label5.Name = "label5";
-            label5.Size = new Size(301, 24);
+            label5.Size = new Size(436, 32);
             label5.TabIndex = 0;
             label5.Text = "Input Pengecekan Suhu Harian";
             // 
@@ -1807,7 +1806,7 @@
             label6.ForeColor = Color.DimGray;
             label6.Location = new Point(20, 90);
             label6.Name = "label6";
-            label6.Size = new Size(96, 17);
+            label6.Size = new Size(132, 25);
             label6.TabIndex = 0;
             label6.Text = "Pilih Ruangan";
             // 
@@ -1818,7 +1817,7 @@
             cmbRuanganSuhu.FormattingEnabled = true;
             cmbRuanganSuhu.Location = new Point(20, 120);
             cmbRuanganSuhu.Name = "cmbRuanganSuhu";
-            cmbRuanganSuhu.Size = new Size(340, 26);
+            cmbRuanganSuhu.Size = new Size(340, 34);
             cmbRuanganSuhu.TabIndex = 0;
             // 
             // label7
@@ -1828,7 +1827,7 @@
             label7.ForeColor = Color.DimGray;
             label7.Location = new Point(20, 170);
             label7.Name = "label7";
-            label7.Size = new Size(113, 17);
+            label7.Size = new Size(161, 25);
             label7.TabIndex = 0;
             label7.Text = "Suhu Aktual (°C)";
             // 
@@ -1838,7 +1837,7 @@
             txtSuhuAktual.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSuhuAktual.Location = new Point(20, 200);
             txtSuhuAktual.Name = "txtSuhuAktual";
-            txtSuhuAktual.Size = new Size(340, 24);
+            txtSuhuAktual.Size = new Size(340, 32);
             txtSuhuAktual.TabIndex = 0;
             // 
             // label8
@@ -1848,7 +1847,7 @@
             label8.ForeColor = Color.DimGray;
             label8.Location = new Point(20, 245);
             label8.Name = "label8";
-            label8.Size = new Size(83, 17);
+            label8.Size = new Size(115, 25);
             label8.TabIndex = 0;
             label8.Text = "Grade Mutu";
             // 
@@ -1859,7 +1858,7 @@
             cmbGradeMutu.FormattingEnabled = true;
             cmbGradeMutu.Location = new Point(20, 275);
             cmbGradeMutu.Name = "cmbGradeMutu";
-            cmbGradeMutu.Size = new Size(340, 26);
+            cmbGradeMutu.Size = new Size(340, 34);
             cmbGradeMutu.TabIndex = 0;
             // 
             // label9
@@ -1869,7 +1868,7 @@
             label9.ForeColor = Color.DimGray;
             label9.Location = new Point(20, 320);
             label9.Name = "label9";
-            label9.Size = new Size(57, 17);
+            label9.Size = new Size(81, 25);
             label9.TabIndex = 0;
             label9.Text = "Catatan";
             // 
@@ -1959,7 +1958,7 @@
             txtKuantitasKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtKuantitasKirim.Location = new Point(20, 395);
             txtKuantitasKirim.Name = "txtKuantitasKirim";
-            txtKuantitasKirim.Size = new Size(340, 24);
+            txtKuantitasKirim.Size = new Size(340, 32);
             txtKuantitasKirim.TabIndex = 0;
             // 
             // label15
@@ -1969,7 +1968,7 @@
             label15.ForeColor = Color.DimGray;
             label15.Location = new Point(20, 370);
             label15.Name = "label15";
-            label15.Size = new Size(131, 17);
+            label15.Size = new Size(183, 25);
             label15.TabIndex = 0;
             label15.Text = "Kuantitas Kirim (kg)";
             // 
@@ -1980,7 +1979,7 @@
             cmbStokKirim.FormattingEnabled = true;
             cmbStokKirim.Location = new Point(20, 320);
             cmbStokKirim.Name = "cmbStokKirim";
-            cmbStokKirim.Size = new Size(340, 26);
+            cmbStokKirim.Size = new Size(340, 34);
             cmbStokKirim.TabIndex = 0;
             // 
             // label14
@@ -1990,7 +1989,7 @@
             label14.ForeColor = Color.DimGray;
             label14.Location = new Point(20, 295);
             label14.Name = "label14";
-            label14.Size = new Size(66, 17);
+            label14.Size = new Size(93, 25);
             label14.TabIndex = 0;
             label14.Text = "Pilih Stok";
             // 
@@ -2000,7 +1999,7 @@
             txtNoArmada.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNoArmada.Location = new Point(20, 245);
             txtNoArmada.Name = "txtNoArmada";
-            txtNoArmada.Size = new Size(340, 24);
+            txtNoArmada.Size = new Size(340, 32);
             txtNoArmada.TabIndex = 0;
             // 
             // label13
@@ -2010,7 +2009,7 @@
             label13.ForeColor = Color.DimGray;
             label13.Location = new Point(20, 220);
             label13.Name = "label13";
-            label13.Size = new Size(103, 17);
+            label13.Size = new Size(144, 25);
             label13.TabIndex = 0;
             label13.Text = "Nomor Armada";
             // 
@@ -2020,7 +2019,7 @@
             txtTujuan.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTujuan.Location = new Point(20, 170);
             txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(340, 24);
+            txtTujuan.Size = new Size(340, 32);
             txtTujuan.TabIndex = 0;
             // 
             // label12
@@ -2030,7 +2029,7 @@
             label12.ForeColor = Color.DimGray;
             label12.Location = new Point(20, 145);
             label12.Name = "label12";
-            label12.Size = new Size(114, 17);
+            label12.Size = new Size(157, 25);
             label12.TabIndex = 0;
             label12.Text = "Tujuan Distribusi";
             // 
@@ -2042,7 +2041,7 @@
             txtIdPengiriman.Location = new Point(20, 95);
             txtIdPengiriman.Name = "txtIdPengiriman";
             txtIdPengiriman.ReadOnly = true;
-            txtIdPengiriman.Size = new Size(340, 24);
+            txtIdPengiriman.Size = new Size(340, 32);
             txtIdPengiriman.TabIndex = 0;
             // 
             // label11
@@ -2052,7 +2051,7 @@
             label11.ForeColor = Color.DimGray;
             label11.Location = new Point(20, 70);
             label11.Name = "label11";
-            label11.Size = new Size(96, 17);
+            label11.Size = new Size(134, 25);
             label11.TabIndex = 0;
             label11.Text = "ID Pengiriman";
             // 
@@ -2063,7 +2062,7 @@
             label10.ForeColor = Color.MidnightBlue;
             label10.Location = new Point(20, 20);
             label10.Name = "label10";
-            label10.Size = new Size(186, 24);
+            label10.Size = new Size(279, 33);
             label10.TabIndex = 0;
             label10.Text = "Proses Pengiriman";
             // 
@@ -2090,7 +2089,7 @@
             label16.ForeColor = Color.MidnightBlue;
             label16.Location = new Point(20, 20);
             label16.Name = "label16";
-            label16.Size = new Size(229, 24);
+            label16.Size = new Size(340, 32);
             label16.TabIndex = 0;
             label16.Text = "Laporan Riwayat Mutasi";
             // 
@@ -2101,7 +2100,7 @@
             label17.ForeColor = Color.DimGray;
             label17.Location = new Point(20, 70);
             label17.Name = "label17";
-            label17.Size = new Size(121, 17);
+            label17.Size = new Size(169, 25);
             label17.TabIndex = 0;
             label17.Text = "Filter Jenis Mutasi";
             // 
@@ -2112,7 +2111,7 @@
             cmbFilterMutasi.FormattingEnabled = true;
             cmbFilterMutasi.Location = new Point(20, 95);
             cmbFilterMutasi.Name = "cmbFilterMutasi";
-            cmbFilterMutasi.Size = new Size(200, 26);
+            cmbFilterMutasi.Size = new Size(200, 34);
             cmbFilterMutasi.TabIndex = 0;
             // 
             // btnFilter
@@ -2151,7 +2150,7 @@
             lblGrafikTitle.ForeColor = Color.DimGray;
             lblGrafikTitle.Location = new Point(580, 70);
             lblGrafikTitle.Name = "lblGrafikTitle";
-            lblGrafikTitle.Size = new Size(300, 17);
+            lblGrafikTitle.Size = new Size(418, 25);
             lblGrafikTitle.TabIndex = 0;
             lblGrafikTitle.Text = "Grafik Mutasi Stok: Masuk vs Keluar (Manajer)";
             // 
@@ -2252,7 +2251,7 @@
             lblNamaUser.Location = new Point(20, 95);
             lblNamaUser.Margin = new Padding(4, 0, 4, 0);
             lblNamaUser.Name = "lblNamaUser";
-            lblNamaUser.Size = new Size(100, 13);
+            lblNamaUser.Size = new Size(147, 20);
             lblNamaUser.TabIndex = 1;
             lblNamaUser.Text = "Halo, [NamaUser]";
             // 
@@ -2264,7 +2263,7 @@
             lblRoleUser.Location = new Point(20, 128);
             lblRoleUser.Margin = new Padding(4, 0, 4, 0);
             lblRoleUser.Name = "lblRoleUser";
-            lblRoleUser.Size = new Size(52, 15);
+            lblRoleUser.Size = new Size(73, 20);
             lblRoleUser.TabIndex = 2;
             lblRoleUser.Text = "Manajer";
             // 
@@ -2352,7 +2351,7 @@
             lblLogo.Location = new Point(45, 15);
             lblLogo.Margin = new Padding(4, 0, 4, 0);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(108, 27);
+            lblLogo.Size = new Size(155, 40);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "🐟 FISHY";
             lblLogo.TextAlign = ContentAlignment.MiddleCenter;
@@ -2462,7 +2461,6 @@
             cardPeringatan.ResumeLayout(false);
             cardPeringatan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).EndInit();
             panelStok.ResumeLayout(false);
             panelStok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStok).EndInit();
@@ -2516,7 +2514,6 @@
         private Label label4;
         private Label lblRingkasanStokTitle;
         private Label lblKondisiRuanganTitle;
-        private DataGridView dgvKondisiRuangan;
         private DataGridView dgvRingkasanStok;
         private Label label5;
         private DataGridView dgvStok;
