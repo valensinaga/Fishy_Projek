@@ -498,10 +498,10 @@ namespace Fishy_Projek
         private void btnClose_Click(object sender, EventArgs e)
         {
             var konfirmasi = MessageBox.Show(
-       "Yakin ingin keluar?",
-       "Konfirmasi",
-       MessageBoxButtons.YesNo,
-       MessageBoxIcon.Question);
+            "Yakin ingin keluar?",
+            "Konfirmasi",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
 
             if (konfirmasi == DialogResult.Yes)
                 Application.Exit();
