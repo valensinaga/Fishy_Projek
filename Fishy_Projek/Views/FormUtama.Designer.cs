@@ -416,6 +416,7 @@
             btnTambahIkan.TabIndex = 1;
             btnTambahIkan.Text = "+ Tambah Ikan";
             btnTambahIkan.UseVisualStyleBackColor = false;
+            btnTambahIkan.Click += btnTambahIkan_Click;
             // 
             // txtSuhuIdeal
             // 

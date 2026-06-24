@@ -62,7 +62,7 @@ namespace Fishy_Projek.Repositories
                 cmd.Parameters.AddWithValue("id_pihak", idPihak);
                 cmd.Parameters.AddWithValue("id_ikan", idIkan);
                 cmd.Parameters.AddWithValue("id_ruang", idRuang);
-                cmd.Parameters.AddWithValue("jumlah",kuantitasKg);
+                cmd.Parameters.AddWithValue("jumlah", kuantitasKg);
                 cmd.Parameters.AddWithValue("id_user", idUser);
                 cmd.ExecuteNonQuery();
             }
@@ -93,6 +93,25 @@ namespace Fishy_Projek.Repositories
         public void EksekusiStoredProcedurePengiriman(string idKeluar, string idMasuk, int idPihak, string noArmada, double kuantitasKirim, int idUser)
         {
             ProsesPengiriman(idKeluar, idMasuk, idPihak, noArmada, kuantitasKirim, idUser);
+        }
+
+        // Cari id_pihak berdasarkan nama tujuan distribusi (dipakai form Pengiriman,
+        // karena operator ngetik NAMA tujuan, bukan ID mentah)
+        public int GetIdPihakByNama(string namaTujuan)
+        {
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(
+                    "SELECT id_pihak FROM pihak_eksternal WHERE nama_pihak = @tujuan LIMIT 1", conn))
+                {
+                    cmd.Parameters.AddWithValue("tujuan", namaTujuan);
+                    var result = cmd.ExecuteScalar();
+                    if (result == null)
+                        throw new Exception($"Tujuan distribusi '{namaTujuan}' tidak ditemukan di data pihak eksternal. Pastikan namanya sama persis dengan yang ada di database.");
+                    return Convert.ToInt32(result);
+                }
+            }
         }
 
         public void InputSuhu(string idRuang, double suhuAktual, string gradeMutu, string catatan, int idUser)

@@ -272,7 +272,7 @@ namespace Fishy_Projek
         {
             try
             {
-                var stokList = _laporanRepo.GetRingkasanStok();
+                var stokList = _opsRepo.GetRingkasanStok(); // FIX: _opsRepo (model Stok punya IdIkan), bukan _laporanRepo (model MutasiView gak punya IdIkan)
                 cmbStokKirim.DisplayMember = "NamaIkan";
                 cmbStokKirim.ValueMember = "IdIkan"; // Karena IdIkan adalah string
                 cmbStokKirim.DataSource = stokList;
@@ -431,7 +431,7 @@ namespace Fishy_Projek
             {
                 string idKeluar = txtIdPengiriman.Text;
                 string idMasuk = txtIdMasuk.Text; // Tambahkan TextBox txtIdMasuk di Design
-                int idPihak = int.Parse(txtTujuan.Text); // ID UMKM/Tujuan
+                int idPihak = _opsRepo.GetIdPihakByNama(txtTujuan.Text.Trim()); // FIX: lookup nama -> id, bukan int.Parse langsung
                 string armada = txtNoArmada.Text;
                 double kuantitas = double.Parse(txtKuantitasKirim.Text);
 
@@ -563,6 +563,6 @@ namespace Fishy_Projek
             }
         }
     }
-    
-    
+
+
 }
