@@ -41,6 +41,25 @@
             lblTagline = new Label();
             lblAppName = new Label();
             panelKonten = new Panel();
+            panelMaster = new Panel();
+            tabMaster = new TabControl();
+            tabIkan = new TabPage();
+            label22 = new Label();
+            this.txtBatasSuhu = new TextBox();
+            label21 = new Label();
+            label20 = new Label();
+            this.label18 = new Label();
+            btnTambahIkan = new Button();
+            this.txtSuhuIdeal = new TextBox();
+            this.txtNamaIkan = new TextBox();
+            dgvIkan = new DataGridView();
+            txtIdIkan = new TextBox();
+            tabGudang = new TabPage();
+            btnTambahGudang = new Button();
+            dgvGudang = new DataGridView();
+            tabRuang = new TabPage();
+            btnTambahRuang = new Button();
+            dgvRuang = new DataGridView();
             panelHeader = new Panel();
             lblPageTitle = new Label();
             panelDashboard = new Panel();
@@ -98,18 +117,6 @@
             dgvLaporan = new DataGridView();
             lblGrafikTitle = new Label();
             formsPlotMutasi = new ScottPlot.WinForms.FormsPlot();
-            panelMaster = new Panel();
-            label18 = new Label();
-            tabMaster = new TabControl();
-            tabIkan = new TabPage();
-            btnTambahIkan = new Button();
-            dgvIkan = new DataGridView();
-            tabGudang = new TabPage();
-            btnTambahGudang = new Button();
-            dgvGudang = new DataGridView();
-            tabRuang = new TabPage();
-            btnTambahRuang = new Button();
-            dgvRuang = new DataGridView();
             panelTitleBar = new Panel();
             btnMinimize = new Button();
             btnMaximize = new Button();
@@ -129,6 +136,14 @@
             panelKanan.SuspendLayout();
             panelKiri.SuspendLayout();
             panelKonten.SuspendLayout();
+            panelMaster.SuspendLayout();
+            tabMaster.SuspendLayout();
+            tabIkan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIkan).BeginInit();
+            tabGudang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvGudang).BeginInit();
+            tabRuang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRuang).BeginInit();
             panelHeader.SuspendLayout();
             panelDashboard.SuspendLayout();
             cardTotalUnit.SuspendLayout();
@@ -143,14 +158,6 @@
             panelPengiriman.SuspendLayout();
             panelLaporan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLaporan).BeginInit();
-            panelMaster.SuspendLayout();
-            tabMaster.SuspendLayout();
-            tabIkan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvIkan).BeginInit();
-            tabGudang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvGudang).BeginInit();
-            tabRuang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRuang).BeginInit();
             panelTitleBar.SuspendLayout();
             panelSidebar.SuspendLayout();
             SuspendLayout();
@@ -295,19 +302,233 @@
             // 
             // panelKonten
             // 
+            panelKonten.Controls.Add(panelMaster);
             panelKonten.Controls.Add(panelHeader);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelInputSuhu);
             panelKonten.Controls.Add(panelPengiriman);
             panelKonten.Controls.Add(panelLaporan);
-            panelKonten.Controls.Add(panelMaster);
             panelKonten.Location = new Point(240, 35);
             panelKonten.Margin = new Padding(6, 8, 6, 8);
             panelKonten.Name = "panelKonten";
             panelKonten.Size = new Size(960, 665);
             panelKonten.TabIndex = 2;
             panelKonten.Visible = false;
+            // 
+            // panelMaster
+            // 
+            panelMaster.Controls.Add(tabMaster);
+            panelMaster.Location = new Point(0, 0);
+            panelMaster.Margin = new Padding(4, 5, 4, 5);
+            panelMaster.Name = "panelMaster";
+            panelMaster.Size = new Size(960, 585);
+            panelMaster.TabIndex = 0;
+            panelMaster.Visible = false;
+            // 
+            // tabMaster
+            // 
+            tabMaster.Controls.Add(tabIkan);
+            tabMaster.Controls.Add(tabGudang);
+            tabMaster.Controls.Add(tabRuang);
+            tabMaster.Location = new Point(20, 70);
+            tabMaster.Name = "tabMaster";
+            tabMaster.SelectedIndex = 0;
+            tabMaster.Size = new Size(920, 495);
+            tabMaster.TabIndex = 1;
+            // 
+            // tabIkan
+            // 
+            tabIkan.Controls.Add(label22);
+            tabIkan.Controls.Add(this.txtBatasSuhu);
+            tabIkan.Controls.Add(label21);
+            tabIkan.Controls.Add(label20);
+            tabIkan.Controls.Add(this.label18);
+            tabIkan.Controls.Add(btnTambahIkan);
+            tabIkan.Controls.Add(this.txtSuhuIdeal);
+            tabIkan.Controls.Add(this.txtNamaIkan);
+            tabIkan.Controls.Add(dgvIkan);
+            tabIkan.Controls.Add(txtIdIkan);
+            tabIkan.Location = new Point(4, 24);
+            tabIkan.Name = "tabIkan";
+            tabIkan.Padding = new Padding(4, 5, 4, 5);
+            tabIkan.Size = new Size(912, 467);
+            tabIkan.TabIndex = 0;
+            tabIkan.Text = "Data Ikan";
+            tabIkan.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(665, 329);
+            label22.Name = "label22";
+            label22.Size = new Size(65, 15);
+            label22.TabIndex = 4;
+            label22.Text = "Batas Suhu";
+            // 
+            // txtBatasSuhu
+            // 
+            this.txtBatasSuhu.Location = new Point(736, 326);
+            this.txtBatasSuhu.Name = "txtBatasSuhu";
+            this.txtBatasSuhu.Size = new Size(100, 23);
+            this.txtBatasSuhu.TabIndex = 8;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(665, 299);
+            label21.Name = "label21";
+            label21.Size = new Size(62, 15);
+            label21.TabIndex = 2;
+            label21.Text = "Suhu Ideal";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(666, 267);
+            label20.Name = "label20";
+            label20.Size = new Size(64, 15);
+            label20.TabIndex = 2;
+            label20.Text = "Nama Ikan";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new Point(665, 233);
+            this.label18.Name = "label18";
+            this.label18.Size = new Size(42, 15);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Id Ikan";
+            // 
+            // btnTambahIkan
+            // 
+            btnTambahIkan.BackColor = Color.SteelBlue;
+            btnTambahIkan.Cursor = Cursors.Hand;
+            btnTambahIkan.FlatAppearance.BorderSize = 0;
+            btnTambahIkan.FlatStyle = FlatStyle.Flat;
+            btnTambahIkan.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahIkan.ForeColor = Color.White;
+            btnTambahIkan.Location = new Point(679, 366);
+            btnTambahIkan.Name = "btnTambahIkan";
+            btnTambahIkan.Size = new Size(157, 35);
+            btnTambahIkan.TabIndex = 1;
+            btnTambahIkan.Text = "+ Tambah Ikan";
+            btnTambahIkan.UseVisualStyleBackColor = false;
+            // 
+            // txtSuhuIdeal
+            // 
+            this.txtSuhuIdeal.Location = new Point(736, 296);
+            this.txtSuhuIdeal.Name = "txtSuhuIdeal";
+            this.txtSuhuIdeal.Size = new Size(100, 23);
+            this.txtSuhuIdeal.TabIndex = 6;
+            // 
+            // txtNamaIkan
+            // 
+            this.txtNamaIkan.Location = new Point(736, 264);
+            this.txtNamaIkan.Name = "txtNamaIkan";
+            this.txtNamaIkan.Size = new Size(100, 23);
+            this.txtNamaIkan.TabIndex = 7;
+            // 
+            // dgvIkan
+            // 
+            dgvIkan.AllowUserToAddRows = false;
+            dgvIkan.BackgroundColor = Color.White;
+            dgvIkan.BorderStyle = BorderStyle.None;
+            dgvIkan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIkan.Location = new Point(10, 11);
+            dgvIkan.Name = "dgvIkan";
+            dgvIkan.ReadOnly = true;
+            dgvIkan.RowHeadersVisible = false;
+            dgvIkan.RowHeadersWidth = 62;
+            dgvIkan.Size = new Size(892, 200);
+            dgvIkan.TabIndex = 0;
+            // 
+            // txtIdIkan
+            // 
+            txtIdIkan.Location = new Point(736, 229);
+            txtIdIkan.Name = "txtIdIkan";
+            txtIdIkan.Size = new Size(100, 23);
+            txtIdIkan.TabIndex = 5;
+            // 
+            // tabGudang
+            // 
+            tabGudang.Controls.Add(btnTambahGudang);
+            tabGudang.Controls.Add(dgvGudang);
+            tabGudang.Location = new Point(4, 24);
+            tabGudang.Name = "tabGudang";
+            tabGudang.Padding = new Padding(4, 5, 4, 5);
+            tabGudang.Size = new Size(912, 467);
+            tabGudang.TabIndex = 1;
+            tabGudang.Text = "Data Gudang";
+            tabGudang.UseVisualStyleBackColor = true;
+            // 
+            // btnTambahGudang
+            // 
+            btnTambahGudang.BackColor = Color.SteelBlue;
+            btnTambahGudang.Cursor = Cursors.Hand;
+            btnTambahGudang.FlatAppearance.BorderSize = 0;
+            btnTambahGudang.FlatStyle = FlatStyle.Flat;
+            btnTambahGudang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahGudang.ForeColor = Color.White;
+            btnTambahGudang.Location = new Point(752, 10);
+            btnTambahGudang.Name = "btnTambahGudang";
+            btnTambahGudang.Size = new Size(150, 35);
+            btnTambahGudang.TabIndex = 3;
+            btnTambahGudang.Text = "+ Tambah Gudang";
+            btnTambahGudang.UseVisualStyleBackColor = false;
+            // 
+            // dgvGudang
+            // 
+            dgvGudang.AllowUserToAddRows = false;
+            dgvGudang.BackgroundColor = Color.White;
+            dgvGudang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGudang.Location = new Point(10, 55);
+            dgvGudang.Name = "dgvGudang";
+            dgvGudang.ReadOnly = true;
+            dgvGudang.RowHeadersVisible = false;
+            dgvGudang.RowHeadersWidth = 62;
+            dgvGudang.Size = new Size(892, 396);
+            dgvGudang.TabIndex = 2;
+            // 
+            // tabRuang
+            // 
+            tabRuang.Controls.Add(btnTambahRuang);
+            tabRuang.Controls.Add(dgvRuang);
+            tabRuang.Location = new Point(4, 24);
+            tabRuang.Name = "tabRuang";
+            tabRuang.Padding = new Padding(4, 5, 4, 5);
+            tabRuang.Size = new Size(912, 467);
+            tabRuang.TabIndex = 2;
+            tabRuang.Text = "Data Ruang Cooler";
+            tabRuang.UseVisualStyleBackColor = true;
+            // 
+            // btnTambahRuang
+            // 
+            btnTambahRuang.BackColor = Color.SteelBlue;
+            btnTambahRuang.Cursor = Cursors.Hand;
+            btnTambahRuang.FlatAppearance.BorderSize = 0;
+            btnTambahRuang.FlatStyle = FlatStyle.Flat;
+            btnTambahRuang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahRuang.ForeColor = Color.White;
+            btnTambahRuang.Location = new Point(752, 10);
+            btnTambahRuang.Name = "btnTambahRuang";
+            btnTambahRuang.Size = new Size(150, 35);
+            btnTambahRuang.TabIndex = 5;
+            btnTambahRuang.Text = "+ Tambah Ruangan";
+            btnTambahRuang.UseVisualStyleBackColor = false;
+            // 
+            // dgvRuang
+            // 
+            dgvRuang.AllowUserToAddRows = false;
+            dgvRuang.BackgroundColor = Color.White;
+            dgvRuang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRuang.Location = new Point(10, 55);
+            dgvRuang.Name = "dgvRuang";
+            dgvRuang.ReadOnly = true;
+            dgvRuang.RowHeadersVisible = false;
+            dgvRuang.RowHeadersWidth = 62;
+            dgvRuang.Size = new Size(892, 396);
+            dgvRuang.TabIndex = 4;
             // 
             // panelHeader
             // 
@@ -978,160 +1199,6 @@
             formsPlotMutasi.Size = new Size(360, 420);
             formsPlotMutasi.TabIndex = 0;
             // 
-            // panelMaster
-            // 
-            panelMaster.Controls.Add(label18);
-            panelMaster.Controls.Add(tabMaster);
-            panelMaster.Location = new Point(0, 80);
-            panelMaster.Margin = new Padding(4, 5, 4, 5);
-            panelMaster.Name = "panelMaster";
-            panelMaster.Size = new Size(960, 585);
-            panelMaster.TabIndex = 0;
-            panelMaster.Visible = false;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.MidnightBlue;
-            label18.Location = new Point(20, 20);
-            label18.Name = "label18";
-            label18.Size = new Size(152, 29);
-            label18.TabIndex = 0;
-            label18.Text = "Master Data";
-            // 
-            // tabMaster
-            // 
-            tabMaster.Controls.Add(tabIkan);
-            tabMaster.Controls.Add(tabGudang);
-            tabMaster.Controls.Add(tabRuang);
-            tabMaster.Location = new Point(20, 70);
-            tabMaster.Name = "tabMaster";
-            tabMaster.SelectedIndex = 0;
-            tabMaster.Size = new Size(920, 495);
-            tabMaster.TabIndex = 1;
-            // 
-            // tabIkan
-            // 
-            tabIkan.Controls.Add(btnTambahIkan);
-            tabIkan.Controls.Add(dgvIkan);
-            tabIkan.Location = new Point(4, 24);
-            tabIkan.Name = "tabIkan";
-            tabIkan.Padding = new Padding(4, 5, 4, 5);
-            tabIkan.Size = new Size(912, 467);
-            tabIkan.TabIndex = 0;
-            tabIkan.Text = "Data Ikan";
-            tabIkan.UseVisualStyleBackColor = true;
-            // 
-            // btnTambahIkan
-            // 
-            btnTambahIkan.BackColor = Color.SteelBlue;
-            btnTambahIkan.Cursor = Cursors.Hand;
-            btnTambahIkan.FlatAppearance.BorderSize = 0;
-            btnTambahIkan.FlatStyle = FlatStyle.Flat;
-            btnTambahIkan.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTambahIkan.ForeColor = Color.White;
-            btnTambahIkan.Location = new Point(752, 10);
-            btnTambahIkan.Name = "btnTambahIkan";
-            btnTambahIkan.Size = new Size(150, 35);
-            btnTambahIkan.TabIndex = 1;
-            btnTambahIkan.Text = "+ Tambah Ikan";
-            btnTambahIkan.UseVisualStyleBackColor = false;
-            // 
-            // dgvIkan
-            // 
-            dgvIkan.AllowUserToAddRows = false;
-            dgvIkan.BackgroundColor = Color.White;
-            dgvIkan.BorderStyle = BorderStyle.None;
-            dgvIkan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvIkan.Location = new Point(10, 55);
-            dgvIkan.Name = "dgvIkan";
-            dgvIkan.ReadOnly = true;
-            dgvIkan.RowHeadersVisible = false;
-            dgvIkan.RowHeadersWidth = 62;
-            dgvIkan.Size = new Size(892, 396);
-            dgvIkan.TabIndex = 0;
-            // 
-            // tabGudang
-            // 
-            tabGudang.Controls.Add(btnTambahGudang);
-            tabGudang.Controls.Add(dgvGudang);
-            tabGudang.Location = new Point(4, 24);
-            tabGudang.Name = "tabGudang";
-            tabGudang.Padding = new Padding(4, 5, 4, 5);
-            tabGudang.Size = new Size(912, 467);
-            tabGudang.TabIndex = 1;
-            tabGudang.Text = "Data Gudang";
-            tabGudang.UseVisualStyleBackColor = true;
-            // 
-            // btnTambahGudang
-            // 
-            btnTambahGudang.BackColor = Color.SteelBlue;
-            btnTambahGudang.Cursor = Cursors.Hand;
-            btnTambahGudang.FlatAppearance.BorderSize = 0;
-            btnTambahGudang.FlatStyle = FlatStyle.Flat;
-            btnTambahGudang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTambahGudang.ForeColor = Color.White;
-            btnTambahGudang.Location = new Point(752, 10);
-            btnTambahGudang.Name = "btnTambahGudang";
-            btnTambahGudang.Size = new Size(150, 35);
-            btnTambahGudang.TabIndex = 3;
-            btnTambahGudang.Text = "+ Tambah Gudang";
-            btnTambahGudang.UseVisualStyleBackColor = false;
-            // 
-            // dgvGudang
-            // 
-            dgvGudang.AllowUserToAddRows = false;
-            dgvGudang.BackgroundColor = Color.White;
-            dgvGudang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGudang.Location = new Point(10, 55);
-            dgvGudang.Name = "dgvGudang";
-            dgvGudang.ReadOnly = true;
-            dgvGudang.RowHeadersVisible = false;
-            dgvGudang.RowHeadersWidth = 62;
-            dgvGudang.Size = new Size(892, 396);
-            dgvGudang.TabIndex = 2;
-            // 
-            // tabRuang
-            // 
-            tabRuang.Controls.Add(btnTambahRuang);
-            tabRuang.Controls.Add(dgvRuang);
-            tabRuang.Location = new Point(4, 24);
-            tabRuang.Name = "tabRuang";
-            tabRuang.Padding = new Padding(4, 5, 4, 5);
-            tabRuang.Size = new Size(912, 467);
-            tabRuang.TabIndex = 2;
-            tabRuang.Text = "Data Ruang Cooler";
-            tabRuang.UseVisualStyleBackColor = true;
-            // 
-            // btnTambahRuang
-            // 
-            btnTambahRuang.BackColor = Color.SteelBlue;
-            btnTambahRuang.Cursor = Cursors.Hand;
-            btnTambahRuang.FlatAppearance.BorderSize = 0;
-            btnTambahRuang.FlatStyle = FlatStyle.Flat;
-            btnTambahRuang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTambahRuang.ForeColor = Color.White;
-            btnTambahRuang.Location = new Point(752, 10);
-            btnTambahRuang.Name = "btnTambahRuang";
-            btnTambahRuang.Size = new Size(150, 35);
-            btnTambahRuang.TabIndex = 5;
-            btnTambahRuang.Text = "+ Tambah Ruangan";
-            btnTambahRuang.UseVisualStyleBackColor = false;
-            // 
-            // dgvRuang
-            // 
-            dgvRuang.AllowUserToAddRows = false;
-            dgvRuang.BackgroundColor = Color.White;
-            dgvRuang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRuang.Location = new Point(10, 55);
-            dgvRuang.Name = "dgvRuang";
-            dgvRuang.ReadOnly = true;
-            dgvRuang.RowHeadersVisible = false;
-            dgvRuang.RowHeadersWidth = 62;
-            dgvRuang.Size = new Size(892, 396);
-            dgvRuang.TabIndex = 4;
-            // 
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.MidnightBlue;
@@ -1404,6 +1471,15 @@
             panelKiri.ResumeLayout(false);
             panelKiri.PerformLayout();
             panelKonten.ResumeLayout(false);
+            panelMaster.ResumeLayout(false);
+            tabMaster.ResumeLayout(false);
+            tabIkan.ResumeLayout(false);
+            tabIkan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIkan).EndInit();
+            tabGudang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvGudang).EndInit();
+            tabRuang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRuang).EndInit();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelDashboard.ResumeLayout(false);
@@ -1428,15 +1504,6 @@
             panelLaporan.ResumeLayout(false);
             panelLaporan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLaporan).EndInit();
-            panelMaster.ResumeLayout(false);
-            panelMaster.PerformLayout();
-            tabMaster.ResumeLayout(false);
-            tabIkan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvIkan).EndInit();
-            tabGudang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvGudang).EndInit();
-            tabRuang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRuang).EndInit();
             panelTitleBar.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
             panelSidebar.PerformLayout();
@@ -1511,7 +1578,6 @@
         private Label label16;
         private Button btnFilter;
         private ComboBox cmbFilterMutasi;
-        private Label label18;
         private DataGridView dgvLaporan;
         private Label lblGrafikTitle;
         private ScottPlot.WinForms.FormsPlot formsPlotMutasi;
@@ -1542,5 +1608,13 @@
         public Button btnMaster;
         private Button btnLogout;
         private Panel panelSidebar;
+        private Label label22;
+        private TextBox textBox4;
+        private Label label21;
+        private Label label20;
+        private Label txtIdIkan;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox txtIdIkan;
     }
 }

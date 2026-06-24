@@ -517,5 +517,52 @@ namespace Fishy_Projek
         {
 
         }
+
+        private void btnTambahIkan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Cek jangan sampai ada kotak yang masih kosong
+                if (string.IsNullOrWhiteSpace(txtIdIkan.Text) || string.IsNullOrWhiteSpace(txtNamaIkan.Text) ||
+                    string.IsNullOrWhiteSpace(txtSuhuIdeal.Text) || string.IsNullOrWhiteSpace(txtBatasSuhu.Text))
+                {
+                    MessageBox.Show("Semua kolom harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 2. Ambil data dari kotak-kotak tadi
+                Ikan ikanBaru = new Ikan
+                {
+                    IdIkan = txtIdIkan.Text.Trim(),
+                    NamaIkan = txtNamaIkan.Text.Trim(),
+                    SuhuIdeal = double.Parse(txtSuhuIdeal.Text),
+                    BatasSuhu = double.Parse(txtBatasSuhu.Text)
+                };
+
+                // 3. Simpan ke database
+                _masterRepo.TambahIkan(ikanBaru);
+
+                MessageBox.Show("Data Ikan berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // 4. Bersihkan kotak isian setelah sukses
+                txtIdIkan.Clear();
+                txtNamaIkan.Clear();
+                txtSuhuIdeal.Clear();
+                txtBatasSuhu.Clear();
+
+                // 5. Refresh tabel biar ikan barunya langsung muncul
+                LoadMaster();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Kolom Suhu Ideal dan Batas Suhu harus diisi dengan ANGKA (misal: -5), bukan huruf!", "Error Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menyimpan data: " + ex.Message, "Error Sistem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+    
+    
 }
