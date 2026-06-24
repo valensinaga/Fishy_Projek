@@ -45,13 +45,13 @@
             tabMaster = new TabControl();
             tabIkan = new TabPage();
             label22 = new Label();
-            this.txtBatasSuhu = new TextBox();
+            txtBatasSuhu = new TextBox();
             label21 = new Label();
             label20 = new Label();
-            this.label18 = new Label();
+            label18 = new Label();
             btnTambahIkan = new Button();
-            this.txtSuhuIdeal = new TextBox();
-            this.txtNamaIkan = new TextBox();
+            txtSuhuIdeal = new TextBox();
+            txtNamaIkan = new TextBox();
             dgvIkan = new DataGridView();
             txtIdIkan = new TextBox();
             tabGudang = new TabPage();
@@ -132,6 +132,7 @@
             btnLaporan = new Button();
             btnMaster = new Button();
             btnLogout = new Button();
+            label23 = new Label();
             panelLogin.SuspendLayout();
             panelKanan.SuspendLayout();
             panelKiri.SuspendLayout();
@@ -339,14 +340,15 @@
             // 
             // tabIkan
             // 
+            tabIkan.Controls.Add(label23);
             tabIkan.Controls.Add(label22);
-            tabIkan.Controls.Add(this.txtBatasSuhu);
+            tabIkan.Controls.Add(txtBatasSuhu);
             tabIkan.Controls.Add(label21);
             tabIkan.Controls.Add(label20);
-            tabIkan.Controls.Add(this.label18);
+            tabIkan.Controls.Add(label18);
             tabIkan.Controls.Add(btnTambahIkan);
-            tabIkan.Controls.Add(this.txtSuhuIdeal);
-            tabIkan.Controls.Add(this.txtNamaIkan);
+            tabIkan.Controls.Add(txtSuhuIdeal);
+            tabIkan.Controls.Add(txtNamaIkan);
             tabIkan.Controls.Add(dgvIkan);
             tabIkan.Controls.Add(txtIdIkan);
             tabIkan.Location = new Point(4, 24);
@@ -360,7 +362,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(665, 329);
+            label22.Location = new Point(37, 396);
             label22.Name = "label22";
             label22.Size = new Size(65, 15);
             label22.TabIndex = 4;
@@ -368,15 +370,15 @@
             // 
             // txtBatasSuhu
             // 
-            this.txtBatasSuhu.Location = new Point(736, 326);
-            this.txtBatasSuhu.Name = "txtBatasSuhu";
-            this.txtBatasSuhu.Size = new Size(100, 23);
-            this.txtBatasSuhu.TabIndex = 8;
+            txtBatasSuhu.Location = new Point(125, 393);
+            txtBatasSuhu.Name = "txtBatasSuhu";
+            txtBatasSuhu.Size = new Size(100, 23);
+            txtBatasSuhu.TabIndex = 8;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(665, 299);
+            label21.Location = new Point(37, 364);
             label21.Name = "label21";
             label21.Size = new Size(62, 15);
             label21.TabIndex = 2;
@@ -385,7 +387,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(666, 267);
+            label20.Location = new Point(37, 331);
             label20.Name = "label20";
             label20.Size = new Size(64, 15);
             label20.TabIndex = 2;
@@ -393,12 +395,12 @@
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new Point(665, 233);
-            this.label18.Name = "label18";
-            this.label18.Size = new Size(42, 15);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Id Ikan";
+            label18.AutoSize = true;
+            label18.Location = new Point(37, 298);
+            label18.Name = "label18";
+            label18.Size = new Size(42, 15);
+            label18.TabIndex = 3;
+            label18.Text = "Id Ikan";
             // 
             // btnTambahIkan
             // 
@@ -408,7 +410,7 @@
             btnTambahIkan.FlatStyle = FlatStyle.Flat;
             btnTambahIkan.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahIkan.ForeColor = Color.White;
-            btnTambahIkan.Location = new Point(679, 366);
+            btnTambahIkan.Location = new Point(73, 424);
             btnTambahIkan.Name = "btnTambahIkan";
             btnTambahIkan.Size = new Size(157, 35);
             btnTambahIkan.TabIndex = 1;
@@ -417,17 +419,17 @@
             // 
             // txtSuhuIdeal
             // 
-            this.txtSuhuIdeal.Location = new Point(736, 296);
-            this.txtSuhuIdeal.Name = "txtSuhuIdeal";
-            this.txtSuhuIdeal.Size = new Size(100, 23);
-            this.txtSuhuIdeal.TabIndex = 6;
+            txtSuhuIdeal.Location = new Point(125, 361);
+            txtSuhuIdeal.Name = "txtSuhuIdeal";
+            txtSuhuIdeal.Size = new Size(100, 23);
+            txtSuhuIdeal.TabIndex = 6;
             // 
             // txtNamaIkan
             // 
-            this.txtNamaIkan.Location = new Point(736, 264);
-            this.txtNamaIkan.Name = "txtNamaIkan";
-            this.txtNamaIkan.Size = new Size(100, 23);
-            this.txtNamaIkan.TabIndex = 7;
+            txtNamaIkan.Location = new Point(125, 328);
+            txtNamaIkan.Name = "txtNamaIkan";
+            txtNamaIkan.Size = new Size(100, 23);
+            txtNamaIkan.TabIndex = 7;
             // 
             // dgvIkan
             // 
@@ -440,12 +442,12 @@
             dgvIkan.ReadOnly = true;
             dgvIkan.RowHeadersVisible = false;
             dgvIkan.RowHeadersWidth = 62;
-            dgvIkan.Size = new Size(892, 200);
+            dgvIkan.Size = new Size(895, 200);
             dgvIkan.TabIndex = 0;
             // 
             // txtIdIkan
             // 
-            txtIdIkan.Location = new Point(736, 229);
+            txtIdIkan.Location = new Point(125, 293);
             txtIdIkan.Name = "txtIdIkan";
             txtIdIkan.Size = new Size(100, 23);
             txtIdIkan.TabIndex = 5;
@@ -1451,6 +1453,15 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(80, 261);
+            label23.Name = "label23";
+            label23.Size = new Size(102, 15);
+            label23.TabIndex = 9;
+            label23.Text = "Tambah Data Ikan";
+            // 
             // FormUtama
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -1609,12 +1620,13 @@
         private Button btnLogout;
         private Panel panelSidebar;
         private Label label22;
-        private TextBox textBox4;
+        private TextBox txtBatasSuhu;
         private Label label21;
         private Label label20;
-        private Label txtIdIkan;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label label18;
+        private TextBox txtNamaIkan;
+        private TextBox txtSuhuIdeal;
         private TextBox txtIdIkan;
+        private Label label23;
     }
 }
