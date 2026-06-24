@@ -173,11 +173,14 @@ namespace Fishy_Projek.Repositories
                     {
                         while (reader.Read())
                         {
+                            DateOnly tanggalDb = reader.GetFieldValue<DateOnly>(0);
+                            DateTime tanggalAman = tanggalDb.ToDateTime(TimeOnly.MinValue);
+
                             list.Add(new GrafikMutasiHarian
                             {
-                                Tanggal = Convert.ToDateTime(reader["tanggal"]),
-                                TotalMasukKg = Convert.ToDouble(reader["total_masuk_kg"]),
-                                TotalKeluarKg = Convert.ToDouble(reader["total_keluar_kg"])
+                                Tanggal = tanggalAman,
+                                TotalMasukKg = reader.GetDouble(1),
+                                TotalKeluarKg = reader.GetDouble(2)
                             });
                         }
                     }
