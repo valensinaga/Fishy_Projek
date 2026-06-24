@@ -322,11 +322,11 @@
             // lblPageTitle
             // 
             lblPageTitle.AutoSize = true;
-            lblPageTitle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPageTitle.Font = new Font("Berlin Sans FB", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPageTitle.ForeColor = Color.DarkSlateGray;
             lblPageTitle.Location = new Point(20, 25);
             lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(175, 26);
+            lblPageTitle.Size = new Size(158, 23);
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard Page";
             // 
