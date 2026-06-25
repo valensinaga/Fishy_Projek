@@ -162,7 +162,7 @@ namespace Fishy_Projek
 
         private void btnInputSuhu_Click(object sender, EventArgs e)
         {
-            TampilkanPanel(panelInputSuhu, btnInputSuhu, "Input Suhu");
+            TampilkanPanel(panelInputSuhu, btnInputSuhu, "Inspeksi Harian");
             LoadRuanganComboBox();
         }
 
@@ -730,7 +730,7 @@ namespace Fishy_Projek
 
         private void btnTambahStok_Click(object sender, EventArgs e)
         {
-            TampilkanPanel(panelInputSuhu, btnInputSuhu, "Input Suhu");
+            TampilkanPanel(panelInputSuhu, btnInputSuhu, "Inspeksi Harian");
             LoadRuanganComboBox();
         }
 

@@ -882,9 +882,9 @@
             label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(20, 20);
             label5.Name = "label5";
-            label5.Size = new Size(436, 32);
+            label5.Size = new Size(398, 32);
             label5.TabIndex = 0;
-            label5.Text = "Input Pengecekan Suhu Harian";
+            label5.Text = "Inspeksi Operasional Harian";
             // 
             // label6
             // 
@@ -2293,7 +2293,7 @@
             btnInputSuhu.Padding = new Padding(29, 0, 0, 0);
             btnInputSuhu.Size = new Size(240, 55);
             btnInputSuhu.TabIndex = 5;
-            btnInputSuhu.Text = "🌡️  Input Suhu";
+            btnInputSuhu.Text = "🌡️  Inspeksi Harian";
             btnInputSuhu.TextAlign = ContentAlignment.MiddleLeft;
             btnInputSuhu.UseVisualStyleBackColor = false;
             btnInputSuhu.Click += btnInputSuhu_Click;
