@@ -396,9 +396,9 @@
             // 
             // panelKonten
             // 
+            panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelMaster);
             panelKonten.Controls.Add(panelHeader);
-            panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelInputSuhu);
             panelKonten.Controls.Add(panelPengiriman);
@@ -2648,4 +2648,4 @@
         private ComboBox comboBox8;
         private DataGridView dgvKondisiRuangan;
     }
-}
+} ////////
