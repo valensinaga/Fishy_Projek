@@ -9,11 +9,12 @@ namespace Fishy_Projek
 {
     public partial class FormUtama : Form
     {
-        private TextBox txtIdMasuk = new TextBox();
+        
         private User _userLogin;
         private LaporanRepository _laporanRepo = new LaporanRepository();
         private MasterRepository _masterRepo = new MasterRepository();
         private OperasionalRepository _opsRepo = new OperasionalRepository();
+
 
         public FormUtama()
         {
@@ -40,15 +41,9 @@ namespace Fishy_Projek
             dgvStok.BringToFront();
             dgvStok.Dock = DockStyle.Fill;
 
-            txtIdMasuk.Name = "txtIdMasuk";
-            txtIdMasuk.Location = new Point(150, 200);
-            txtIdMasuk.Size = new Size(200, 30);
-            panelPengiriman.Controls.Add(txtIdMasuk);
+           
 
-            Label lblIdMasuk = new Label();
-            lblIdMasuk.Text = "ID Batch Masuk:";
-            lblIdMasuk.Location = new Point(20, 200);
-            panelPengiriman.Controls.Add(lblIdMasuk);
+        
 
             // Event Handler untuk komponen Master
             btnUpdateIkan.Click += btnUpdateIkan_Click;
@@ -178,10 +173,10 @@ namespace Fishy_Projek
             txtIdPengiriman.Text = "TX-" + DateTime.Now.ToString("yyyyMMddHHmmss");
         }
 
-        private void btnLaporan_Click(object sender, EventArgs e)
+        private void btnTampilkanLaporan_Click(object sender, EventArgs e)
         {
-            TampilkanPanel(panelLaporan, btnLaporan, "Laporan");
-            LoadLaporan();
+            string filter = cmbFilterMutasi.Text;
+            dgvLaporan.DataSource = _laporanRepo.GetRiwayatMutasi(filter);
         }
 
         private void btnMaster_Click(object sender, EventArgs e)
@@ -218,19 +213,38 @@ namespace Fishy_Projek
         {
             try
             {
+
                 var stokList = _laporanRepo.GetRingkasanStok();
                 lblTotalUnit.Text = stokList.Count.ToString();
 
                 double totalKg = 0;
                 foreach (var s in stokList) totalKg += s.KuantitasAwalKg;
                 lblKapasitas.Text = totalKg.ToString("N0") + " kg";
-
                 dgvRingkasanStok.DataSource = stokList;
-                
+
+
+                var dtSuhu = _laporanRepo.GetKondisiRuanganTerakhir();
+                dgvKondisiRuangan.DataSource = dtSuhu;
+
+
+                if (dgvKondisiRuangan.Columns.Count > 0)
+                {
+
+                    dgvKondisiRuangan.Columns["id_batch"].Visible = false;
+                    dgvKondisiRuangan.Columns["id_ruang"].Visible = false;
+
+
+                    dgvKondisiRuangan.Columns["nama_ruang"].HeaderText = "Ruang";
+                    dgvKondisiRuangan.Columns["nama_gudang"].HeaderText = "Gudang";
+                    dgvKondisiRuangan.Columns["waktu_cek"].HeaderText = "Waktu Cek";
+                    dgvKondisiRuangan.Columns["suhu_aktual"].HeaderText = "Suhu (°C)";
+                    dgvKondisiRuangan.Columns["grade_mutu"].HeaderText = "Grade";
+                    dgvKondisiRuangan.Columns["catatan"].HeaderText = "Catatan";
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error load dashboard: " + ex.Message);
+                MessageBox.Show("Error saat memuat Dashboard: " + ex.Message);
             }
         }
 
@@ -376,7 +390,7 @@ namespace Fishy_Projek
                 // Load Data ComboBox untuk Update IKAN
                 var listIkan = _masterRepo.GetAllIkan();
                 comboBox1.DataSource = listIkan; comboBox1.DisplayMember = "IdIkan"; comboBox1.ValueMember = "IdIkan";
-              
+
                 // Load Data ComboBox untuk Update/Delete GUDANG
                 var listGudang = _masterRepo.GetAllGudang();
                 comboBox2.DataSource = listGudang; comboBox2.DisplayMember = "IdGudang"; comboBox2.ValueMember = "IdGudang";
@@ -393,7 +407,7 @@ namespace Fishy_Projek
                 var listUser = _masterRepo.GetAllUser();
                 comboBox9.DataSource = listUser; comboBox9.DisplayMember = "IdUser"; comboBox9.ValueMember = "IdUser";
                 comboBox11.DataSource = listUser; comboBox11.DisplayMember = "IdUser"; comboBox11.ValueMember = "IdUser";
-                
+
                 // Load Data ComboBox untuk ROLE (Langsung pakai DataTable dari SQL)
                 var dtRole = _masterRepo.GetRolesDataTable();
 
@@ -459,7 +473,7 @@ namespace Fishy_Projek
             catch (Exception ex) { MessageBox.Show("Gagal Update Ikan: " + ex.Message); }
         }
 
-        
+
 
         // ==========================================
         // CUD TAB GUDANG
@@ -748,5 +762,37 @@ namespace Fishy_Projek
             base.OnResize(e);
             panelTitleBar.Width = this.Width;
         }
+
+        private void panelMaster_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ApplyRoleAccess()
+        {
+            if (_userLogin.IdRole == 2)
+            {
+                btnMaster.Visible = false;
+                btnLaporan.Visible = false;
+            }
+            else
+            {
+                btnMaster.Visible = true;
+                btnLaporan.Visible = true;
+            }
+        }
+
+
+         private void btnLaporan_Click(object sender, EventArgs e)
+         {
+            TampilkanPanel(panelLaporan, btnLaporan, "Laporan Mutasi");
+            LoadLaporan();
+         }
+
+
+
+
     }
+
+    
 }

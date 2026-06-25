@@ -3,6 +3,7 @@ using Fishy_Projek.Models;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Fishy_Projek.Repositories
 {
@@ -41,37 +42,38 @@ namespace Fishy_Projek.Repositories
             return list;
         }
 
-        public List<MutasiView> GetRiwayatMutasi(string filter)
+        public DataTable GetRiwayatMutasi(string filter)
         {
-            var list = new List<MutasiView>();
+            var dt = new DataTable();
             using (var conn = DbHelper.GetConnection())
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand(@"
-                    SELECT bm.id_masuk, i.nama_ikan, pe.nama_pihak,
-                           bm.kuantitas_awal_kg, bm.sisa_stok_kg, bm.waktu_masuk
-                    FROM batch_masuk bm
-                    JOIN ikan i ON bm.id_ikan = i.id_ikan
-                    JOIN pihak_eksternal pe ON bm.id_pihak = pe.id_pihak", conn))
+                // Query ini yang akan memfilter berdasarkan pilihan Semua / Masuk / Keluar
+                string sql = @"
+            SELECT 'Masuk' AS jenis_mutasi, bm.id_masuk AS id_transaksi, i.nama_ikan, bm.waktu_masuk AS waktu, bm.kuantitas_awal_kg AS jumlah_kg
+            FROM batch_masuk bm
+            JOIN ikan i ON bm.id_ikan = i.id_ikan
+            WHERE (@filter = 'SEMUA' OR @filter = 'MASUK')
+            
+            UNION ALL
+            
+            SELECT 'Keluar' AS jenis_mutasi, bk.id_keluar AS id_transaksi, i.nama_ikan, bk.waktu_keluar AS waktu, bk.kuantitas_keluar_kg AS jumlah_kg
+            FROM batch_keluar bk
+            JOIN batch_masuk bm ON bk.id_masuk = bm.id_masuk
+            JOIN ikan i ON bm.id_ikan = i.id_ikan
+            WHERE (@filter = 'SEMUA' OR @filter = 'KELUAR')
+            ORDER BY waktu DESC";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
+                    cmd.Parameters.AddWithValue("filter", filter.ToUpper());
                     using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            list.Add(new MutasiView
-                            {
-                                KodeBatchMasuk = reader["id_masuk"].ToString(),
-                                NamaIkan = reader["nama_ikan"].ToString(),
-                                PenyuplaiNelayan = reader["nama_pihak"].ToString(),
-                                WaktuMasuk = Convert.ToDateTime(reader["waktu_masuk"]),
-                                KuantitasAwalKg = Convert.ToDouble(reader["kuantitas_awal_kg"]),
-                                SisaStokKg = Convert.ToDouble(reader["sisa_stok_kg"])
-                            });
-                        }
+                        dt.Load(reader);
                     }
                 }
             }
-            return list;
+            return dt;
         }
 
         public double GetTotalStokRuang(string idRuang)
@@ -186,7 +188,25 @@ namespace Fishy_Projek.Repositories
                     }
                 }
             }
-            return list;
+            return list; 
+        } 
+
+        
+        public DataTable GetKondisiRuanganTerakhir()
+        {
+            var dt = new DataTable();
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT * FROM vw_kondisi_ruangan_terakhir", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+            }
+            return dt;
         }
-    }
-}
+    } 
+} 

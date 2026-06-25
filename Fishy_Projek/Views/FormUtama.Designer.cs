@@ -42,6 +42,36 @@
             lblTagline = new Label();
             lblAppName = new Label();
             panelKonten = new Panel();
+            panelPengiriman = new Panel();
+            btnProsesKirim = new Button();
+            txtKuantitasKirim = new TextBox();
+            label15 = new Label();
+            cmbStokKirim = new ComboBox();
+            label14 = new Label();
+            txtNoArmada = new TextBox();
+            label13 = new Label();
+            txtTujuan = new TextBox();
+            label12 = new Label();
+            txtIdPengiriman = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
+            panelDashboard = new Panel();
+            dgvKondisiRuangan = new DataGridView();
+            cardTotalUnit = new Panel();
+            label1 = new Label();
+            lblTotalUnit = new Label();
+            cardKapasitas = new Panel();
+            lblKapasitas = new Label();
+            label2 = new Label();
+            cardSuhu = new Panel();
+            label3 = new Label();
+            lblSuhu = new Label();
+            cardPeringatan = new Panel();
+            lblPeringatan = new Label();
+            label4 = new Label();
+            lblRingkasanStokTitle = new Label();
+            dgvRingkasanStok = new DataGridView();
+            lblKondisiRuanganTitle = new Label();
             panelMaster = new Panel();
             tabMaster = new TabControl();
             tabGudang = new TabPage();
@@ -153,23 +183,6 @@
             dgvRuang = new DataGridView();
             panelHeader = new Panel();
             lblPageTitle = new Label();
-            panelDashboard = new Panel();
-            dgvKondisiRuangan = new DataGridView();
-            cardTotalUnit = new Panel();
-            label1 = new Label();
-            lblTotalUnit = new Label();
-            cardKapasitas = new Panel();
-            lblKapasitas = new Label();
-            label2 = new Label();
-            cardSuhu = new Panel();
-            label3 = new Label();
-            lblSuhu = new Label();
-            cardPeringatan = new Panel();
-            lblPeringatan = new Label();
-            label4 = new Label();
-            lblRingkasanStokTitle = new Label();
-            dgvRingkasanStok = new DataGridView();
-            lblKondisiRuanganTitle = new Label();
             panelStok = new Panel();
             btnTambahStok = new Button();
             label19 = new Label();
@@ -186,20 +199,6 @@
             txtCatatanSuhu = new TextBox();
             btnSimpanSuhu = new Button();
             lblStatusSuhu = new Label();
-            panelPengiriman = new Panel();
-            lblStatusKirim = new Label();
-            btnProsesKirim = new Button();
-            txtKuantitasKirim = new TextBox();
-            label15 = new Label();
-            cmbStokKirim = new ComboBox();
-            label14 = new Label();
-            txtNoArmada = new TextBox();
-            label13 = new Label();
-            txtTujuan = new TextBox();
-            label12 = new Label();
-            txtIdPengiriman = new TextBox();
-            label11 = new Label();
-            label10 = new Label();
             panelLaporan = new Panel();
             label16 = new Label();
             label17 = new Label();
@@ -223,10 +222,20 @@
             btnLaporan = new Button();
             btnMaster = new Button();
             btnLogout = new Button();
+            lblidMasuk = new Label();
+            comboBox12 = new ComboBox();
             panelLogin.SuspendLayout();
             panelKanan.SuspendLayout();
             panelKiri.SuspendLayout();
             panelKonten.SuspendLayout();
+            panelPengiriman.SuspendLayout();
+            panelDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).BeginInit();
+            cardTotalUnit.SuspendLayout();
+            cardKapasitas.SuspendLayout();
+            cardSuhu.SuspendLayout();
+            cardPeringatan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).BeginInit();
             panelMaster.SuspendLayout();
             tabMaster.SuspendLayout();
             tabGudang.SuspendLayout();
@@ -239,17 +248,9 @@
             tabRuang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRuang).BeginInit();
             panelHeader.SuspendLayout();
-            panelDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).BeginInit();
-            cardTotalUnit.SuspendLayout();
-            cardKapasitas.SuspendLayout();
-            cardSuhu.SuspendLayout();
-            cardPeringatan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).BeginInit();
             panelStok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStok).BeginInit();
             panelInputSuhu.SuspendLayout();
-            panelPengiriman.SuspendLayout();
             panelLaporan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLaporan).BeginInit();
             panelTitleBar.SuspendLayout();
@@ -396,12 +397,12 @@
             // 
             // panelKonten
             // 
+            panelKonten.Controls.Add(panelPengiriman);
             panelKonten.Controls.Add(panelDashboard);
             panelKonten.Controls.Add(panelMaster);
             panelKonten.Controls.Add(panelHeader);
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelInputSuhu);
-            panelKonten.Controls.Add(panelPengiriman);
             panelKonten.Controls.Add(panelLaporan);
             panelKonten.Location = new Point(240, 35);
             panelKonten.Margin = new Padding(6, 8, 6, 8);
@@ -409,6 +410,358 @@
             panelKonten.Size = new Size(960, 665);
             panelKonten.TabIndex = 2;
             panelKonten.Visible = false;
+            // 
+            // panelPengiriman
+            // 
+            panelPengiriman.Controls.Add(comboBox12);
+            panelPengiriman.Controls.Add(lblidMasuk);
+            panelPengiriman.Controls.Add(btnProsesKirim);
+            panelPengiriman.Controls.Add(txtKuantitasKirim);
+            panelPengiriman.Controls.Add(label15);
+            panelPengiriman.Controls.Add(cmbStokKirim);
+            panelPengiriman.Controls.Add(label14);
+            panelPengiriman.Controls.Add(txtNoArmada);
+            panelPengiriman.Controls.Add(label13);
+            panelPengiriman.Controls.Add(txtTujuan);
+            panelPengiriman.Controls.Add(label12);
+            panelPengiriman.Controls.Add(txtIdPengiriman);
+            panelPengiriman.Controls.Add(label11);
+            panelPengiriman.Controls.Add(label10);
+            panelPengiriman.Location = new Point(0, 80);
+            panelPengiriman.Name = "panelPengiriman";
+            panelPengiriman.Size = new Size(960, 585);
+            panelPengiriman.TabIndex = 0;
+            panelPengiriman.Visible = false;
+            // 
+            // btnProsesKirim
+            // 
+            btnProsesKirim.BackColor = Color.Teal;
+            btnProsesKirim.Cursor = Cursors.Hand;
+            btnProsesKirim.FlatAppearance.BorderSize = 0;
+            btnProsesKirim.FlatStyle = FlatStyle.Flat;
+            btnProsesKirim.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProsesKirim.ForeColor = Color.White;
+            btnProsesKirim.Location = new Point(44, 510);
+            btnProsesKirim.Name = "btnProsesKirim";
+            btnProsesKirim.Size = new Size(210, 37);
+            btnProsesKirim.TabIndex = 0;
+            btnProsesKirim.Text = "PROSES PENGIRIMAN";
+            btnProsesKirim.UseVisualStyleBackColor = false;
+            btnProsesKirim.Click += btnProsesKirim_Click;
+            // 
+            // txtKuantitasKirim
+            // 
+            txtKuantitasKirim.BorderStyle = BorderStyle.FixedSingle;
+            txtKuantitasKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtKuantitasKirim.Location = new Point(20, 473);
+            txtKuantitasKirim.Name = "txtKuantitasKirim";
+            txtKuantitasKirim.Size = new Size(237, 24);
+            txtKuantitasKirim.TabIndex = 0;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.Black;
+            label15.Location = new Point(19, 445);
+            label15.Name = "label15";
+            label15.Size = new Size(131, 17);
+            label15.TabIndex = 0;
+            label15.Text = "Kuantitas Kirim (kg)";
+            // 
+            // cmbStokKirim
+            // 
+            cmbStokKirim.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStokKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbStokKirim.FormattingEnabled = true;
+            cmbStokKirim.Location = new Point(21, 400);
+            cmbStokKirim.Name = "cmbStokKirim";
+            cmbStokKirim.Size = new Size(238, 26);
+            cmbStokKirim.TabIndex = 0;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
+            label14.Location = new Point(19, 370);
+            label14.Name = "label14";
+            label14.Size = new Size(66, 17);
+            label14.TabIndex = 0;
+            label14.Text = "Pilih Stok";
+            // 
+            // txtNoArmada
+            // 
+            txtNoArmada.BorderStyle = BorderStyle.FixedSingle;
+            txtNoArmada.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNoArmada.Location = new Point(25, 326);
+            txtNoArmada.Name = "txtNoArmada";
+            txtNoArmada.Size = new Size(234, 24);
+            txtNoArmada.TabIndex = 0;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(24, 298);
+            label13.Name = "label13";
+            label13.Size = new Size(103, 17);
+            label13.TabIndex = 0;
+            label13.Text = "Nomor Armada";
+            // 
+            // txtTujuan
+            // 
+            txtTujuan.BorderStyle = BorderStyle.FixedSingle;
+            txtTujuan.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTujuan.Location = new Point(25, 248);
+            txtTujuan.Name = "txtTujuan";
+            txtTujuan.Size = new Size(235, 24);
+            txtTujuan.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(23, 219);
+            label12.Name = "label12";
+            label12.Size = new Size(114, 17);
+            label12.TabIndex = 0;
+            label12.Text = "Tujuan Distribusi";
+            // 
+            // txtIdPengiriman
+            // 
+            txtIdPengiriman.BackColor = Color.WhiteSmoke;
+            txtIdPengiriman.BorderStyle = BorderStyle.FixedSingle;
+            txtIdPengiriman.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtIdPengiriman.Location = new Point(24, 91);
+            txtIdPengiriman.Name = "txtIdPengiriman";
+            txtIdPengiriman.ReadOnly = true;
+            txtIdPengiriman.Size = new Size(234, 24);
+            txtIdPengiriman.TabIndex = 0;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(20, 66);
+            label11.Name = "label11";
+            label11.Size = new Size(94, 17);
+            label11.TabIndex = 0;
+            label11.Text = "Id Pengiriman";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.MidnightBlue;
+            label10.Location = new Point(20, 20);
+            label10.Name = "label10";
+            label10.Size = new Size(158, 20);
+            label10.TabIndex = 0;
+            label10.Text = "Proses Pengiriman";
+            // 
+            // panelDashboard
+            // 
+            panelDashboard.Controls.Add(dgvKondisiRuangan);
+            panelDashboard.Controls.Add(cardTotalUnit);
+            panelDashboard.Controls.Add(cardKapasitas);
+            panelDashboard.Controls.Add(cardSuhu);
+            panelDashboard.Controls.Add(cardPeringatan);
+            panelDashboard.Controls.Add(lblRingkasanStokTitle);
+            panelDashboard.Controls.Add(dgvRingkasanStok);
+            panelDashboard.Controls.Add(lblKondisiRuanganTitle);
+            panelDashboard.Location = new Point(0, 80);
+            panelDashboard.Margin = new Padding(4, 5, 4, 5);
+            panelDashboard.Name = "panelDashboard";
+            panelDashboard.Size = new Size(960, 585);
+            panelDashboard.TabIndex = 1;
+            panelDashboard.Visible = false;
+            // 
+            // dgvKondisiRuangan
+            // 
+            dgvKondisiRuangan.AllowUserToAddRows = false;
+            dgvKondisiRuangan.BackgroundColor = Color.White;
+            dgvKondisiRuangan.BorderStyle = BorderStyle.None;
+            dgvKondisiRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKondisiRuangan.Location = new Point(20, 400);
+            dgvKondisiRuangan.Margin = new Padding(4, 5, 4, 5);
+            dgvKondisiRuangan.Name = "dgvKondisiRuangan";
+            dgvKondisiRuangan.ReadOnly = true;
+            dgvKondisiRuangan.RowHeadersVisible = false;
+            dgvKondisiRuangan.RowHeadersWidth = 62;
+            dgvKondisiRuangan.Size = new Size(920, 170);
+            dgvKondisiRuangan.TabIndex = 0;
+            // 
+            // cardTotalUnit
+            // 
+            cardTotalUnit.BackColor = Color.SteelBlue;
+            cardTotalUnit.Controls.Add(label1);
+            cardTotalUnit.Controls.Add(lblTotalUnit);
+            cardTotalUnit.Location = new Point(20, 20);
+            cardTotalUnit.Name = "cardTotalUnit";
+            cardTotalUnit.Size = new Size(210, 110);
+            cardTotalUnit.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(14, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Total Unit";
+            // 
+            // lblTotalUnit
+            // 
+            lblTotalUnit.AutoSize = true;
+            lblTotalUnit.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalUnit.ForeColor = Color.White;
+            lblTotalUnit.Location = new Point(14, 32);
+            lblTotalUnit.Name = "lblTotalUnit";
+            lblTotalUnit.Size = new Size(0, 36);
+            lblTotalUnit.TabIndex = 0;
+            // 
+            // cardKapasitas
+            // 
+            cardKapasitas.BackColor = Color.DarkViolet;
+            cardKapasitas.Controls.Add(lblKapasitas);
+            cardKapasitas.Controls.Add(label2);
+            cardKapasitas.Location = new Point(257, 20);
+            cardKapasitas.Name = "cardKapasitas";
+            cardKapasitas.Size = new Size(210, 110);
+            cardKapasitas.TabIndex = 0;
+            // 
+            // lblKapasitas
+            // 
+            lblKapasitas.AutoSize = true;
+            lblKapasitas.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKapasitas.ForeColor = Color.White;
+            lblKapasitas.Location = new Point(14, 32);
+            lblKapasitas.Name = "lblKapasitas";
+            lblKapasitas.Size = new Size(33, 36);
+            lblKapasitas.TabIndex = 0;
+            lblKapasitas.Text = "0";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(14, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 13);
+            label2.TabIndex = 0;
+            label2.Text = "Kapasitas Terisi";
+            // 
+            // cardSuhu
+            // 
+            cardSuhu.BackColor = Color.Teal;
+            cardSuhu.Controls.Add(label3);
+            cardSuhu.Controls.Add(lblSuhu);
+            cardSuhu.Location = new Point(494, 20);
+            cardSuhu.Margin = new Padding(4, 5, 4, 5);
+            cardSuhu.Name = "cardSuhu";
+            cardSuhu.Size = new Size(210, 110);
+            cardSuhu.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(14, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 13);
+            label3.TabIndex = 0;
+            label3.Text = "Suhu Rata-rata";
+            // 
+            // lblSuhu
+            // 
+            lblSuhu.AutoSize = true;
+            lblSuhu.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSuhu.ForeColor = Color.White;
+            lblSuhu.Location = new Point(14, 32);
+            lblSuhu.Name = "lblSuhu";
+            lblSuhu.Size = new Size(33, 36);
+            lblSuhu.TabIndex = 0;
+            lblSuhu.Text = "0";
+            // 
+            // cardPeringatan
+            // 
+            cardPeringatan.BackColor = Color.OrangeRed;
+            cardPeringatan.Controls.Add(lblPeringatan);
+            cardPeringatan.Controls.Add(label4);
+            cardPeringatan.Location = new Point(731, 20);
+            cardPeringatan.Margin = new Padding(4, 5, 4, 5);
+            cardPeringatan.Name = "cardPeringatan";
+            cardPeringatan.Size = new Size(210, 110);
+            cardPeringatan.TabIndex = 0;
+            // 
+            // lblPeringatan
+            // 
+            lblPeringatan.AutoSize = true;
+            lblPeringatan.Font = new Font("Berlin Sans FB", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPeringatan.ForeColor = Color.White;
+            lblPeringatan.Location = new Point(14, 32);
+            lblPeringatan.Margin = new Padding(4, 0, 4, 0);
+            lblPeringatan.Name = "lblPeringatan";
+            lblPeringatan.Size = new Size(37, 37);
+            lblPeringatan.TabIndex = 0;
+            lblPeringatan.Text = "0";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Berlin Sans FB", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(14, 10);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 13);
+            label4.TabIndex = 0;
+            label4.Text = "Peringatan";
+            // 
+            // lblRingkasanStokTitle
+            // 
+            lblRingkasanStokTitle.AutoSize = true;
+            lblRingkasanStokTitle.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRingkasanStokTitle.ForeColor = Color.MidnightBlue;
+            lblRingkasanStokTitle.Location = new Point(20, 150);
+            lblRingkasanStokTitle.Name = "lblRingkasanStokTitle";
+            lblRingkasanStokTitle.Size = new Size(126, 20);
+            lblRingkasanStokTitle.TabIndex = 0;
+            lblRingkasanStokTitle.Text = "Ringkasan Stok";
+            // 
+            // dgvRingkasanStok
+            // 
+            dgvRingkasanStok.AllowUserToAddRows = false;
+            dgvRingkasanStok.BackgroundColor = Color.White;
+            dgvRingkasanStok.BorderStyle = BorderStyle.None;
+            dgvRingkasanStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRingkasanStok.Location = new Point(20, 180);
+            dgvRingkasanStok.Margin = new Padding(4, 5, 4, 5);
+            dgvRingkasanStok.Name = "dgvRingkasanStok";
+            dgvRingkasanStok.ReadOnly = true;
+            dgvRingkasanStok.RowHeadersVisible = false;
+            dgvRingkasanStok.RowHeadersWidth = 62;
+            dgvRingkasanStok.Size = new Size(920, 185);
+            dgvRingkasanStok.TabIndex = 0;
+            // 
+            // lblKondisiRuanganTitle
+            // 
+            lblKondisiRuanganTitle.AutoSize = true;
+            lblKondisiRuanganTitle.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKondisiRuanganTitle.ForeColor = Color.MidnightBlue;
+            lblKondisiRuanganTitle.Location = new Point(20, 375);
+            lblKondisiRuanganTitle.Name = "lblKondisiRuanganTitle";
+            lblKondisiRuanganTitle.Size = new Size(138, 20);
+            lblKondisiRuanganTitle.TabIndex = 0;
+            lblKondisiRuanganTitle.Text = "Kondisi Ruangan";
             // 
             // panelMaster
             // 
@@ -419,6 +772,7 @@
             panelMaster.Size = new Size(960, 585);
             panelMaster.TabIndex = 0;
             panelMaster.Visible = false;
+            panelMaster.Paint += panelMaster_Paint;
             // 
             // tabMaster
             // 
@@ -1486,206 +1840,6 @@
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Dashboard Page";
             // 
-            // panelDashboard
-            // 
-            panelDashboard.Controls.Add(dgvKondisiRuangan);
-            panelDashboard.Controls.Add(cardTotalUnit);
-            panelDashboard.Controls.Add(cardKapasitas);
-            panelDashboard.Controls.Add(cardSuhu);
-            panelDashboard.Controls.Add(cardPeringatan);
-            panelDashboard.Controls.Add(lblRingkasanStokTitle);
-            panelDashboard.Controls.Add(dgvRingkasanStok);
-            panelDashboard.Controls.Add(lblKondisiRuanganTitle);
-            panelDashboard.Location = new Point(0, 80);
-            panelDashboard.Margin = new Padding(4, 5, 4, 5);
-            panelDashboard.Name = "panelDashboard";
-            panelDashboard.Size = new Size(960, 585);
-            panelDashboard.TabIndex = 1;
-            panelDashboard.Visible = false;
-            // 
-            // dgvKondisiRuangan
-            // 
-            dgvKondisiRuangan.AllowUserToAddRows = false;
-            dgvKondisiRuangan.BackgroundColor = Color.White;
-            dgvKondisiRuangan.BorderStyle = BorderStyle.None;
-            dgvKondisiRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKondisiRuangan.Location = new Point(20, 400);
-            dgvKondisiRuangan.Margin = new Padding(4, 5, 4, 5);
-            dgvKondisiRuangan.Name = "dgvKondisiRuangan";
-            dgvKondisiRuangan.ReadOnly = true;
-            dgvKondisiRuangan.RowHeadersVisible = false;
-            dgvKondisiRuangan.RowHeadersWidth = 62;
-            dgvKondisiRuangan.Size = new Size(920, 170);
-            dgvKondisiRuangan.TabIndex = 0;
-            // 
-            // cardTotalUnit
-            // 
-            cardTotalUnit.BackColor = Color.SteelBlue;
-            cardTotalUnit.Controls.Add(label1);
-            cardTotalUnit.Controls.Add(lblTotalUnit);
-            cardTotalUnit.Location = new Point(20, 20);
-            cardTotalUnit.Name = "cardTotalUnit";
-            cardTotalUnit.Size = new Size(210, 110);
-            cardTotalUnit.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(14, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Total Unit";
-            // 
-            // lblTotalUnit
-            // 
-            lblTotalUnit.AutoSize = true;
-            lblTotalUnit.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalUnit.ForeColor = Color.White;
-            lblTotalUnit.Location = new Point(14, 32);
-            lblTotalUnit.Name = "lblTotalUnit";
-            lblTotalUnit.Size = new Size(0, 36);
-            lblTotalUnit.TabIndex = 0;
-            // 
-            // cardKapasitas
-            // 
-            cardKapasitas.BackColor = Color.DarkViolet;
-            cardKapasitas.Controls.Add(lblKapasitas);
-            cardKapasitas.Controls.Add(label2);
-            cardKapasitas.Location = new Point(257, 20);
-            cardKapasitas.Name = "cardKapasitas";
-            cardKapasitas.Size = new Size(210, 110);
-            cardKapasitas.TabIndex = 0;
-            // 
-            // lblKapasitas
-            // 
-            lblKapasitas.AutoSize = true;
-            lblKapasitas.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblKapasitas.ForeColor = Color.White;
-            lblKapasitas.Location = new Point(14, 32);
-            lblKapasitas.Name = "lblKapasitas";
-            lblKapasitas.Size = new Size(33, 36);
-            lblKapasitas.TabIndex = 0;
-            lblKapasitas.Text = "0";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(14, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 13);
-            label2.TabIndex = 0;
-            label2.Text = "Kapasitas Terisi";
-            // 
-            // cardSuhu
-            // 
-            cardSuhu.BackColor = Color.Teal;
-            cardSuhu.Controls.Add(label3);
-            cardSuhu.Controls.Add(lblSuhu);
-            cardSuhu.Location = new Point(494, 20);
-            cardSuhu.Margin = new Padding(4, 5, 4, 5);
-            cardSuhu.Name = "cardSuhu";
-            cardSuhu.Size = new Size(210, 110);
-            cardSuhu.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(14, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 13);
-            label3.TabIndex = 0;
-            label3.Text = "Suhu Rata-rata";
-            // 
-            // lblSuhu
-            // 
-            lblSuhu.AutoSize = true;
-            lblSuhu.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSuhu.ForeColor = Color.White;
-            lblSuhu.Location = new Point(14, 32);
-            lblSuhu.Name = "lblSuhu";
-            lblSuhu.Size = new Size(33, 36);
-            lblSuhu.TabIndex = 0;
-            lblSuhu.Text = "0";
-            // 
-            // cardPeringatan
-            // 
-            cardPeringatan.BackColor = Color.OrangeRed;
-            cardPeringatan.Controls.Add(lblPeringatan);
-            cardPeringatan.Controls.Add(label4);
-            cardPeringatan.Location = new Point(731, 20);
-            cardPeringatan.Margin = new Padding(4, 5, 4, 5);
-            cardPeringatan.Name = "cardPeringatan";
-            cardPeringatan.Size = new Size(210, 110);
-            cardPeringatan.TabIndex = 0;
-            // 
-            // lblPeringatan
-            // 
-            lblPeringatan.AutoSize = true;
-            lblPeringatan.Font = new Font("Berlin Sans FB", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPeringatan.ForeColor = Color.White;
-            lblPeringatan.Location = new Point(14, 32);
-            lblPeringatan.Margin = new Padding(4, 0, 4, 0);
-            lblPeringatan.Name = "lblPeringatan";
-            lblPeringatan.Size = new Size(37, 37);
-            lblPeringatan.TabIndex = 0;
-            lblPeringatan.Text = "0";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Berlin Sans FB", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(14, 10);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 13);
-            label4.TabIndex = 0;
-            label4.Text = "Peringatan";
-            // 
-            // lblRingkasanStokTitle
-            // 
-            lblRingkasanStokTitle.AutoSize = true;
-            lblRingkasanStokTitle.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRingkasanStokTitle.ForeColor = Color.MidnightBlue;
-            lblRingkasanStokTitle.Location = new Point(20, 150);
-            lblRingkasanStokTitle.Name = "lblRingkasanStokTitle";
-            lblRingkasanStokTitle.Size = new Size(126, 20);
-            lblRingkasanStokTitle.TabIndex = 0;
-            lblRingkasanStokTitle.Text = "Ringkasan Stok";
-            // 
-            // dgvRingkasanStok
-            // 
-            dgvRingkasanStok.AllowUserToAddRows = false;
-            dgvRingkasanStok.BackgroundColor = Color.White;
-            dgvRingkasanStok.BorderStyle = BorderStyle.None;
-            dgvRingkasanStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRingkasanStok.Location = new Point(20, 180);
-            dgvRingkasanStok.Margin = new Padding(4, 5, 4, 5);
-            dgvRingkasanStok.Name = "dgvRingkasanStok";
-            dgvRingkasanStok.ReadOnly = true;
-            dgvRingkasanStok.RowHeadersVisible = false;
-            dgvRingkasanStok.RowHeadersWidth = 62;
-            dgvRingkasanStok.Size = new Size(920, 185);
-            dgvRingkasanStok.TabIndex = 0;
-            // 
-            // lblKondisiRuanganTitle
-            // 
-            lblKondisiRuanganTitle.AutoSize = true;
-            lblKondisiRuanganTitle.Font = new Font("Berlin Sans FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblKondisiRuanganTitle.ForeColor = Color.MidnightBlue;
-            lblKondisiRuanganTitle.Location = new Point(20, 375);
-            lblKondisiRuanganTitle.Name = "lblKondisiRuanganTitle";
-            lblKondisiRuanganTitle.Size = new Size(138, 20);
-            lblKondisiRuanganTitle.TabIndex = 0;
-            lblKondisiRuanganTitle.Text = "Kondisi Ruangan";
-            // 
             // panelStok
             // 
             panelStok.Controls.Add(btnTambahStok);
@@ -1878,166 +2032,6 @@
             lblStatusSuhu.Name = "lblStatusSuhu";
             lblStatusSuhu.Size = new Size(340, 20);
             lblStatusSuhu.TabIndex = 0;
-            // 
-            // panelPengiriman
-            // 
-            panelPengiriman.Controls.Add(lblStatusKirim);
-            panelPengiriman.Controls.Add(btnProsesKirim);
-            panelPengiriman.Controls.Add(txtKuantitasKirim);
-            panelPengiriman.Controls.Add(label15);
-            panelPengiriman.Controls.Add(cmbStokKirim);
-            panelPengiriman.Controls.Add(label14);
-            panelPengiriman.Controls.Add(txtNoArmada);
-            panelPengiriman.Controls.Add(label13);
-            panelPengiriman.Controls.Add(txtTujuan);
-            panelPengiriman.Controls.Add(label12);
-            panelPengiriman.Controls.Add(txtIdPengiriman);
-            panelPengiriman.Controls.Add(label11);
-            panelPengiriman.Controls.Add(label10);
-            panelPengiriman.Location = new Point(0, 80);
-            panelPengiriman.Name = "panelPengiriman";
-            panelPengiriman.Size = new Size(960, 585);
-            panelPengiriman.TabIndex = 0;
-            panelPengiriman.Visible = false;
-            // 
-            // lblStatusKirim
-            // 
-            lblStatusKirim.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatusKirim.ForeColor = Color.Green;
-            lblStatusKirim.Location = new Point(20, 515);
-            lblStatusKirim.Name = "lblStatusKirim";
-            lblStatusKirim.Size = new Size(340, 20);
-            lblStatusKirim.TabIndex = 0;
-            // 
-            // btnProsesKirim
-            // 
-            btnProsesKirim.BackColor = Color.Teal;
-            btnProsesKirim.Cursor = Cursors.Hand;
-            btnProsesKirim.FlatAppearance.BorderSize = 0;
-            btnProsesKirim.FlatStyle = FlatStyle.Flat;
-            btnProsesKirim.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProsesKirim.ForeColor = Color.White;
-            btnProsesKirim.Location = new Point(20, 460);
-            btnProsesKirim.Name = "btnProsesKirim";
-            btnProsesKirim.Size = new Size(340, 45);
-            btnProsesKirim.TabIndex = 0;
-            btnProsesKirim.Text = "PROSES PENGIRIMAN";
-            btnProsesKirim.UseVisualStyleBackColor = false;
-            btnProsesKirim.Click += btnProsesKirim_Click;
-            // 
-            // txtKuantitasKirim
-            // 
-            txtKuantitasKirim.BorderStyle = BorderStyle.FixedSingle;
-            txtKuantitasKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtKuantitasKirim.Location = new Point(20, 395);
-            txtKuantitasKirim.Name = "txtKuantitasKirim";
-            txtKuantitasKirim.Size = new Size(340, 24);
-            txtKuantitasKirim.TabIndex = 0;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.DimGray;
-            label15.Location = new Point(20, 370);
-            label15.Name = "label15";
-            label15.Size = new Size(131, 17);
-            label15.TabIndex = 0;
-            label15.Text = "Kuantitas Kirim (kg)";
-            // 
-            // cmbStokKirim
-            // 
-            cmbStokKirim.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStokKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbStokKirim.FormattingEnabled = true;
-            cmbStokKirim.Location = new Point(20, 320);
-            cmbStokKirim.Name = "cmbStokKirim";
-            cmbStokKirim.Size = new Size(340, 26);
-            cmbStokKirim.TabIndex = 0;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.DimGray;
-            label14.Location = new Point(20, 295);
-            label14.Name = "label14";
-            label14.Size = new Size(66, 17);
-            label14.TabIndex = 0;
-            label14.Text = "Pilih Stok";
-            // 
-            // txtNoArmada
-            // 
-            txtNoArmada.BorderStyle = BorderStyle.FixedSingle;
-            txtNoArmada.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNoArmada.Location = new Point(20, 245);
-            txtNoArmada.Name = "txtNoArmada";
-            txtNoArmada.Size = new Size(340, 24);
-            txtNoArmada.TabIndex = 0;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.DimGray;
-            label13.Location = new Point(20, 220);
-            label13.Name = "label13";
-            label13.Size = new Size(103, 17);
-            label13.TabIndex = 0;
-            label13.Text = "Nomor Armada";
-            // 
-            // txtTujuan
-            // 
-            txtTujuan.BorderStyle = BorderStyle.FixedSingle;
-            txtTujuan.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTujuan.Location = new Point(20, 170);
-            txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(340, 24);
-            txtTujuan.TabIndex = 0;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.DimGray;
-            label12.Location = new Point(20, 145);
-            label12.Name = "label12";
-            label12.Size = new Size(114, 17);
-            label12.TabIndex = 0;
-            label12.Text = "Tujuan Distribusi";
-            // 
-            // txtIdPengiriman
-            // 
-            txtIdPengiriman.BackColor = Color.WhiteSmoke;
-            txtIdPengiriman.BorderStyle = BorderStyle.FixedSingle;
-            txtIdPengiriman.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIdPengiriman.Location = new Point(20, 95);
-            txtIdPengiriman.Name = "txtIdPengiriman";
-            txtIdPengiriman.ReadOnly = true;
-            txtIdPengiriman.Size = new Size(340, 24);
-            txtIdPengiriman.TabIndex = 0;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(20, 70);
-            label11.Name = "label11";
-            label11.Size = new Size(96, 17);
-            label11.TabIndex = 0;
-            label11.Text = "ID Pengiriman";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.MidnightBlue;
-            label10.Location = new Point(20, 20);
-            label10.Name = "label10";
-            label10.Size = new Size(186, 24);
-            label10.TabIndex = 0;
-            label10.Text = "Proses Pengiriman";
             // 
             // panelLaporan
             // 
@@ -2386,6 +2380,24 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
+            // lblidMasuk
+            // 
+            lblidMasuk.AutoSize = true;
+            lblidMasuk.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblidMasuk.Location = new Point(24, 145);
+            lblidMasuk.Name = "lblidMasuk";
+            lblidMasuk.Size = new Size(98, 16);
+            lblidMasuk.TabIndex = 2;
+            lblidMasuk.Text = "Id Batch Masuk";
+            // 
+            // comboBox12
+            // 
+            comboBox12.FormattingEnabled = true;
+            comboBox12.Location = new Point(24, 171);
+            comboBox12.Name = "comboBox12";
+            comboBox12.Size = new Size(233, 23);
+            comboBox12.TabIndex = 3;
+            // 
             // FormUtama
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -2406,6 +2418,20 @@
             panelKiri.ResumeLayout(false);
             panelKiri.PerformLayout();
             panelKonten.ResumeLayout(false);
+            panelPengiriman.ResumeLayout(false);
+            panelPengiriman.PerformLayout();
+            panelDashboard.ResumeLayout(false);
+            panelDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).EndInit();
+            cardTotalUnit.ResumeLayout(false);
+            cardTotalUnit.PerformLayout();
+            cardKapasitas.ResumeLayout(false);
+            cardKapasitas.PerformLayout();
+            cardSuhu.ResumeLayout(false);
+            cardSuhu.PerformLayout();
+            cardPeringatan.ResumeLayout(false);
+            cardPeringatan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).EndInit();
             panelMaster.ResumeLayout(false);
             tabMaster.ResumeLayout(false);
             tabGudang.ResumeLayout(false);
@@ -2423,25 +2449,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvRuang).EndInit();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
-            panelDashboard.ResumeLayout(false);
-            panelDashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).EndInit();
-            cardTotalUnit.ResumeLayout(false);
-            cardTotalUnit.PerformLayout();
-            cardKapasitas.ResumeLayout(false);
-            cardKapasitas.PerformLayout();
-            cardSuhu.ResumeLayout(false);
-            cardSuhu.PerformLayout();
-            cardPeringatan.ResumeLayout(false);
-            cardPeringatan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).EndInit();
             panelStok.ResumeLayout(false);
             panelStok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStok).EndInit();
             panelInputSuhu.ResumeLayout(false);
             panelInputSuhu.PerformLayout();
-            panelPengiriman.ResumeLayout(false);
-            panelPengiriman.PerformLayout();
             panelLaporan.ResumeLayout(false);
             panelLaporan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLaporan).EndInit();
@@ -2647,5 +2659,7 @@
         private Button button6;
         private ComboBox comboBox8;
         private DataGridView dgvKondisiRuangan;
+        private Label lblidMasuk;
+        private ComboBox comboBox12;
     }
 } ////////
