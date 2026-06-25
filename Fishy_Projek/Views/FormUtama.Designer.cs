@@ -43,6 +43,8 @@
             lblAppName = new Label();
             panelKonten = new Panel();
             panelPengiriman = new Panel();
+            cmbIdMasuk = new ComboBox();
+            lblidMasuk = new Label();
             btnProsesKirim = new Button();
             txtKuantitasKirim = new TextBox();
             label15 = new Label();
@@ -222,8 +224,6 @@
             btnLaporan = new Button();
             btnMaster = new Button();
             btnLogout = new Button();
-            lblidMasuk = new Label();
-            comboBox12 = new ComboBox();
             panelLogin.SuspendLayout();
             panelKanan.SuspendLayout();
             panelKiri.SuspendLayout();
@@ -413,7 +413,7 @@
             // 
             // panelPengiriman
             // 
-            panelPengiriman.Controls.Add(comboBox12);
+            panelPengiriman.Controls.Add(cmbIdMasuk);
             panelPengiriman.Controls.Add(lblidMasuk);
             panelPengiriman.Controls.Add(btnProsesKirim);
             panelPengiriman.Controls.Add(txtKuantitasKirim);
@@ -432,6 +432,24 @@
             panelPengiriman.Size = new Size(960, 585);
             panelPengiriman.TabIndex = 0;
             panelPengiriman.Visible = false;
+            // 
+            // cmbIdMasuk
+            // 
+            cmbIdMasuk.FormattingEnabled = true;
+            cmbIdMasuk.Location = new Point(24, 171);
+            cmbIdMasuk.Name = "cmbIdMasuk";
+            cmbIdMasuk.Size = new Size(233, 23);
+            cmbIdMasuk.TabIndex = 3;
+            // 
+            // lblidMasuk
+            // 
+            lblidMasuk.AutoSize = true;
+            lblidMasuk.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblidMasuk.Location = new Point(24, 145);
+            lblidMasuk.Name = "lblidMasuk";
+            lblidMasuk.Size = new Size(98, 16);
+            lblidMasuk.TabIndex = 2;
+            lblidMasuk.Text = "Id Batch Masuk";
             // 
             // btnProsesKirim
             // 
@@ -2380,24 +2398,6 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // lblidMasuk
-            // 
-            lblidMasuk.AutoSize = true;
-            lblidMasuk.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblidMasuk.Location = new Point(24, 145);
-            lblidMasuk.Name = "lblidMasuk";
-            lblidMasuk.Size = new Size(98, 16);
-            lblidMasuk.TabIndex = 2;
-            lblidMasuk.Text = "Id Batch Masuk";
-            // 
-            // comboBox12
-            // 
-            comboBox12.FormattingEnabled = true;
-            comboBox12.Location = new Point(24, 171);
-            comboBox12.Name = "comboBox12";
-            comboBox12.Size = new Size(233, 23);
-            comboBox12.TabIndex = 3;
-            // 
             // FormUtama
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -2660,6 +2660,6 @@
         private ComboBox comboBox8;
         private DataGridView dgvKondisiRuangan;
         private Label lblidMasuk;
-        private ComboBox comboBox12;
+        private ComboBox cmbIdMasuk;
     }
 } ////////

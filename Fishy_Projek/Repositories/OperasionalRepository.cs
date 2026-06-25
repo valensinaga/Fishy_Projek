@@ -221,6 +221,25 @@ namespace Fishy_Projek.Repositories
             }
         }
 
+        public List<string> GetIdMasukAktif()
+        {
+            List<string> list = new List<string>();
+            using (var conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT id_masuk FROM batch_masuk WHERE sisa_stok_kg > 0";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(reader["id_masuk"].ToString());
+                    }
+                }
+            }
+            return list;
+        }
+
     }
 
 }

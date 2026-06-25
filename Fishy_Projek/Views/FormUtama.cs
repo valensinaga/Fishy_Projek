@@ -422,6 +422,8 @@ namespace Fishy_Projek
                 comboBox10.DisplayMember = "nama_role";
                 comboBox10.ValueMember = "id_role";
 
+                cmbIdMasuk.DataSource = _opsRepo.GetIdMasukAktif();
+
             }
             catch (Exception ex)
             {
@@ -689,7 +691,7 @@ namespace Fishy_Projek
             try
             {
                 string idKeluar = txtIdPengiriman.Text;
-                string idMasuk = cmbStokKirim.SelectedValue.ToString();
+                string idMasuk = cmbIdMasuk.SelectedItem.ToString();
                 int idPihak = _opsRepo.GetIdPihakByNama(txtTujuan.Text.Trim());
                 string armada = txtNoArmada.Text;
                 double kuantitas = double.Parse(txtKuantitasKirim.Text);
@@ -700,7 +702,7 @@ namespace Fishy_Projek
                 lblStatusKirim.Text = "Pengiriman berhasil diproses!";
 
                 txtIdPengiriman.Text = "TX-" + DateTime.Now.ToString("yyyyMMddHHmmss");
-                cmbStokKirim.SelectedIndex = -1;
+                cmbIdMasuk.SelectedIndex = -1;
                 txtTujuan.Clear();
                 txtNoArmada.Clear();
                 txtKuantitasKirim.Clear();
