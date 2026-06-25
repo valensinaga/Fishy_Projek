@@ -74,6 +74,32 @@
             lblRingkasanStokTitle = new Label();
             dgvRingkasanStok = new DataGridView();
             lblKondisiRuanganTitle = new Label();
+            panelHeader = new Panel();
+            lblPageTitle = new Label();
+            panelStok = new Panel();
+            btnTambahStok = new Button();
+            label19 = new Label();
+            dgvStok = new DataGridView();
+            panelInputSuhu = new Panel();
+            label5 = new Label();
+            label6 = new Label();
+            cmbRuanganSuhu = new ComboBox();
+            label7 = new Label();
+            txtSuhuAktual = new TextBox();
+            label8 = new Label();
+            cmbGradeMutu = new ComboBox();
+            label9 = new Label();
+            txtCatatanSuhu = new TextBox();
+            btnSimpanSuhu = new Button();
+            lblStatusSuhu = new Label();
+            panelLaporan = new Panel();
+            label16 = new Label();
+            label17 = new Label();
+            cmbFilterMutasi = new ComboBox();
+            btnFilter = new Button();
+            dgvLaporan = new DataGridView();
+            lblGrafikTitle = new Label();
+            formsPlotMutasi = new ScottPlot.WinForms.FormsPlot();
             panelMaster = new Panel();
             tabMaster = new TabControl();
             tabGudang = new TabPage();
@@ -181,34 +207,7 @@
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
-            btnTambahRuang = new Button();
             dgvRuang = new DataGridView();
-            panelHeader = new Panel();
-            lblPageTitle = new Label();
-            panelStok = new Panel();
-            btnTambahStok = new Button();
-            label19 = new Label();
-            dgvStok = new DataGridView();
-            panelInputSuhu = new Panel();
-            label5 = new Label();
-            label6 = new Label();
-            cmbRuanganSuhu = new ComboBox();
-            label7 = new Label();
-            txtSuhuAktual = new TextBox();
-            label8 = new Label();
-            cmbGradeMutu = new ComboBox();
-            label9 = new Label();
-            txtCatatanSuhu = new TextBox();
-            btnSimpanSuhu = new Button();
-            lblStatusSuhu = new Label();
-            panelLaporan = new Panel();
-            label16 = new Label();
-            label17 = new Label();
-            cmbFilterMutasi = new ComboBox();
-            btnFilter = new Button();
-            dgvLaporan = new DataGridView();
-            lblGrafikTitle = new Label();
-            formsPlotMutasi = new ScottPlot.WinForms.FormsPlot();
             panelTitleBar = new Panel();
             btnMinimize = new Button();
             btnMaximize = new Button();
@@ -236,6 +235,12 @@
             cardSuhu.SuspendLayout();
             cardPeringatan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).BeginInit();
+            panelHeader.SuspendLayout();
+            panelStok.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStok).BeginInit();
+            panelInputSuhu.SuspendLayout();
+            panelLaporan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporan).BeginInit();
             panelMaster.SuspendLayout();
             tabMaster.SuspendLayout();
             tabGudang.SuspendLayout();
@@ -247,12 +252,6 @@
             ((System.ComponentModel.ISupportInitialize)operatorBindingSource).BeginInit();
             tabRuang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRuang).BeginInit();
-            panelHeader.SuspendLayout();
-            panelStok.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStok).BeginInit();
-            panelInputSuhu.SuspendLayout();
-            panelLaporan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLaporan).BeginInit();
             panelTitleBar.SuspendLayout();
             panelSidebar.SuspendLayout();
             SuspendLayout();
@@ -316,7 +315,7 @@
             txtPassword.Location = new Point(80, 350);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(291, 24);
+            txtPassword.Size = new Size(291, 32);
             txtPassword.TabIndex = 4;
             // 
             // lblPassword
@@ -326,7 +325,7 @@
             lblPassword.ForeColor = Color.DimGray;
             lblPassword.Location = new Point(80, 325);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(69, 17);
+            lblPassword.Size = new Size(98, 25);
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
@@ -336,7 +335,7 @@
             txtUsername.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(80, 275);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(291, 24);
+            txtUsername.Size = new Size(291, 32);
             txtUsername.TabIndex = 2;
             // 
             // lblUsername
@@ -346,7 +345,7 @@
             lblUsername.ForeColor = Color.DimGray;
             lblUsername.Location = new Point(80, 250);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(73, 17);
+            lblUsername.Size = new Size(102, 25);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "Username";
             // 
@@ -357,7 +356,7 @@
             lblWelcome.ForeColor = Color.MidnightBlue;
             lblWelcome.Location = new Point(80, 150);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(222, 31);
+            lblWelcome.Size = new Size(319, 46);
             lblWelcome.TabIndex = 0;
             lblWelcome.Text = "Selamat Datang";
             // 
@@ -379,7 +378,7 @@
             lblTagline.ForeColor = Color.LightSkyBlue;
             lblTagline.Location = new Point(80, 330);
             lblTagline.Name = "lblTagline";
-            lblTagline.Size = new Size(297, 18);
+            lblTagline.Size = new Size(436, 26);
             lblTagline.TabIndex = 1;
             lblTagline.Text = "Cold Chain Fish Storage Monitoring System";
             lblTagline.TextAlign = ContentAlignment.MiddleCenter;
@@ -391,7 +390,7 @@
             lblAppName.ForeColor = Color.White;
             lblAppName.Location = new Point(130, 250);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(189, 44);
+            lblAppName.Size = new Size(278, 64);
             lblAppName.TabIndex = 0;
             lblAppName.Text = "🐟 FISHY";
             // 
@@ -399,7 +398,6 @@
             // 
             panelKonten.Controls.Add(panelPengiriman);
             panelKonten.Controls.Add(panelDashboard);
-            panelKonten.Controls.Add(panelMaster);
             panelKonten.Controls.Add(panelHeader);
             panelKonten.Controls.Add(panelStok);
             panelKonten.Controls.Add(panelInputSuhu);
@@ -438,7 +436,7 @@
             cmbIdMasuk.FormattingEnabled = true;
             cmbIdMasuk.Location = new Point(24, 171);
             cmbIdMasuk.Name = "cmbIdMasuk";
-            cmbIdMasuk.Size = new Size(233, 23);
+            cmbIdMasuk.Size = new Size(233, 33);
             cmbIdMasuk.TabIndex = 3;
             // 
             // lblidMasuk
@@ -447,7 +445,7 @@
             lblidMasuk.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblidMasuk.Location = new Point(24, 145);
             lblidMasuk.Name = "lblidMasuk";
-            lblidMasuk.Size = new Size(98, 16);
+            lblidMasuk.Size = new Size(147, 25);
             lblidMasuk.TabIndex = 2;
             lblidMasuk.Text = "Id Batch Masuk";
             // 
@@ -459,7 +457,7 @@
             btnProsesKirim.FlatStyle = FlatStyle.Flat;
             btnProsesKirim.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProsesKirim.ForeColor = Color.White;
-            btnProsesKirim.Location = new Point(44, 510);
+            btnProsesKirim.Location = new Point(34, 511);
             btnProsesKirim.Name = "btnProsesKirim";
             btnProsesKirim.Size = new Size(210, 37);
             btnProsesKirim.TabIndex = 0;
@@ -473,7 +471,7 @@
             txtKuantitasKirim.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtKuantitasKirim.Location = new Point(20, 473);
             txtKuantitasKirim.Name = "txtKuantitasKirim";
-            txtKuantitasKirim.Size = new Size(237, 24);
+            txtKuantitasKirim.Size = new Size(237, 32);
             txtKuantitasKirim.TabIndex = 0;
             // 
             // label15
@@ -483,7 +481,7 @@
             label15.ForeColor = Color.Black;
             label15.Location = new Point(19, 445);
             label15.Name = "label15";
-            label15.Size = new Size(131, 17);
+            label15.Size = new Size(183, 25);
             label15.TabIndex = 0;
             label15.Text = "Kuantitas Kirim (kg)";
             // 
@@ -494,7 +492,7 @@
             cmbStokKirim.FormattingEnabled = true;
             cmbStokKirim.Location = new Point(21, 400);
             cmbStokKirim.Name = "cmbStokKirim";
-            cmbStokKirim.Size = new Size(238, 26);
+            cmbStokKirim.Size = new Size(238, 34);
             cmbStokKirim.TabIndex = 0;
             // 
             // label14
@@ -504,7 +502,7 @@
             label14.ForeColor = Color.Black;
             label14.Location = new Point(19, 370);
             label14.Name = "label14";
-            label14.Size = new Size(66, 17);
+            label14.Size = new Size(93, 25);
             label14.TabIndex = 0;
             label14.Text = "Pilih Stok";
             // 
@@ -514,7 +512,7 @@
             txtNoArmada.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNoArmada.Location = new Point(25, 326);
             txtNoArmada.Name = "txtNoArmada";
-            txtNoArmada.Size = new Size(234, 24);
+            txtNoArmada.Size = new Size(234, 32);
             txtNoArmada.TabIndex = 0;
             // 
             // label13
@@ -524,7 +522,7 @@
             label13.ForeColor = Color.Black;
             label13.Location = new Point(24, 298);
             label13.Name = "label13";
-            label13.Size = new Size(103, 17);
+            label13.Size = new Size(144, 25);
             label13.TabIndex = 0;
             label13.Text = "Nomor Armada";
             // 
@@ -534,7 +532,7 @@
             txtTujuan.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTujuan.Location = new Point(25, 248);
             txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(235, 24);
+            txtTujuan.Size = new Size(235, 32);
             txtTujuan.TabIndex = 0;
             // 
             // label12
@@ -544,7 +542,7 @@
             label12.ForeColor = Color.Black;
             label12.Location = new Point(23, 219);
             label12.Name = "label12";
-            label12.Size = new Size(114, 17);
+            label12.Size = new Size(157, 25);
             label12.TabIndex = 0;
             label12.Text = "Tujuan Distribusi";
             // 
@@ -556,7 +554,7 @@
             txtIdPengiriman.Location = new Point(24, 91);
             txtIdPengiriman.Name = "txtIdPengiriman";
             txtIdPengiriman.ReadOnly = true;
-            txtIdPengiriman.Size = new Size(234, 24);
+            txtIdPengiriman.Size = new Size(234, 32);
             txtIdPengiriman.TabIndex = 0;
             // 
             // label11
@@ -566,7 +564,7 @@
             label11.ForeColor = Color.Black;
             label11.Location = new Point(20, 66);
             label11.Name = "label11";
-            label11.Size = new Size(94, 17);
+            label11.Size = new Size(131, 25);
             label11.TabIndex = 0;
             label11.Text = "Id Pengiriman";
             // 
@@ -577,7 +575,7 @@
             label10.ForeColor = Color.MidnightBlue;
             label10.Location = new Point(20, 20);
             label10.Name = "label10";
-            label10.Size = new Size(158, 20);
+            label10.Size = new Size(235, 29);
             label10.TabIndex = 0;
             label10.Text = "Proses Pengiriman";
             // 
@@ -630,7 +628,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(14, 10);
             label1.Name = "label1";
-            label1.Size = new Size(53, 13);
+            label1.Size = new Size(77, 20);
             label1.TabIndex = 0;
             label1.Text = "Total Unit";
             // 
@@ -641,7 +639,7 @@
             lblTotalUnit.ForeColor = Color.White;
             lblTotalUnit.Location = new Point(14, 32);
             lblTotalUnit.Name = "lblTotalUnit";
-            lblTotalUnit.Size = new Size(0, 36);
+            lblTotalUnit.Size = new Size(0, 52);
             lblTotalUnit.TabIndex = 0;
             // 
             // cardKapasitas
@@ -661,7 +659,7 @@
             lblKapasitas.ForeColor = Color.White;
             lblKapasitas.Location = new Point(14, 32);
             lblKapasitas.Name = "lblKapasitas";
-            lblKapasitas.Size = new Size(33, 36);
+            lblKapasitas.Size = new Size(47, 52);
             lblKapasitas.TabIndex = 0;
             lblKapasitas.Text = "0";
             // 
@@ -672,7 +670,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(14, 10);
             label2.Name = "label2";
-            label2.Size = new Size(81, 13);
+            label2.Size = new Size(120, 20);
             label2.TabIndex = 0;
             label2.Text = "Kapasitas Terisi";
             // 
@@ -694,7 +692,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(14, 10);
             label3.Name = "label3";
-            label3.Size = new Size(79, 13);
+            label3.Size = new Size(119, 20);
             label3.TabIndex = 0;
             label3.Text = "Suhu Rata-rata";
             // 
@@ -705,7 +703,7 @@
             lblSuhu.ForeColor = Color.White;
             lblSuhu.Location = new Point(14, 32);
             lblSuhu.Name = "lblSuhu";
-            lblSuhu.Size = new Size(33, 36);
+            lblSuhu.Size = new Size(47, 52);
             lblSuhu.TabIndex = 0;
             lblSuhu.Text = "0";
             // 
@@ -728,7 +726,7 @@
             lblPeringatan.Location = new Point(14, 32);
             lblPeringatan.Margin = new Padding(4, 0, 4, 0);
             lblPeringatan.Name = "lblPeringatan";
-            lblPeringatan.Size = new Size(37, 37);
+            lblPeringatan.Size = new Size(53, 56);
             lblPeringatan.TabIndex = 0;
             lblPeringatan.Text = "0";
             // 
@@ -740,7 +738,7 @@
             label4.Location = new Point(14, 10);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(59, 13);
+            label4.Size = new Size(81, 18);
             label4.TabIndex = 0;
             label4.Text = "Peringatan";
             // 
@@ -751,7 +749,7 @@
             lblRingkasanStokTitle.ForeColor = Color.MidnightBlue;
             lblRingkasanStokTitle.Location = new Point(20, 150);
             lblRingkasanStokTitle.Name = "lblRingkasanStokTitle";
-            lblRingkasanStokTitle.Size = new Size(126, 20);
+            lblRingkasanStokTitle.Size = new Size(192, 30);
             lblRingkasanStokTitle.TabIndex = 0;
             lblRingkasanStokTitle.Text = "Ringkasan Stok";
             // 
@@ -777,9 +775,318 @@
             lblKondisiRuanganTitle.ForeColor = Color.MidnightBlue;
             lblKondisiRuanganTitle.Location = new Point(20, 375);
             lblKondisiRuanganTitle.Name = "lblKondisiRuanganTitle";
-            lblKondisiRuanganTitle.Size = new Size(138, 20);
+            lblKondisiRuanganTitle.Size = new Size(211, 30);
             lblKondisiRuanganTitle.TabIndex = 0;
             lblKondisiRuanganTitle.Text = "Kondisi Ruangan";
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.Transparent;
+            panelHeader.BackgroundImage = Properties.Resources._42432421485151040;
+            panelHeader.Controls.Add(lblPageTitle);
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(960, 80);
+            panelHeader.TabIndex = 0;
+            // 
+            // lblPageTitle
+            // 
+            lblPageTitle.AutoSize = true;
+            lblPageTitle.Font = new Font("Berlin Sans FB", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPageTitle.ForeColor = Color.DarkSlateGray;
+            lblPageTitle.Location = new Point(20, 25);
+            lblPageTitle.Name = "lblPageTitle";
+            lblPageTitle.Size = new Size(241, 35);
+            lblPageTitle.TabIndex = 0;
+            lblPageTitle.Text = "Dashboard Page";
+            // 
+            // panelStok
+            // 
+            panelStok.Controls.Add(btnTambahStok);
+            panelStok.Controls.Add(label19);
+            panelStok.Controls.Add(dgvStok);
+            panelStok.Location = new Point(0, 80);
+            panelStok.Margin = new Padding(4, 5, 4, 5);
+            panelStok.Name = "panelStok";
+            panelStok.Size = new Size(960, 585);
+            panelStok.TabIndex = 0;
+            panelStok.Visible = false;
+            // 
+            // btnTambahStok
+            // 
+            btnTambahStok.BackColor = Color.SteelBlue;
+            btnTambahStok.Cursor = Cursors.Hand;
+            btnTambahStok.FlatAppearance.BorderSize = 0;
+            btnTambahStok.FlatStyle = FlatStyle.Flat;
+            btnTambahStok.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahStok.ForeColor = Color.White;
+            btnTambahStok.Location = new Point(760, 20);
+            btnTambahStok.Margin = new Padding(4, 5, 4, 5);
+            btnTambahStok.Name = "btnTambahStok";
+            btnTambahStok.Size = new Size(180, 40);
+            btnTambahStok.TabIndex = 6;
+            btnTambahStok.Text = "+ Terima Stok";
+            btnTambahStok.UseVisualStyleBackColor = false;
+            btnTambahStok.Click += btnTambahStok_Click;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Berlin Sans FB", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.MidnightBlue;
+            label19.Location = new Point(20, 25);
+            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(259, 35);
+            label19.TabIndex = 6;
+            label19.Text = "Stok dan Ruangan";
+            // 
+            // dgvStok
+            // 
+            dgvStok.AllowUserToAddRows = false;
+            dgvStok.BackgroundColor = Color.White;
+            dgvStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStok.Location = new Point(20, 80);
+            dgvStok.Margin = new Padding(4, 5, 4, 5);
+            dgvStok.Name = "dgvStok";
+            dgvStok.ReadOnly = true;
+            dgvStok.RowHeadersVisible = false;
+            dgvStok.RowHeadersWidth = 62;
+            dgvStok.Size = new Size(920, 485);
+            dgvStok.TabIndex = 0;
+            // 
+            // panelInputSuhu
+            // 
+            panelInputSuhu.Controls.Add(label5);
+            panelInputSuhu.Controls.Add(label6);
+            panelInputSuhu.Controls.Add(cmbRuanganSuhu);
+            panelInputSuhu.Controls.Add(label7);
+            panelInputSuhu.Controls.Add(txtSuhuAktual);
+            panelInputSuhu.Controls.Add(label8);
+            panelInputSuhu.Controls.Add(cmbGradeMutu);
+            panelInputSuhu.Controls.Add(label9);
+            panelInputSuhu.Controls.Add(txtCatatanSuhu);
+            panelInputSuhu.Controls.Add(btnSimpanSuhu);
+            panelInputSuhu.Controls.Add(lblStatusSuhu);
+            panelInputSuhu.Location = new Point(0, 80);
+            panelInputSuhu.Margin = new Padding(4, 5, 4, 5);
+            panelInputSuhu.Name = "panelInputSuhu";
+            panelInputSuhu.Size = new Size(960, 585);
+            panelInputSuhu.TabIndex = 0;
+            panelInputSuhu.Visible = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.MidnightBlue;
+            label5.Location = new Point(20, 20);
+            label5.Name = "label5";
+            label5.Size = new Size(436, 32);
+            label5.TabIndex = 0;
+            label5.Text = "Input Pengecekan Suhu Harian";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.DimGray;
+            label6.Location = new Point(20, 90);
+            label6.Name = "label6";
+            label6.Size = new Size(132, 25);
+            label6.TabIndex = 0;
+            label6.Text = "Pilih Ruangan";
+            // 
+            // cmbRuanganSuhu
+            // 
+            cmbRuanganSuhu.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRuanganSuhu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbRuanganSuhu.FormattingEnabled = true;
+            cmbRuanganSuhu.Location = new Point(20, 120);
+            cmbRuanganSuhu.Name = "cmbRuanganSuhu";
+            cmbRuanganSuhu.Size = new Size(340, 34);
+            cmbRuanganSuhu.TabIndex = 0;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.DimGray;
+            label7.Location = new Point(20, 170);
+            label7.Name = "label7";
+            label7.Size = new Size(161, 25);
+            label7.TabIndex = 0;
+            label7.Text = "Suhu Aktual (°C)";
+            // 
+            // txtSuhuAktual
+            // 
+            txtSuhuAktual.BorderStyle = BorderStyle.FixedSingle;
+            txtSuhuAktual.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSuhuAktual.Location = new Point(20, 200);
+            txtSuhuAktual.Name = "txtSuhuAktual";
+            txtSuhuAktual.Size = new Size(340, 32);
+            txtSuhuAktual.TabIndex = 0;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.DimGray;
+            label8.Location = new Point(20, 245);
+            label8.Name = "label8";
+            label8.Size = new Size(115, 25);
+            label8.TabIndex = 0;
+            label8.Text = "Grade Mutu";
+            // 
+            // cmbGradeMutu
+            // 
+            cmbGradeMutu.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbGradeMutu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbGradeMutu.FormattingEnabled = true;
+            cmbGradeMutu.Location = new Point(20, 275);
+            cmbGradeMutu.Name = "cmbGradeMutu";
+            cmbGradeMutu.Size = new Size(340, 34);
+            cmbGradeMutu.TabIndex = 0;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.DimGray;
+            label9.Location = new Point(20, 320);
+            label9.Name = "label9";
+            label9.Size = new Size(81, 25);
+            label9.TabIndex = 0;
+            label9.Text = "Catatan";
+            // 
+            // txtCatatanSuhu
+            // 
+            txtCatatanSuhu.BorderStyle = BorderStyle.FixedSingle;
+            txtCatatanSuhu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCatatanSuhu.Location = new Point(20, 350);
+            txtCatatanSuhu.Multiline = true;
+            txtCatatanSuhu.Name = "txtCatatanSuhu";
+            txtCatatanSuhu.Size = new Size(340, 80);
+            txtCatatanSuhu.TabIndex = 0;
+            // 
+            // btnSimpanSuhu
+            // 
+            btnSimpanSuhu.BackColor = Color.SteelBlue;
+            btnSimpanSuhu.Cursor = Cursors.Hand;
+            btnSimpanSuhu.FlatAppearance.BorderSize = 0;
+            btnSimpanSuhu.FlatStyle = FlatStyle.Flat;
+            btnSimpanSuhu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSimpanSuhu.ForeColor = Color.White;
+            btnSimpanSuhu.Location = new Point(20, 445);
+            btnSimpanSuhu.Name = "btnSimpanSuhu";
+            btnSimpanSuhu.Size = new Size(340, 45);
+            btnSimpanSuhu.TabIndex = 0;
+            btnSimpanSuhu.Text = "SIMPAN";
+            btnSimpanSuhu.UseVisualStyleBackColor = false;
+            btnSimpanSuhu.Click += btnSimpanSuhu_Click;
+            // 
+            // lblStatusSuhu
+            // 
+            lblStatusSuhu.ForeColor = Color.Green;
+            lblStatusSuhu.Location = new Point(20, 500);
+            lblStatusSuhu.Name = "lblStatusSuhu";
+            lblStatusSuhu.Size = new Size(340, 20);
+            lblStatusSuhu.TabIndex = 0;
+            // 
+            // panelLaporan
+            // 
+            panelLaporan.Controls.Add(label16);
+            panelLaporan.Controls.Add(label17);
+            panelLaporan.Controls.Add(cmbFilterMutasi);
+            panelLaporan.Controls.Add(btnFilter);
+            panelLaporan.Controls.Add(dgvLaporan);
+            panelLaporan.Controls.Add(lblGrafikTitle);
+            panelLaporan.Controls.Add(formsPlotMutasi);
+            panelLaporan.Location = new Point(0, 80);
+            panelLaporan.Margin = new Padding(4, 5, 4, 5);
+            panelLaporan.Name = "panelLaporan";
+            panelLaporan.Size = new Size(960, 585);
+            panelLaporan.TabIndex = 0;
+            panelLaporan.Visible = false;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.MidnightBlue;
+            label16.Location = new Point(20, 20);
+            label16.Name = "label16";
+            label16.Size = new Size(340, 32);
+            label16.TabIndex = 0;
+            label16.Text = "Laporan Riwayat Mutasi";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.DimGray;
+            label17.Location = new Point(20, 70);
+            label17.Name = "label17";
+            label17.Size = new Size(169, 25);
+            label17.TabIndex = 0;
+            label17.Text = "Filter Jenis Mutasi";
+            // 
+            // cmbFilterMutasi
+            // 
+            cmbFilterMutasi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFilterMutasi.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbFilterMutasi.FormattingEnabled = true;
+            cmbFilterMutasi.Location = new Point(20, 95);
+            cmbFilterMutasi.Name = "cmbFilterMutasi";
+            cmbFilterMutasi.Size = new Size(200, 34);
+            cmbFilterMutasi.TabIndex = 0;
+            // 
+            // btnFilter
+            // 
+            btnFilter.BackColor = Color.SteelBlue;
+            btnFilter.Cursor = Cursors.Hand;
+            btnFilter.FlatAppearance.BorderSize = 0;
+            btnFilter.FlatStyle = FlatStyle.Flat;
+            btnFilter.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFilter.ForeColor = Color.White;
+            btnFilter.Location = new Point(234, 95);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(150, 34);
+            btnFilter.TabIndex = 0;
+            btnFilter.Text = "TAMPILKAN";
+            btnFilter.UseVisualStyleBackColor = false;
+            btnFilter.Click += btnFilter_Click;
+            // 
+            // dgvLaporan
+            // 
+            dgvLaporan.AllowUserToAddRows = false;
+            dgvLaporan.BackgroundColor = Color.White;
+            dgvLaporan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLaporan.Location = new Point(20, 145);
+            dgvLaporan.Name = "dgvLaporan";
+            dgvLaporan.ReadOnly = true;
+            dgvLaporan.RowHeadersVisible = false;
+            dgvLaporan.RowHeadersWidth = 62;
+            dgvLaporan.Size = new Size(540, 420);
+            dgvLaporan.TabIndex = 0;
+            // 
+            // lblGrafikTitle
+            // 
+            lblGrafikTitle.AutoSize = true;
+            lblGrafikTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrafikTitle.ForeColor = Color.DimGray;
+            lblGrafikTitle.Location = new Point(580, 70);
+            lblGrafikTitle.Name = "lblGrafikTitle";
+            lblGrafikTitle.Size = new Size(418, 25);
+            lblGrafikTitle.TabIndex = 0;
+            lblGrafikTitle.Text = "Grafik Mutasi Stok: Masuk vs Keluar (Manajer)";
+            // 
+            // formsPlotMutasi
+            // 
+            formsPlotMutasi.Location = new Point(580, 145);
+            formsPlotMutasi.Name = "formsPlotMutasi";
+            formsPlotMutasi.Size = new Size(360, 420);
+            formsPlotMutasi.TabIndex = 0;
             // 
             // panelMaster
             // 
@@ -787,7 +1094,7 @@
             panelMaster.Location = new Point(0, 0);
             panelMaster.Margin = new Padding(4, 5, 4, 5);
             panelMaster.Name = "panelMaster";
-            panelMaster.Size = new Size(960, 585);
+            panelMaster.Size = new Size(960, 605);
             panelMaster.TabIndex = 0;
             panelMaster.Visible = false;
             panelMaster.Paint += panelMaster_Paint;
@@ -798,7 +1105,7 @@
             tabMaster.Controls.Add(tabIkan);
             tabMaster.Controls.Add(tabUser);
             tabMaster.Controls.Add(tabRuang);
-            tabMaster.Location = new Point(20, 70);
+            tabMaster.Location = new Point(12, 98);
             tabMaster.Name = "tabMaster";
             tabMaster.SelectedIndex = 0;
             tabMaster.Size = new Size(920, 522);
@@ -827,10 +1134,10 @@
             tabGudang.Controls.Add(label24);
             tabGudang.Controls.Add(btnTambahGudang);
             tabGudang.Controls.Add(dgvGudang);
-            tabGudang.Location = new Point(4, 24);
+            tabGudang.Location = new Point(4, 34);
             tabGudang.Name = "tabGudang";
             tabGudang.Padding = new Padding(4, 5, 4, 5);
-            tabGudang.Size = new Size(912, 494);
+            tabGudang.Size = new Size(912, 484);
             tabGudang.TabIndex = 1;
             tabGudang.Text = "Data Gudang";
             tabGudang.UseVisualStyleBackColor = true;
@@ -838,159 +1145,162 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(735, 273);
+            comboBox3.Location = new Point(772, 239);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
+            comboBox3.Size = new Size(121, 33);
             comboBox3.TabIndex = 22;
             // 
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(663, 276);
+            label33.Location = new Point(660, 242);
             label33.Name = "label33";
-            label33.Size = new Size(62, 15);
+            label33.Size = new Size(96, 25);
             label33.TabIndex = 21;
             label33.Text = "Id Gudang";
             // 
             // button2
             // 
-            button2.Location = new Point(736, 353);
+            button2.BackColor = Color.Red;
+            button2.Location = new Point(772, 300);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(121, 34);
             button2.TabIndex = 20;
             button2.Text = "Hapus";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(736, 241);
+            label32.Location = new Point(702, 183);
             label32.Name = "label32";
-            label32.Size = new Size(113, 15);
+            label32.Size = new Size(173, 25);
             label32.TabIndex = 19;
             label32.Text = "Hapus Data Gudang";
             // 
             // button1
             // 
-            button1.Location = new Point(442, 417);
+            button1.BackColor = Color.Yellow;
+            button1.Location = new Point(490, 419);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(130, 34);
             button1.TabIndex = 18;
             button1.Text = "Update";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(436, 278);
+            comboBox2.Location = new Point(493, 244);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(127, 23);
+            comboBox2.Size = new Size(127, 33);
             comboBox2.TabIndex = 17;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(436, 363);
+            textBox8.Location = new Point(490, 361);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(127, 23);
+            textBox8.Size = new Size(127, 31);
             textBox8.TabIndex = 16;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(436, 318);
+            textBox7.Location = new Point(490, 299);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(127, 23);
+            textBox7.Size = new Size(127, 31);
             textBox7.TabIndex = 15;
             // 
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(368, 366);
+            label31.Location = new Point(342, 364);
             label31.Name = "label31";
-            label31.Size = new Size(85, 15);
+            label31.Size = new Size(129, 25);
             label31.TabIndex = 14;
             label31.Text = "Lokasi Gudang";
             // 
             // label30
             // 
             label30.AutoSize = true;
-            label30.Location = new Point(368, 321);
+            label30.Location = new Point(343, 302);
             label30.Name = "label30";
-            label30.Size = new Size(84, 15);
+            label30.Size = new Size(127, 25);
             label30.TabIndex = 13;
             label30.Text = "Nama Gudang";
             // 
             // label29
             // 
             label29.AutoSize = true;
-            label29.Location = new Point(368, 281);
+            label29.Location = new Point(341, 244);
             label29.Name = "label29";
-            label29.Size = new Size(62, 15);
+            label29.Size = new Size(96, 25);
             label29.TabIndex = 12;
             label29.Text = "Id Gudang";
+            label29.Click += label29_Click;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(162, 364);
+            textBox6.Location = new Point(162, 358);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(118, 23);
+            textBox6.Size = new Size(118, 31);
             textBox6.TabIndex = 11;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(162, 318);
+            textBox5.Location = new Point(162, 299);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(118, 23);
+            textBox5.Size = new Size(118, 31);
             textBox5.TabIndex = 10;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(162, 273);
+            textBox4.Location = new Point(162, 241);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(118, 23);
+            textBox4.Size = new Size(118, 31);
             textBox4.TabIndex = 9;
             // 
             // label28
             // 
             label28.AutoSize = true;
-            label28.Location = new Point(99, 364);
+            label28.Location = new Point(16, 358);
             label28.Name = "label28";
-            label28.Size = new Size(85, 15);
+            label28.Size = new Size(129, 25);
             label28.TabIndex = 8;
             label28.Text = "Lokasi Gudang";
             // 
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(99, 321);
+            label27.Location = new Point(16, 299);
             label27.Name = "label27";
-            label27.Size = new Size(84, 15);
+            label27.Size = new Size(127, 25);
             label27.TabIndex = 7;
             label27.Text = "Nama Gudang";
             // 
             // label26
             // 
             label26.AutoSize = true;
-            label26.Location = new Point(99, 281);
+            label26.Location = new Point(16, 244);
             label26.Name = "label26";
-            label26.Size = new Size(62, 15);
+            label26.Size = new Size(96, 25);
             label26.TabIndex = 6;
             label26.Text = "Id Gudang";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(436, 241);
+            label25.Location = new Point(390, 186);
             label25.Name = "label25";
-            label25.Size = new Size(117, 15);
+            label25.Size = new Size(180, 25);
             label25.TabIndex = 5;
             label25.Text = "Update Data Gudang";
             // 
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(162, 236);
+            label24.Location = new Point(96, 186);
             label24.Name = "label24";
-            label24.Size = new Size(122, 15);
+            label24.Size = new Size(184, 25);
             label24.TabIndex = 4;
             label24.Text = "Tambah Data Gudang";
             // 
@@ -999,14 +1309,13 @@
             btnTambahGudang.BackColor = Color.SteelBlue;
             btnTambahGudang.Cursor = Cursors.Hand;
             btnTambahGudang.FlatAppearance.BorderSize = 0;
-            btnTambahGudang.FlatStyle = FlatStyle.Flat;
-            btnTambahGudang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahGudang.Font = new Font("Segoe UI", 9F);
             btnTambahGudang.ForeColor = Color.White;
-            btnTambahGudang.Location = new Point(99, 411);
+            btnTambahGudang.Location = new Point(162, 419);
             btnTambahGudang.Name = "btnTambahGudang";
-            btnTambahGudang.Size = new Size(150, 35);
+            btnTambahGudang.Size = new Size(118, 34);
             btnTambahGudang.TabIndex = 3;
-            btnTambahGudang.Text = "+ Tambah Gudang";
+            btnTambahGudang.Text = "Tambah";
             btnTambahGudang.UseVisualStyleBackColor = false;
             // 
             // dgvGudang
@@ -1019,7 +1328,7 @@
             dgvGudang.ReadOnly = true;
             dgvGudang.RowHeadersVisible = false;
             dgvGudang.RowHeadersWidth = 62;
-            dgvGudang.Size = new Size(892, 200);
+            dgvGudang.Size = new Size(892, 149);
             dgvGudang.TabIndex = 2;
             // 
             // tabIkan
@@ -1045,147 +1354,148 @@
             tabIkan.Controls.Add(txtNamaIkan);
             tabIkan.Controls.Add(dgvIkan);
             tabIkan.Controls.Add(txtIdIkan);
-            tabIkan.Location = new Point(4, 24);
+            tabIkan.Location = new Point(4, 34);
             tabIkan.Name = "tabIkan";
             tabIkan.Padding = new Padding(4, 5, 4, 5);
-            tabIkan.Size = new Size(912, 494);
+            tabIkan.Size = new Size(912, 484);
             tabIkan.TabIndex = 0;
             tabIkan.Text = "Data Ikan";
             tabIkan.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(400, 382);
+            textBox3.Location = new Point(623, 385);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(109, 23);
+            textBox3.Size = new Size(121, 31);
             textBox3.TabIndex = 23;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(400, 345);
+            textBox2.Location = new Point(623, 333);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(109, 23);
+            textBox2.Size = new Size(121, 31);
             textBox2.TabIndex = 22;
             // 
             // lblBatasSuhuUpdt
             // 
             lblBatasSuhuUpdt.AutoSize = true;
-            lblBatasSuhuUpdt.Location = new Point(294, 383);
+            lblBatasSuhuUpdt.Location = new Point(517, 386);
             lblBatasSuhuUpdt.Name = "lblBatasSuhuUpdt";
-            lblBatasSuhuUpdt.Size = new Size(65, 15);
+            lblBatasSuhuUpdt.Size = new Size(99, 25);
             lblBatasSuhuUpdt.TabIndex = 21;
             lblBatasSuhuUpdt.Text = "Batas Suhu";
             // 
             // lblSuhuIdealUpdt
             // 
             lblSuhuIdealUpdt.AutoSize = true;
-            lblSuhuIdealUpdt.Location = new Point(294, 346);
+            lblSuhuIdealUpdt.Location = new Point(517, 336);
             lblSuhuIdealUpdt.Name = "lblSuhuIdealUpdt";
-            lblSuhuIdealUpdt.Size = new Size(62, 15);
+            lblSuhuIdealUpdt.Size = new Size(95, 25);
             lblSuhuIdealUpdt.TabIndex = 20;
             lblSuhuIdealUpdt.Text = "Suhu Ideal";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(400, 312);
+            textBox1.Location = new Point(625, 286);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 23);
+            textBox1.Size = new Size(119, 31);
             textBox1.TabIndex = 19;
             // 
             // lblNamaIkanUpdt
             // 
             lblNamaIkanUpdt.AutoSize = true;
-            lblNamaIkanUpdt.Location = new Point(294, 313);
+            lblNamaIkanUpdt.Location = new Point(517, 287);
             lblNamaIkanUpdt.Name = "lblNamaIkanUpdt";
-            lblNamaIkanUpdt.Size = new Size(64, 15);
+            lblNamaIkanUpdt.Size = new Size(97, 25);
             lblNamaIkanUpdt.TabIndex = 18;
             lblNamaIkanUpdt.Text = "Nama Ikan";
             // 
             // btnUpdateIkan
             // 
             btnUpdateIkan.BackColor = Color.Yellow;
-            btnUpdateIkan.Location = new Point(400, 431);
+            btnUpdateIkan.Location = new Point(623, 429);
             btnUpdateIkan.Name = "btnUpdateIkan";
             btnUpdateIkan.Size = new Size(121, 35);
             btnUpdateIkan.TabIndex = 16;
             btnUpdateIkan.Text = "Update";
             btnUpdateIkan.UseVisualStyleBackColor = false;
+            btnUpdateIkan.Click += btnUpdateIkan_Click_1;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(400, 279);
+            comboBox1.Location = new Point(623, 242);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(109, 23);
+            comboBox1.Size = new Size(121, 33);
             comboBox1.TabIndex = 15;
             // 
             // lblIdIkanUpdt
             // 
             lblIdIkanUpdt.AutoSize = true;
-            lblIdIkanUpdt.Location = new Point(294, 281);
+            lblIdIkanUpdt.Location = new Point(517, 246);
             lblIdIkanUpdt.Name = "lblIdIkanUpdt";
-            lblIdIkanUpdt.Size = new Size(42, 15);
+            lblIdIkanUpdt.Size = new Size(66, 25);
             lblIdIkanUpdt.TabIndex = 14;
             lblIdIkanUpdt.Text = "Id Ikan";
             // 
             // lblUpdateIkan
             // 
             lblUpdateIkan.AutoSize = true;
-            lblUpdateIkan.Location = new Point(381, 246);
+            lblUpdateIkan.Location = new Point(582, 205);
             lblUpdateIkan.Name = "lblUpdateIkan";
-            lblUpdateIkan.Size = new Size(97, 15);
+            lblUpdateIkan.Size = new Size(150, 25);
             lblUpdateIkan.TabIndex = 10;
             lblUpdateIkan.Text = "Update Data Ikan";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(112, 249);
+            label23.Location = new Point(173, 205);
             label23.Name = "label23";
-            label23.Size = new Size(102, 15);
+            label23.Size = new Size(154, 25);
             label23.TabIndex = 9;
             label23.Text = "Tambah Data Ikan";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(45, 386);
+            label22.Location = new Point(127, 378);
             label22.Name = "label22";
-            label22.Size = new Size(65, 15);
+            label22.Size = new Size(99, 25);
             label22.TabIndex = 4;
             label22.Text = "Batas Suhu";
             // 
             // txtBatasSuhu
             // 
-            txtBatasSuhu.Location = new Point(146, 383);
+            txtBatasSuhu.Location = new Point(228, 378);
             txtBatasSuhu.Name = "txtBatasSuhu";
-            txtBatasSuhu.Size = new Size(100, 23);
+            txtBatasSuhu.Size = new Size(123, 31);
             txtBatasSuhu.TabIndex = 8;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(45, 354);
+            label21.Location = new Point(127, 331);
             label21.Name = "label21";
-            label21.Size = new Size(62, 15);
+            label21.Size = new Size(95, 25);
             label21.TabIndex = 2;
             label21.Text = "Suhu Ideal";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(45, 321);
+            label20.Location = new Point(125, 281);
             label20.Name = "label20";
-            label20.Size = new Size(64, 15);
+            label20.Size = new Size(97, 25);
             label20.TabIndex = 2;
             label20.Text = "Nama Ikan";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(45, 288);
+            label18.Location = new Point(127, 240);
             label18.Name = "label18";
-            label18.Size = new Size(42, 15);
+            label18.Size = new Size(66, 25);
             label18.TabIndex = 3;
             label18.Text = "Id Ikan";
             // 
@@ -1194,12 +1504,11 @@
             btnTambahIkan.BackColor = Color.SteelBlue;
             btnTambahIkan.Cursor = Cursors.Hand;
             btnTambahIkan.FlatAppearance.BorderSize = 0;
-            btnTambahIkan.FlatStyle = FlatStyle.Flat;
             btnTambahIkan.Font = new Font("Segoe UI", 9F);
             btnTambahIkan.ForeColor = Color.White;
-            btnTambahIkan.Location = new Point(131, 431);
+            btnTambahIkan.Location = new Point(230, 429);
             btnTambahIkan.Name = "btnTambahIkan";
-            btnTambahIkan.Size = new Size(121, 35);
+            btnTambahIkan.Size = new Size(121, 34);
             btnTambahIkan.TabIndex = 1;
             btnTambahIkan.Text = "Tambah";
             btnTambahIkan.UseVisualStyleBackColor = false;
@@ -1207,16 +1516,16 @@
             // 
             // txtSuhuIdeal
             // 
-            txtSuhuIdeal.Location = new Point(146, 351);
+            txtSuhuIdeal.Location = new Point(228, 331);
             txtSuhuIdeal.Name = "txtSuhuIdeal";
-            txtSuhuIdeal.Size = new Size(100, 23);
+            txtSuhuIdeal.Size = new Size(123, 31);
             txtSuhuIdeal.TabIndex = 6;
             // 
             // txtNamaIkan
             // 
-            txtNamaIkan.Location = new Point(146, 318);
+            txtNamaIkan.Location = new Point(230, 281);
             txtNamaIkan.Name = "txtNamaIkan";
-            txtNamaIkan.Size = new Size(100, 23);
+            txtNamaIkan.Size = new Size(121, 31);
             txtNamaIkan.TabIndex = 7;
             // 
             // dgvIkan
@@ -1230,14 +1539,14 @@
             dgvIkan.ReadOnly = true;
             dgvIkan.RowHeadersVisible = false;
             dgvIkan.RowHeadersWidth = 62;
-            dgvIkan.Size = new Size(895, 200);
+            dgvIkan.Size = new Size(895, 172);
             dgvIkan.TabIndex = 0;
             // 
             // txtIdIkan
             // 
-            txtIdIkan.Location = new Point(146, 283);
+            txtIdIkan.Location = new Point(228, 235);
             txtIdIkan.Name = "txtIdIkan";
-            txtIdIkan.Size = new Size(100, 23);
+            txtIdIkan.Size = new Size(123, 31);
             txtIdIkan.TabIndex = 5;
             // 
             // tabUser
@@ -1271,9 +1580,9 @@
             tabUser.Controls.Add(label47);
             tabUser.Controls.Add(label46);
             tabUser.Controls.Add(dataGridView1);
-            tabUser.Location = new Point(4, 24);
+            tabUser.Location = new Point(4, 34);
             tabUser.Name = "tabUser";
-            tabUser.Size = new Size(912, 494);
+            tabUser.Size = new Size(912, 484);
             tabUser.TabIndex = 3;
             tabUser.Text = "Data User";
             tabUser.UseVisualStyleBackColor = true;
@@ -1283,28 +1592,28 @@
             comboBox11.FormattingEnabled = true;
             comboBox11.Location = new Point(707, 218);
             comboBox11.Name = "comboBox11";
-            comboBox11.Size = new Size(121, 23);
+            comboBox11.Size = new Size(121, 33);
             comboBox11.TabIndex = 28;
             // 
             // textBox20
             // 
             textBox20.Location = new Point(438, 264);
             textBox20.Name = "textBox20";
-            textBox20.Size = new Size(121, 23);
+            textBox20.Size = new Size(121, 31);
             textBox20.TabIndex = 27;
             // 
             // textBox19
             // 
             textBox19.Location = new Point(438, 342);
             textBox19.Name = "textBox19";
-            textBox19.Size = new Size(121, 23);
+            textBox19.Size = new Size(121, 31);
             textBox19.TabIndex = 26;
             // 
             // textBox18
             // 
             textBox18.Location = new Point(438, 304);
             textBox18.Name = "textBox18";
-            textBox18.Size = new Size(121, 23);
+            textBox18.Size = new Size(121, 31);
             textBox18.TabIndex = 25;
             // 
             // comboBox10
@@ -1312,7 +1621,7 @@
             comboBox10.FormattingEnabled = true;
             comboBox10.Location = new Point(438, 383);
             comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(121, 23);
+            comboBox10.Size = new Size(121, 33);
             comboBox10.TabIndex = 24;
             // 
             // comboBox9
@@ -1320,7 +1629,7 @@
             comboBox9.FormattingEnabled = true;
             comboBox9.Location = new Point(438, 223);
             comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(121, 23);
+            comboBox9.Size = new Size(121, 33);
             comboBox9.TabIndex = 23;
             // 
             // button8
@@ -1358,35 +1667,35 @@
             comboBox8.FormattingEnabled = true;
             comboBox8.Location = new Point(138, 386);
             comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(121, 23);
+            comboBox8.Size = new Size(121, 33);
             comboBox8.TabIndex = 19;
             // 
             // textBox17
             // 
             textBox17.Location = new Point(139, 261);
             textBox17.Name = "textBox17";
-            textBox17.Size = new Size(123, 23);
+            textBox17.Size = new Size(120, 31);
             textBox17.TabIndex = 18;
             // 
             // textBox16
             // 
             textBox16.Location = new Point(139, 342);
             textBox16.Name = "textBox16";
-            textBox16.Size = new Size(120, 23);
+            textBox16.Size = new Size(120, 31);
             textBox16.TabIndex = 17;
             // 
             // textBox15
             // 
             textBox15.Location = new Point(140, 299);
             textBox15.Name = "textBox15";
-            textBox15.Size = new Size(119, 23);
+            textBox15.Size = new Size(119, 31);
             textBox15.TabIndex = 16;
             // 
             // textBox14
             // 
             textBox14.Location = new Point(139, 218);
             textBox14.Name = "textBox14";
-            textBox14.Size = new Size(120, 23);
+            textBox14.Size = new Size(120, 31);
             textBox14.TabIndex = 15;
             // 
             // label59
@@ -1394,7 +1703,7 @@
             label59.AutoSize = true;
             label59.Location = new Point(636, 223);
             label59.Name = "label59";
-            label59.Size = new Size(43, 15);
+            label59.Size = new Size(68, 25);
             label59.TabIndex = 14;
             label59.Text = "Id User";
             // 
@@ -1403,16 +1712,16 @@
             label58.AutoSize = true;
             label58.Location = new Point(347, 386);
             label58.Name = "label58";
-            label58.Size = new Size(43, 15);
+            label58.Size = new Size(46, 25);
             label58.TabIndex = 13;
-            label58.Text = "Id Role";
+            label58.Text = "Role";
             // 
             // label57
             // 
             label57.AutoSize = true;
             label57.Location = new Point(343, 345);
             label57.Name = "label57";
-            label57.Size = new Size(57, 15);
+            label57.Size = new Size(87, 25);
             label57.TabIndex = 12;
             label57.Text = "Password";
             // 
@@ -1421,7 +1730,7 @@
             label56.AutoSize = true;
             label56.Location = new Point(343, 307);
             label56.Name = "label56";
-            label56.Size = new Size(39, 15);
+            label56.Size = new Size(59, 25);
             label56.TabIndex = 11;
             label56.Text = "Nama";
             // 
@@ -1430,7 +1739,7 @@
             label55.AutoSize = true;
             label55.Location = new Point(343, 264);
             label55.Name = "label55";
-            label55.Size = new Size(60, 15);
+            label55.Size = new Size(91, 25);
             label55.TabIndex = 10;
             label55.Text = "Username";
             // 
@@ -1439,7 +1748,7 @@
             label54.AutoSize = true;
             label54.Location = new Point(343, 226);
             label54.Name = "label54";
-            label54.Size = new Size(43, 15);
+            label54.Size = new Size(68, 25);
             label54.TabIndex = 9;
             label54.Text = "Id User";
             // 
@@ -1448,16 +1757,16 @@
             label53.AutoSize = true;
             label53.Location = new Point(43, 386);
             label53.Name = "label53";
-            label53.Size = new Size(43, 15);
+            label53.Size = new Size(46, 25);
             label53.TabIndex = 8;
-            label53.Text = "Id Role";
+            label53.Text = "Role";
             // 
             // label52
             // 
             label52.AutoSize = true;
             label52.Location = new Point(43, 345);
             label52.Name = "label52";
-            label52.Size = new Size(57, 15);
+            label52.Size = new Size(87, 25);
             label52.TabIndex = 7;
             label52.Text = "Password";
             // 
@@ -1466,7 +1775,7 @@
             label51.AutoSize = true;
             label51.Location = new Point(43, 301);
             label51.Name = "label51";
-            label51.Size = new Size(39, 15);
+            label51.Size = new Size(59, 25);
             label51.TabIndex = 6;
             label51.Text = "Nama";
             // 
@@ -1475,7 +1784,7 @@
             label50.AutoSize = true;
             label50.Location = new Point(43, 264);
             label50.Name = "label50";
-            label50.Size = new Size(60, 15);
+            label50.Size = new Size(91, 25);
             label50.TabIndex = 5;
             label50.Text = "Username";
             // 
@@ -1484,7 +1793,7 @@
             label49.AutoSize = true;
             label49.Location = new Point(43, 226);
             label49.Name = "label49";
-            label49.Size = new Size(43, 15);
+            label49.Size = new Size(68, 25);
             label49.TabIndex = 4;
             label49.Text = "Id User";
             // 
@@ -1493,7 +1802,7 @@
             label48.AutoSize = true;
             label48.Location = new Point(696, 179);
             label48.Name = "label48";
-            label48.Size = new Size(94, 15);
+            label48.Size = new Size(145, 25);
             label48.TabIndex = 3;
             label48.Text = "Hapus Data User";
             // 
@@ -1502,7 +1811,7 @@
             label47.AutoSize = true;
             label47.Location = new Point(421, 179);
             label47.Name = "label47";
-            label47.Size = new Size(98, 15);
+            label47.Size = new Size(152, 25);
             label47.TabIndex = 2;
             label47.Text = "Update Data User";
             // 
@@ -1511,13 +1820,14 @@
             label46.AutoSize = true;
             label46.Location = new Point(128, 179);
             label46.Name = "label46";
-            label46.Size = new Size(103, 15);
+            label46.Size = new Size(156, 25);
             label46.TabIndex = 1;
             label46.Text = "Tambah Data User";
             // 
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idUserDataGridViewTextBoxColumn, namaDataGridViewTextBoxColumn, usernameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, idRoleDataGridViewTextBoxColumn });
             dataGridView1.DataSource = operatorBindingSource;
@@ -1597,12 +1907,11 @@
             tabRuang.Controls.Add(button5);
             tabRuang.Controls.Add(button4);
             tabRuang.Controls.Add(button3);
-            tabRuang.Controls.Add(btnTambahRuang);
             tabRuang.Controls.Add(dgvRuang);
-            tabRuang.Location = new Point(4, 24);
+            tabRuang.Location = new Point(4, 34);
             tabRuang.Name = "tabRuang";
             tabRuang.Padding = new Padding(4, 5, 4, 5);
-            tabRuang.Size = new Size(912, 494);
+            tabRuang.Size = new Size(912, 484);
             tabRuang.TabIndex = 2;
             tabRuang.Text = "Data Ruang Cooler";
             tabRuang.UseVisualStyleBackColor = true;
@@ -1610,541 +1919,221 @@
             // comboBox7
             // 
             comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(739, 293);
+            comboBox7.Location = new Point(742, 233);
             comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(121, 23);
+            comboBox7.Size = new Size(121, 33);
             comboBox7.TabIndex = 29;
             // 
             // label45
             // 
             label45.AutoSize = true;
-            label45.Location = new Point(689, 296);
+            label45.Location = new Point(652, 235);
             label45.Name = "label45";
-            label45.Size = new Size(54, 15);
+            label45.Size = new Size(84, 25);
             label45.TabIndex = 28;
             label45.Text = "Id Ruang";
             // 
             // textBox13
             // 
-            textBox13.Location = new Point(442, 393);
+            textBox13.Location = new Point(498, 365);
             textBox13.Name = "textBox13";
-            textBox13.Size = new Size(121, 23);
+            textBox13.Size = new Size(121, 31);
             textBox13.TabIndex = 27;
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(442, 358);
+            textBox12.Location = new Point(498, 325);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(121, 23);
+            textBox12.Size = new Size(121, 31);
             textBox12.TabIndex = 26;
             // 
             // comboBox6
             // 
             comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(442, 320);
+            comboBox6.Location = new Point(498, 279);
             comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(121, 23);
+            comboBox6.Size = new Size(121, 33);
             comboBox6.TabIndex = 25;
             // 
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(442, 283);
+            comboBox5.Location = new Point(498, 233);
             comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(121, 23);
+            comboBox5.Size = new Size(121, 33);
             comboBox5.TabIndex = 24;
             // 
             // label44
             // 
             label44.AutoSize = true;
-            label44.Location = new Point(383, 391);
+            label44.Location = new Point(370, 368);
             label44.Name = "label44";
-            label44.Size = new Size(84, 15);
+            label44.Size = new Size(127, 25);
             label44.TabIndex = 23;
             label44.Text = "Kapasitas (Kg) ";
             // 
             // label43
             // 
             label43.AutoSize = true;
-            label43.Location = new Point(383, 358);
+            label43.Location = new Point(370, 328);
             label43.Name = "label43";
-            label43.Size = new Size(76, 15);
+            label43.Size = new Size(115, 25);
             label43.TabIndex = 22;
             label43.Text = "Nama Ruang";
             // 
             // label42
             // 
             label42.AutoSize = true;
-            label42.Location = new Point(383, 323);
+            label42.Location = new Point(370, 282);
             label42.Name = "label42";
-            label42.Size = new Size(62, 15);
+            label42.Size = new Size(96, 25);
             label42.TabIndex = 21;
             label42.Text = "Id Gudang";
             // 
             // label41
             // 
             label41.AutoSize = true;
-            label41.Location = new Point(383, 286);
+            label41.Location = new Point(370, 236);
             label41.Name = "label41";
-            label41.Size = new Size(54, 15);
+            label41.Size = new Size(84, 25);
             label41.TabIndex = 20;
             label41.Text = "Id Ruang";
             // 
             // textBox11
             // 
-            textBox11.Location = new Point(146, 399);
+            textBox11.Location = new Point(198, 368);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(120, 23);
+            textBox11.Size = new Size(120, 31);
             textBox11.TabIndex = 19;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(145, 361);
+            textBox10.Location = new Point(197, 317);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(121, 23);
+            textBox10.Size = new Size(121, 31);
             textBox10.TabIndex = 18;
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(145, 285);
+            textBox9.Location = new Point(196, 227);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(121, 23);
+            textBox9.Size = new Size(121, 31);
             textBox9.TabIndex = 17;
             // 
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(145, 323);
+            comboBox4.Location = new Point(196, 274);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(121, 23);
+            comboBox4.Size = new Size(121, 33);
             comboBox4.TabIndex = 16;
             // 
             // label40
             // 
             label40.AutoSize = true;
-            label40.Location = new Point(83, 401);
+            label40.Location = new Point(63, 368);
             label40.Name = "label40";
-            label40.Size = new Size(81, 15);
+            label40.Size = new Size(122, 25);
             label40.TabIndex = 15;
             label40.Text = "Kapasitas (Kg)";
             // 
             // label39
             // 
             label39.AutoSize = true;
-            label39.Location = new Point(83, 363);
+            label39.Location = new Point(63, 320);
             label39.Name = "label39";
-            label39.Size = new Size(76, 15);
+            label39.Size = new Size(115, 25);
             label39.TabIndex = 14;
             label39.Text = "Nama Ruang";
             // 
             // label38
             // 
             label38.AutoSize = true;
-            label38.Location = new Point(83, 326);
+            label38.Location = new Point(63, 275);
             label38.Name = "label38";
-            label38.Size = new Size(62, 15);
+            label38.Size = new Size(96, 25);
             label38.TabIndex = 13;
             label38.Text = "Id Gudang";
             // 
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(83, 288);
+            label37.Location = new Point(63, 228);
             label37.Name = "label37";
-            label37.Size = new Size(54, 15);
+            label37.Size = new Size(84, 25);
             label37.TabIndex = 12;
             label37.Text = "Id Ruang";
             // 
             // label36
             // 
             label36.AutoSize = true;
-            label36.Location = new Point(783, 265);
+            label36.Location = new Point(710, 186);
             label36.Name = "label36";
-            label36.Size = new Size(105, 15);
+            label36.Size = new Size(161, 25);
             label36.TabIndex = 11;
             label36.Text = "Hapus Data Ruang";
             // 
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(459, 261);
+            label35.Location = new Point(451, 185);
             label35.Name = "label35";
-            label35.Size = new Size(109, 15);
+            label35.Size = new Size(168, 25);
             label35.TabIndex = 10;
             label35.Text = "Update Data Ruang";
             // 
             // label34
             // 
             label34.AutoSize = true;
-            label34.Location = new Point(162, 261);
+            label34.Location = new Point(146, 186);
             label34.Name = "label34";
-            label34.Size = new Size(114, 15);
+            label34.Size = new Size(172, 25);
             label34.TabIndex = 9;
             label34.Text = "Tambah Data Ruang";
+            label34.Click += label34_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(752, 424);
+            button5.BackColor = Color.Red;
+            button5.Location = new Point(742, 281);
             button5.Name = "button5";
-            button5.Size = new Size(75, 23);
+            button5.Size = new Size(121, 36);
             button5.TabIndex = 8;
             button5.Text = "Hapus";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            button4.Location = new Point(463, 431);
+            button4.BackColor = Color.Yellow;
+            button4.Location = new Point(498, 419);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(121, 36);
             button4.TabIndex = 7;
             button4.Text = "Update";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.Location = new Point(172, 431);
+            button3.BackColor = Color.SteelBlue;
+            button3.Location = new Point(196, 419);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(121, 36);
             button3.TabIndex = 6;
             button3.Text = "Tambah";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // btnTambahRuang
-            // 
-            btnTambahRuang.BackColor = Color.SteelBlue;
-            btnTambahRuang.Cursor = Cursors.Hand;
-            btnTambahRuang.FlatAppearance.BorderSize = 0;
-            btnTambahRuang.FlatStyle = FlatStyle.Flat;
-            btnTambahRuang.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTambahRuang.ForeColor = Color.White;
-            btnTambahRuang.Location = new Point(752, 10);
-            btnTambahRuang.Name = "btnTambahRuang";
-            btnTambahRuang.Size = new Size(150, 35);
-            btnTambahRuang.TabIndex = 5;
-            btnTambahRuang.Text = "+ Tambah Ruangan";
-            btnTambahRuang.UseVisualStyleBackColor = false;
+            button3.UseVisualStyleBackColor = false;
             // 
             // dgvRuang
             // 
             dgvRuang.AllowUserToAddRows = false;
             dgvRuang.BackgroundColor = Color.White;
             dgvRuang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRuang.Location = new Point(10, 55);
+            dgvRuang.Location = new Point(13, 12);
             dgvRuang.Name = "dgvRuang";
             dgvRuang.ReadOnly = true;
             dgvRuang.RowHeadersVisible = false;
             dgvRuang.RowHeadersWidth = 62;
-            dgvRuang.Size = new Size(892, 199);
+            dgvRuang.Size = new Size(892, 153);
             dgvRuang.TabIndex = 4;
-            // 
-            // panelHeader
-            // 
-            panelHeader.BackColor = Color.Transparent;
-            panelHeader.BackgroundImage = Properties.Resources._42432421485151040;
-            panelHeader.Controls.Add(lblPageTitle);
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(960, 80);
-            panelHeader.TabIndex = 0;
-            // 
-            // lblPageTitle
-            // 
-            lblPageTitle.AutoSize = true;
-            lblPageTitle.Font = new Font("Berlin Sans FB", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPageTitle.ForeColor = Color.DarkSlateGray;
-            lblPageTitle.Location = new Point(20, 25);
-            lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(158, 23);
-            lblPageTitle.TabIndex = 0;
-            lblPageTitle.Text = "Dashboard Page";
-            // 
-            // panelStok
-            // 
-            panelStok.Controls.Add(btnTambahStok);
-            panelStok.Controls.Add(label19);
-            panelStok.Controls.Add(dgvStok);
-            panelStok.Location = new Point(0, 80);
-            panelStok.Margin = new Padding(4, 5, 4, 5);
-            panelStok.Name = "panelStok";
-            panelStok.Size = new Size(960, 585);
-            panelStok.TabIndex = 0;
-            panelStok.Visible = false;
-            // 
-            // btnTambahStok
-            // 
-            btnTambahStok.BackColor = Color.SteelBlue;
-            btnTambahStok.Cursor = Cursors.Hand;
-            btnTambahStok.FlatAppearance.BorderSize = 0;
-            btnTambahStok.FlatStyle = FlatStyle.Flat;
-            btnTambahStok.Font = new Font("Berlin Sans FB", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTambahStok.ForeColor = Color.White;
-            btnTambahStok.Location = new Point(760, 20);
-            btnTambahStok.Margin = new Padding(4, 5, 4, 5);
-            btnTambahStok.Name = "btnTambahStok";
-            btnTambahStok.Size = new Size(180, 40);
-            btnTambahStok.TabIndex = 6;
-            btnTambahStok.Text = "+ Terima Stok";
-            btnTambahStok.UseVisualStyleBackColor = false;
-            btnTambahStok.Click += btnTambahStok_Click;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Berlin Sans FB", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.MidnightBlue;
-            label19.Location = new Point(20, 25);
-            label19.Margin = new Padding(4, 0, 4, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(180, 23);
-            label19.TabIndex = 6;
-            label19.Text = "Stok dan Ruangan";
-            // 
-            // dgvStok
-            // 
-            dgvStok.AllowUserToAddRows = false;
-            dgvStok.BackgroundColor = Color.White;
-            dgvStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStok.Location = new Point(20, 80);
-            dgvStok.Margin = new Padding(4, 5, 4, 5);
-            dgvStok.Name = "dgvStok";
-            dgvStok.ReadOnly = true;
-            dgvStok.RowHeadersVisible = false;
-            dgvStok.RowHeadersWidth = 62;
-            dgvStok.Size = new Size(920, 485);
-            dgvStok.TabIndex = 0;
-            // 
-            // panelInputSuhu
-            // 
-            panelInputSuhu.Controls.Add(label5);
-            panelInputSuhu.Controls.Add(label6);
-            panelInputSuhu.Controls.Add(cmbRuanganSuhu);
-            panelInputSuhu.Controls.Add(label7);
-            panelInputSuhu.Controls.Add(txtSuhuAktual);
-            panelInputSuhu.Controls.Add(label8);
-            panelInputSuhu.Controls.Add(cmbGradeMutu);
-            panelInputSuhu.Controls.Add(label9);
-            panelInputSuhu.Controls.Add(txtCatatanSuhu);
-            panelInputSuhu.Controls.Add(btnSimpanSuhu);
-            panelInputSuhu.Controls.Add(lblStatusSuhu);
-            panelInputSuhu.Location = new Point(0, 80);
-            panelInputSuhu.Margin = new Padding(4, 5, 4, 5);
-            panelInputSuhu.Name = "panelInputSuhu";
-            panelInputSuhu.Size = new Size(960, 585);
-            panelInputSuhu.TabIndex = 0;
-            panelInputSuhu.Visible = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.MidnightBlue;
-            label5.Location = new Point(20, 20);
-            label5.Name = "label5";
-            label5.Size = new Size(301, 24);
-            label5.TabIndex = 0;
-            label5.Text = "Input Pengecekan Suhu Harian";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.DimGray;
-            label6.Location = new Point(20, 90);
-            label6.Name = "label6";
-            label6.Size = new Size(96, 17);
-            label6.TabIndex = 0;
-            label6.Text = "Pilih Ruangan";
-            // 
-            // cmbRuanganSuhu
-            // 
-            cmbRuanganSuhu.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRuanganSuhu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbRuanganSuhu.FormattingEnabled = true;
-            cmbRuanganSuhu.Location = new Point(20, 120);
-            cmbRuanganSuhu.Name = "cmbRuanganSuhu";
-            cmbRuanganSuhu.Size = new Size(340, 26);
-            cmbRuanganSuhu.TabIndex = 0;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(20, 170);
-            label7.Name = "label7";
-            label7.Size = new Size(113, 17);
-            label7.TabIndex = 0;
-            label7.Text = "Suhu Aktual (°C)";
-            // 
-            // txtSuhuAktual
-            // 
-            txtSuhuAktual.BorderStyle = BorderStyle.FixedSingle;
-            txtSuhuAktual.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSuhuAktual.Location = new Point(20, 200);
-            txtSuhuAktual.Name = "txtSuhuAktual";
-            txtSuhuAktual.Size = new Size(340, 24);
-            txtSuhuAktual.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.DimGray;
-            label8.Location = new Point(20, 245);
-            label8.Name = "label8";
-            label8.Size = new Size(83, 17);
-            label8.TabIndex = 0;
-            label8.Text = "Grade Mutu";
-            // 
-            // cmbGradeMutu
-            // 
-            cmbGradeMutu.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbGradeMutu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbGradeMutu.FormattingEnabled = true;
-            cmbGradeMutu.Location = new Point(20, 275);
-            cmbGradeMutu.Name = "cmbGradeMutu";
-            cmbGradeMutu.Size = new Size(340, 26);
-            cmbGradeMutu.TabIndex = 0;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.DimGray;
-            label9.Location = new Point(20, 320);
-            label9.Name = "label9";
-            label9.Size = new Size(57, 17);
-            label9.TabIndex = 0;
-            label9.Text = "Catatan";
-            // 
-            // txtCatatanSuhu
-            // 
-            txtCatatanSuhu.BorderStyle = BorderStyle.FixedSingle;
-            txtCatatanSuhu.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCatatanSuhu.Location = new Point(20, 350);
-            txtCatatanSuhu.Multiline = true;
-            txtCatatanSuhu.Name = "txtCatatanSuhu";
-            txtCatatanSuhu.Size = new Size(340, 80);
-            txtCatatanSuhu.TabIndex = 0;
-            // 
-            // btnSimpanSuhu
-            // 
-            btnSimpanSuhu.BackColor = Color.SteelBlue;
-            btnSimpanSuhu.Cursor = Cursors.Hand;
-            btnSimpanSuhu.FlatAppearance.BorderSize = 0;
-            btnSimpanSuhu.FlatStyle = FlatStyle.Flat;
-            btnSimpanSuhu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSimpanSuhu.ForeColor = Color.White;
-            btnSimpanSuhu.Location = new Point(20, 445);
-            btnSimpanSuhu.Name = "btnSimpanSuhu";
-            btnSimpanSuhu.Size = new Size(340, 45);
-            btnSimpanSuhu.TabIndex = 0;
-            btnSimpanSuhu.Text = "SIMPAN";
-            btnSimpanSuhu.UseVisualStyleBackColor = false;
-            btnSimpanSuhu.Click += btnSimpanSuhu_Click;
-            // 
-            // lblStatusSuhu
-            // 
-            lblStatusSuhu.ForeColor = Color.Green;
-            lblStatusSuhu.Location = new Point(20, 500);
-            lblStatusSuhu.Name = "lblStatusSuhu";
-            lblStatusSuhu.Size = new Size(340, 20);
-            lblStatusSuhu.TabIndex = 0;
-            // 
-            // panelLaporan
-            // 
-            panelLaporan.Controls.Add(label16);
-            panelLaporan.Controls.Add(label17);
-            panelLaporan.Controls.Add(cmbFilterMutasi);
-            panelLaporan.Controls.Add(btnFilter);
-            panelLaporan.Controls.Add(dgvLaporan);
-            panelLaporan.Controls.Add(lblGrafikTitle);
-            panelLaporan.Controls.Add(formsPlotMutasi);
-            panelLaporan.Location = new Point(0, 80);
-            panelLaporan.Margin = new Padding(4, 5, 4, 5);
-            panelLaporan.Name = "panelLaporan";
-            panelLaporan.Size = new Size(960, 585);
-            panelLaporan.TabIndex = 0;
-            panelLaporan.Visible = false;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.MidnightBlue;
-            label16.Location = new Point(20, 20);
-            label16.Name = "label16";
-            label16.Size = new Size(229, 24);
-            label16.TabIndex = 0;
-            label16.Text = "Laporan Riwayat Mutasi";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.DimGray;
-            label17.Location = new Point(20, 70);
-            label17.Name = "label17";
-            label17.Size = new Size(121, 17);
-            label17.TabIndex = 0;
-            label17.Text = "Filter Jenis Mutasi";
-            // 
-            // cmbFilterMutasi
-            // 
-            cmbFilterMutasi.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFilterMutasi.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbFilterMutasi.FormattingEnabled = true;
-            cmbFilterMutasi.Location = new Point(20, 95);
-            cmbFilterMutasi.Name = "cmbFilterMutasi";
-            cmbFilterMutasi.Size = new Size(200, 26);
-            cmbFilterMutasi.TabIndex = 0;
-            // 
-            // btnFilter
-            // 
-            btnFilter.BackColor = Color.SteelBlue;
-            btnFilter.Cursor = Cursors.Hand;
-            btnFilter.FlatAppearance.BorderSize = 0;
-            btnFilter.FlatStyle = FlatStyle.Flat;
-            btnFilter.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnFilter.ForeColor = Color.White;
-            btnFilter.Location = new Point(234, 95);
-            btnFilter.Name = "btnFilter";
-            btnFilter.Size = new Size(150, 34);
-            btnFilter.TabIndex = 0;
-            btnFilter.Text = "TAMPILKAN";
-            btnFilter.UseVisualStyleBackColor = false;
-            btnFilter.Click += btnFilter_Click;
-            // 
-            // dgvLaporan
-            // 
-            dgvLaporan.AllowUserToAddRows = false;
-            dgvLaporan.BackgroundColor = Color.White;
-            dgvLaporan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLaporan.Location = new Point(20, 145);
-            dgvLaporan.Name = "dgvLaporan";
-            dgvLaporan.ReadOnly = true;
-            dgvLaporan.RowHeadersVisible = false;
-            dgvLaporan.RowHeadersWidth = 62;
-            dgvLaporan.Size = new Size(540, 420);
-            dgvLaporan.TabIndex = 0;
-            // 
-            // lblGrafikTitle
-            // 
-            lblGrafikTitle.AutoSize = true;
-            lblGrafikTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGrafikTitle.ForeColor = Color.DimGray;
-            lblGrafikTitle.Location = new Point(580, 70);
-            lblGrafikTitle.Name = "lblGrafikTitle";
-            lblGrafikTitle.Size = new Size(300, 17);
-            lblGrafikTitle.TabIndex = 0;
-            lblGrafikTitle.Text = "Grafik Mutasi Stok: Masuk vs Keluar (Manajer)";
-            // 
-            // formsPlotMutasi
-            // 
-            formsPlotMutasi.Location = new Point(580, 145);
-            formsPlotMutasi.Name = "formsPlotMutasi";
-            formsPlotMutasi.Size = new Size(360, 420);
-            formsPlotMutasi.TabIndex = 0;
             // 
             // panelTitleBar
             // 
@@ -2236,7 +2225,7 @@
             lblNamaUser.Location = new Point(20, 95);
             lblNamaUser.Margin = new Padding(4, 0, 4, 0);
             lblNamaUser.Name = "lblNamaUser";
-            lblNamaUser.Size = new Size(100, 13);
+            lblNamaUser.Size = new Size(147, 20);
             lblNamaUser.TabIndex = 1;
             lblNamaUser.Text = "Halo, [NamaUser]";
             // 
@@ -2248,7 +2237,7 @@
             lblRoleUser.Location = new Point(20, 128);
             lblRoleUser.Margin = new Padding(4, 0, 4, 0);
             lblRoleUser.Name = "lblRoleUser";
-            lblRoleUser.Size = new Size(52, 15);
+            lblRoleUser.Size = new Size(73, 20);
             lblRoleUser.TabIndex = 2;
             lblRoleUser.Text = "Manajer";
             // 
@@ -2336,7 +2325,7 @@
             lblLogo.Location = new Point(45, 15);
             lblLogo.Margin = new Padding(4, 0, 4, 0);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(108, 27);
+            lblLogo.Size = new Size(155, 40);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "🐟 FISHY";
             lblLogo.TextAlign = ContentAlignment.MiddleCenter;
@@ -2403,6 +2392,7 @@
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1200, 700);
+            Controls.Add(panelMaster);
             Controls.Add(panelTitleBar);
             Controls.Add(panelKonten);
             Controls.Add(panelSidebar);
@@ -2432,6 +2422,16 @@
             cardPeringatan.ResumeLayout(false);
             cardPeringatan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRingkasanStok).EndInit();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelStok.ResumeLayout(false);
+            panelStok.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStok).EndInit();
+            panelInputSuhu.ResumeLayout(false);
+            panelInputSuhu.PerformLayout();
+            panelLaporan.ResumeLayout(false);
+            panelLaporan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporan).EndInit();
             panelMaster.ResumeLayout(false);
             tabMaster.ResumeLayout(false);
             tabGudang.ResumeLayout(false);
@@ -2447,16 +2447,6 @@
             tabRuang.ResumeLayout(false);
             tabRuang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRuang).EndInit();
-            panelHeader.ResumeLayout(false);
-            panelHeader.PerformLayout();
-            panelStok.ResumeLayout(false);
-            panelStok.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStok).EndInit();
-            panelInputSuhu.ResumeLayout(false);
-            panelInputSuhu.PerformLayout();
-            panelLaporan.ResumeLayout(false);
-            panelLaporan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLaporan).EndInit();
             panelTitleBar.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
             panelSidebar.PerformLayout();
@@ -2541,7 +2531,6 @@
         private Button btnTambahIkan;
         private Button btnTambahGudang;
         private DataGridView dgvGudang;
-        private Button btnTambahRuang;
         private DataGridView dgvRuang;
         private Button btnTambahStok;
         private Label label19;

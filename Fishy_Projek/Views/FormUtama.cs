@@ -9,7 +9,7 @@ namespace Fishy_Projek
 {
     public partial class FormUtama : Form
     {
-        
+
         private User _userLogin;
         private LaporanRepository _laporanRepo = new LaporanRepository();
         private MasterRepository _masterRepo = new MasterRepository();
@@ -41,9 +41,9 @@ namespace Fishy_Projek
             dgvStok.BringToFront();
             dgvStok.Dock = DockStyle.Fill;
 
-           
 
-        
+
+
 
             // Event Handler untuk komponen Master
             btnUpdateIkan.Click += btnUpdateIkan_Click;
@@ -53,7 +53,7 @@ namespace Fishy_Projek
             btnTambahGudang.Click += btnTambahGudang_Click; // Tambah Gudang
 
             button3.Click += button3_Click; // Bisa difungsikan untuk simpan ruang alternatif
-            btnTambahRuang.Click += btnTambahRuang_Click; // Tambah Ruang
+            button3.Click += button3_Click; // Tambah Ruang
             button4.Click += button4_Click; // Update Ruang
             button5.Click += button5_Click; // Hapus Ruang
 
@@ -785,16 +785,27 @@ namespace Fishy_Projek
         }
 
 
-         private void btnLaporan_Click(object sender, EventArgs e)
-         {
+        private void btnLaporan_Click(object sender, EventArgs e)
+        {
             TampilkanPanel(panelLaporan, btnLaporan, "Laporan Mutasi");
             LoadLaporan();
-         }
+        }
 
+        private void label34_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnUpdateIkan_Click_1(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    
+
 }
