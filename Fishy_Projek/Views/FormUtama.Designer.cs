@@ -44,28 +44,6 @@
             panelKonten = new Panel();
             panelMaster = new Panel();
             tabMaster = new TabControl();
-            tabIkan = new TabPage();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            lblBatasSuhuUpdt = new Label();
-            lblSuhuIdealUpdt = new Label();
-            textBox1 = new TextBox();
-            lblNamaIkanUpdt = new Label();
-            btnUpdateIkan = new Button();
-            comboBox1 = new ComboBox();
-            lblIdIkanUpdt = new Label();
-            lblUpdateIkan = new Label();
-            label23 = new Label();
-            label22 = new Label();
-            txtBatasSuhu = new TextBox();
-            label21 = new Label();
-            label20 = new Label();
-            label18 = new Label();
-            btnTambahIkan = new Button();
-            txtSuhuIdeal = new TextBox();
-            txtNamaIkan = new TextBox();
-            dgvIkan = new DataGridView();
-            txtIdIkan = new TextBox();
             tabGudang = new TabPage();
             comboBox3 = new ComboBox();
             label33 = new Label();
@@ -88,6 +66,28 @@
             label24 = new Label();
             btnTambahGudang = new Button();
             dgvGudang = new DataGridView();
+            tabIkan = new TabPage();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            lblBatasSuhuUpdt = new Label();
+            lblSuhuIdealUpdt = new Label();
+            textBox1 = new TextBox();
+            lblNamaIkanUpdt = new Label();
+            btnUpdateIkan = new Button();
+            comboBox1 = new ComboBox();
+            lblIdIkanUpdt = new Label();
+            lblUpdateIkan = new Label();
+            label23 = new Label();
+            label22 = new Label();
+            txtBatasSuhu = new TextBox();
+            label21 = new Label();
+            label20 = new Label();
+            label18 = new Label();
+            btnTambahIkan = new Button();
+            txtSuhuIdeal = new TextBox();
+            txtNamaIkan = new TextBox();
+            dgvIkan = new DataGridView();
+            txtIdIkan = new TextBox();
             tabUser = new TabPage();
             comboBox11 = new ComboBox();
             textBox20 = new TextBox();
@@ -154,6 +154,7 @@
             panelHeader = new Panel();
             lblPageTitle = new Label();
             panelDashboard = new Panel();
+            dgvKondisiRuangan = new DataGridView();
             cardTotalUnit = new Panel();
             label1 = new Label();
             lblTotalUnit = new Label();
@@ -228,10 +229,10 @@
             panelKonten.SuspendLayout();
             panelMaster.SuspendLayout();
             tabMaster.SuspendLayout();
-            tabIkan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvIkan).BeginInit();
             tabGudang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGudang).BeginInit();
+            tabIkan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIkan).BeginInit();
             tabUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)operatorBindingSource).BeginInit();
@@ -239,6 +240,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvRuang).BeginInit();
             panelHeader.SuspendLayout();
             panelDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).BeginInit();
             cardTotalUnit.SuspendLayout();
             cardKapasitas.SuspendLayout();
             cardSuhu.SuspendLayout();
@@ -429,224 +431,6 @@
             tabMaster.SelectedIndex = 0;
             tabMaster.Size = new Size(920, 522);
             tabMaster.TabIndex = 1;
-            // 
-            // tabIkan
-            // 
-            tabIkan.Controls.Add(textBox3);
-            tabIkan.Controls.Add(textBox2);
-            tabIkan.Controls.Add(lblBatasSuhuUpdt);
-            tabIkan.Controls.Add(lblSuhuIdealUpdt);
-            tabIkan.Controls.Add(textBox1);
-            tabIkan.Controls.Add(lblNamaIkanUpdt);
-            tabIkan.Controls.Add(btnUpdateIkan);
-            tabIkan.Controls.Add(comboBox1);
-            tabIkan.Controls.Add(lblIdIkanUpdt);
-            tabIkan.Controls.Add(lblUpdateIkan);
-            tabIkan.Controls.Add(label23);
-            tabIkan.Controls.Add(label22);
-            tabIkan.Controls.Add(txtBatasSuhu);
-            tabIkan.Controls.Add(label21);
-            tabIkan.Controls.Add(label20);
-            tabIkan.Controls.Add(label18);
-            tabIkan.Controls.Add(btnTambahIkan);
-            tabIkan.Controls.Add(txtSuhuIdeal);
-            tabIkan.Controls.Add(txtNamaIkan);
-            tabIkan.Controls.Add(dgvIkan);
-            tabIkan.Controls.Add(txtIdIkan);
-            tabIkan.Location = new Point(4, 24);
-            tabIkan.Name = "tabIkan";
-            tabIkan.Padding = new Padding(4, 5, 4, 5);
-            tabIkan.Size = new Size(912, 494);
-            tabIkan.TabIndex = 0;
-            tabIkan.Text = "Data Ikan";
-            tabIkan.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(400, 382);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(109, 23);
-            textBox3.TabIndex = 23;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(400, 345);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(109, 23);
-            textBox2.TabIndex = 22;
-            // 
-            // lblBatasSuhuUpdt
-            // 
-            lblBatasSuhuUpdt.AutoSize = true;
-            lblBatasSuhuUpdt.Location = new Point(294, 383);
-            lblBatasSuhuUpdt.Name = "lblBatasSuhuUpdt";
-            lblBatasSuhuUpdt.Size = new Size(65, 15);
-            lblBatasSuhuUpdt.TabIndex = 21;
-            lblBatasSuhuUpdt.Text = "Batas Suhu";
-            // 
-            // lblSuhuIdealUpdt
-            // 
-            lblSuhuIdealUpdt.AutoSize = true;
-            lblSuhuIdealUpdt.Location = new Point(294, 346);
-            lblSuhuIdealUpdt.Name = "lblSuhuIdealUpdt";
-            lblSuhuIdealUpdt.Size = new Size(62, 15);
-            lblSuhuIdealUpdt.TabIndex = 20;
-            lblSuhuIdealUpdt.Text = "Suhu Ideal";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(400, 312);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 23);
-            textBox1.TabIndex = 19;
-            // 
-            // lblNamaIkanUpdt
-            // 
-            lblNamaIkanUpdt.AutoSize = true;
-            lblNamaIkanUpdt.Location = new Point(294, 313);
-            lblNamaIkanUpdt.Name = "lblNamaIkanUpdt";
-            lblNamaIkanUpdt.Size = new Size(64, 15);
-            lblNamaIkanUpdt.TabIndex = 18;
-            lblNamaIkanUpdt.Text = "Nama Ikan";
-            // 
-            // btnUpdateIkan
-            // 
-            btnUpdateIkan.BackColor = Color.Yellow;
-            btnUpdateIkan.Location = new Point(400, 431);
-            btnUpdateIkan.Name = "btnUpdateIkan";
-            btnUpdateIkan.Size = new Size(121, 35);
-            btnUpdateIkan.TabIndex = 16;
-            btnUpdateIkan.Text = "Update";
-            btnUpdateIkan.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(400, 279);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(109, 23);
-            comboBox1.TabIndex = 15;
-            // 
-            // lblIdIkanUpdt
-            // 
-            lblIdIkanUpdt.AutoSize = true;
-            lblIdIkanUpdt.Location = new Point(294, 281);
-            lblIdIkanUpdt.Name = "lblIdIkanUpdt";
-            lblIdIkanUpdt.Size = new Size(42, 15);
-            lblIdIkanUpdt.TabIndex = 14;
-            lblIdIkanUpdt.Text = "Id Ikan";
-            // 
-            // lblUpdateIkan
-            // 
-            lblUpdateIkan.AutoSize = true;
-            lblUpdateIkan.Location = new Point(381, 246);
-            lblUpdateIkan.Name = "lblUpdateIkan";
-            lblUpdateIkan.Size = new Size(97, 15);
-            lblUpdateIkan.TabIndex = 10;
-            lblUpdateIkan.Text = "Update Data Ikan";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(112, 249);
-            label23.Name = "label23";
-            label23.Size = new Size(102, 15);
-            label23.TabIndex = 9;
-            label23.Text = "Tambah Data Ikan";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(45, 386);
-            label22.Name = "label22";
-            label22.Size = new Size(65, 15);
-            label22.TabIndex = 4;
-            label22.Text = "Batas Suhu";
-            // 
-            // txtBatasSuhu
-            // 
-            txtBatasSuhu.Location = new Point(146, 383);
-            txtBatasSuhu.Name = "txtBatasSuhu";
-            txtBatasSuhu.Size = new Size(100, 23);
-            txtBatasSuhu.TabIndex = 8;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(45, 354);
-            label21.Name = "label21";
-            label21.Size = new Size(62, 15);
-            label21.TabIndex = 2;
-            label21.Text = "Suhu Ideal";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(45, 321);
-            label20.Name = "label20";
-            label20.Size = new Size(64, 15);
-            label20.TabIndex = 2;
-            label20.Text = "Nama Ikan";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(45, 288);
-            label18.Name = "label18";
-            label18.Size = new Size(42, 15);
-            label18.TabIndex = 3;
-            label18.Text = "Id Ikan";
-            // 
-            // btnTambahIkan
-            // 
-            btnTambahIkan.BackColor = Color.SteelBlue;
-            btnTambahIkan.Cursor = Cursors.Hand;
-            btnTambahIkan.FlatAppearance.BorderSize = 0;
-            btnTambahIkan.FlatStyle = FlatStyle.Flat;
-            btnTambahIkan.Font = new Font("Segoe UI", 9F);
-            btnTambahIkan.ForeColor = Color.White;
-            btnTambahIkan.Location = new Point(131, 431);
-            btnTambahIkan.Name = "btnTambahIkan";
-            btnTambahIkan.Size = new Size(121, 35);
-            btnTambahIkan.TabIndex = 1;
-            btnTambahIkan.Text = "Tambah";
-            btnTambahIkan.UseVisualStyleBackColor = false;
-            btnTambahIkan.Click += btnTambahIkan_Click;
-            // 
-            // txtSuhuIdeal
-            // 
-            txtSuhuIdeal.Location = new Point(146, 351);
-            txtSuhuIdeal.Name = "txtSuhuIdeal";
-            txtSuhuIdeal.Size = new Size(100, 23);
-            txtSuhuIdeal.TabIndex = 6;
-            // 
-            // txtNamaIkan
-            // 
-            txtNamaIkan.Location = new Point(146, 318);
-            txtNamaIkan.Name = "txtNamaIkan";
-            txtNamaIkan.Size = new Size(100, 23);
-            txtNamaIkan.TabIndex = 7;
-            // 
-            // dgvIkan
-            // 
-            dgvIkan.AllowUserToAddRows = false;
-            dgvIkan.BackgroundColor = Color.White;
-            dgvIkan.BorderStyle = BorderStyle.None;
-            dgvIkan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvIkan.Location = new Point(10, 11);
-            dgvIkan.Name = "dgvIkan";
-            dgvIkan.ReadOnly = true;
-            dgvIkan.RowHeadersVisible = false;
-            dgvIkan.RowHeadersWidth = 62;
-            dgvIkan.Size = new Size(895, 200);
-            dgvIkan.TabIndex = 0;
-            // 
-            // txtIdIkan
-            // 
-            txtIdIkan.Location = new Point(146, 283);
-            txtIdIkan.Name = "txtIdIkan";
-            txtIdIkan.Size = new Size(100, 23);
-            txtIdIkan.TabIndex = 5;
             // 
             // tabGudang
             // 
@@ -865,6 +649,224 @@
             dgvGudang.RowHeadersWidth = 62;
             dgvGudang.Size = new Size(892, 200);
             dgvGudang.TabIndex = 2;
+            // 
+            // tabIkan
+            // 
+            tabIkan.Controls.Add(textBox3);
+            tabIkan.Controls.Add(textBox2);
+            tabIkan.Controls.Add(lblBatasSuhuUpdt);
+            tabIkan.Controls.Add(lblSuhuIdealUpdt);
+            tabIkan.Controls.Add(textBox1);
+            tabIkan.Controls.Add(lblNamaIkanUpdt);
+            tabIkan.Controls.Add(btnUpdateIkan);
+            tabIkan.Controls.Add(comboBox1);
+            tabIkan.Controls.Add(lblIdIkanUpdt);
+            tabIkan.Controls.Add(lblUpdateIkan);
+            tabIkan.Controls.Add(label23);
+            tabIkan.Controls.Add(label22);
+            tabIkan.Controls.Add(txtBatasSuhu);
+            tabIkan.Controls.Add(label21);
+            tabIkan.Controls.Add(label20);
+            tabIkan.Controls.Add(label18);
+            tabIkan.Controls.Add(btnTambahIkan);
+            tabIkan.Controls.Add(txtSuhuIdeal);
+            tabIkan.Controls.Add(txtNamaIkan);
+            tabIkan.Controls.Add(dgvIkan);
+            tabIkan.Controls.Add(txtIdIkan);
+            tabIkan.Location = new Point(4, 24);
+            tabIkan.Name = "tabIkan";
+            tabIkan.Padding = new Padding(4, 5, 4, 5);
+            tabIkan.Size = new Size(912, 494);
+            tabIkan.TabIndex = 0;
+            tabIkan.Text = "Data Ikan";
+            tabIkan.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(400, 382);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(109, 23);
+            textBox3.TabIndex = 23;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(400, 345);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(109, 23);
+            textBox2.TabIndex = 22;
+            // 
+            // lblBatasSuhuUpdt
+            // 
+            lblBatasSuhuUpdt.AutoSize = true;
+            lblBatasSuhuUpdt.Location = new Point(294, 383);
+            lblBatasSuhuUpdt.Name = "lblBatasSuhuUpdt";
+            lblBatasSuhuUpdt.Size = new Size(65, 15);
+            lblBatasSuhuUpdt.TabIndex = 21;
+            lblBatasSuhuUpdt.Text = "Batas Suhu";
+            // 
+            // lblSuhuIdealUpdt
+            // 
+            lblSuhuIdealUpdt.AutoSize = true;
+            lblSuhuIdealUpdt.Location = new Point(294, 346);
+            lblSuhuIdealUpdt.Name = "lblSuhuIdealUpdt";
+            lblSuhuIdealUpdt.Size = new Size(62, 15);
+            lblSuhuIdealUpdt.TabIndex = 20;
+            lblSuhuIdealUpdt.Text = "Suhu Ideal";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(400, 312);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(109, 23);
+            textBox1.TabIndex = 19;
+            // 
+            // lblNamaIkanUpdt
+            // 
+            lblNamaIkanUpdt.AutoSize = true;
+            lblNamaIkanUpdt.Location = new Point(294, 313);
+            lblNamaIkanUpdt.Name = "lblNamaIkanUpdt";
+            lblNamaIkanUpdt.Size = new Size(64, 15);
+            lblNamaIkanUpdt.TabIndex = 18;
+            lblNamaIkanUpdt.Text = "Nama Ikan";
+            // 
+            // btnUpdateIkan
+            // 
+            btnUpdateIkan.BackColor = Color.Yellow;
+            btnUpdateIkan.Location = new Point(400, 431);
+            btnUpdateIkan.Name = "btnUpdateIkan";
+            btnUpdateIkan.Size = new Size(121, 35);
+            btnUpdateIkan.TabIndex = 16;
+            btnUpdateIkan.Text = "Update";
+            btnUpdateIkan.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(400, 279);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(109, 23);
+            comboBox1.TabIndex = 15;
+            // 
+            // lblIdIkanUpdt
+            // 
+            lblIdIkanUpdt.AutoSize = true;
+            lblIdIkanUpdt.Location = new Point(294, 281);
+            lblIdIkanUpdt.Name = "lblIdIkanUpdt";
+            lblIdIkanUpdt.Size = new Size(42, 15);
+            lblIdIkanUpdt.TabIndex = 14;
+            lblIdIkanUpdt.Text = "Id Ikan";
+            // 
+            // lblUpdateIkan
+            // 
+            lblUpdateIkan.AutoSize = true;
+            lblUpdateIkan.Location = new Point(381, 246);
+            lblUpdateIkan.Name = "lblUpdateIkan";
+            lblUpdateIkan.Size = new Size(97, 15);
+            lblUpdateIkan.TabIndex = 10;
+            lblUpdateIkan.Text = "Update Data Ikan";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(112, 249);
+            label23.Name = "label23";
+            label23.Size = new Size(102, 15);
+            label23.TabIndex = 9;
+            label23.Text = "Tambah Data Ikan";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(45, 386);
+            label22.Name = "label22";
+            label22.Size = new Size(65, 15);
+            label22.TabIndex = 4;
+            label22.Text = "Batas Suhu";
+            // 
+            // txtBatasSuhu
+            // 
+            txtBatasSuhu.Location = new Point(146, 383);
+            txtBatasSuhu.Name = "txtBatasSuhu";
+            txtBatasSuhu.Size = new Size(100, 23);
+            txtBatasSuhu.TabIndex = 8;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(45, 354);
+            label21.Name = "label21";
+            label21.Size = new Size(62, 15);
+            label21.TabIndex = 2;
+            label21.Text = "Suhu Ideal";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(45, 321);
+            label20.Name = "label20";
+            label20.Size = new Size(64, 15);
+            label20.TabIndex = 2;
+            label20.Text = "Nama Ikan";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(45, 288);
+            label18.Name = "label18";
+            label18.Size = new Size(42, 15);
+            label18.TabIndex = 3;
+            label18.Text = "Id Ikan";
+            // 
+            // btnTambahIkan
+            // 
+            btnTambahIkan.BackColor = Color.SteelBlue;
+            btnTambahIkan.Cursor = Cursors.Hand;
+            btnTambahIkan.FlatAppearance.BorderSize = 0;
+            btnTambahIkan.FlatStyle = FlatStyle.Flat;
+            btnTambahIkan.Font = new Font("Segoe UI", 9F);
+            btnTambahIkan.ForeColor = Color.White;
+            btnTambahIkan.Location = new Point(131, 431);
+            btnTambahIkan.Name = "btnTambahIkan";
+            btnTambahIkan.Size = new Size(121, 35);
+            btnTambahIkan.TabIndex = 1;
+            btnTambahIkan.Text = "Tambah";
+            btnTambahIkan.UseVisualStyleBackColor = false;
+            btnTambahIkan.Click += btnTambahIkan_Click;
+            // 
+            // txtSuhuIdeal
+            // 
+            txtSuhuIdeal.Location = new Point(146, 351);
+            txtSuhuIdeal.Name = "txtSuhuIdeal";
+            txtSuhuIdeal.Size = new Size(100, 23);
+            txtSuhuIdeal.TabIndex = 6;
+            // 
+            // txtNamaIkan
+            // 
+            txtNamaIkan.Location = new Point(146, 318);
+            txtNamaIkan.Name = "txtNamaIkan";
+            txtNamaIkan.Size = new Size(100, 23);
+            txtNamaIkan.TabIndex = 7;
+            // 
+            // dgvIkan
+            // 
+            dgvIkan.AllowUserToAddRows = false;
+            dgvIkan.BackgroundColor = Color.White;
+            dgvIkan.BorderStyle = BorderStyle.None;
+            dgvIkan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIkan.Location = new Point(10, 11);
+            dgvIkan.Name = "dgvIkan";
+            dgvIkan.ReadOnly = true;
+            dgvIkan.RowHeadersVisible = false;
+            dgvIkan.RowHeadersWidth = 62;
+            dgvIkan.Size = new Size(895, 200);
+            dgvIkan.TabIndex = 0;
+            // 
+            // txtIdIkan
+            // 
+            txtIdIkan.Location = new Point(146, 283);
+            txtIdIkan.Name = "txtIdIkan";
+            txtIdIkan.Size = new Size(100, 23);
+            txtIdIkan.TabIndex = 5;
             // 
             // tabUser
             // 
@@ -1486,6 +1488,7 @@
             // 
             // panelDashboard
             // 
+            panelDashboard.Controls.Add(dgvKondisiRuangan);
             panelDashboard.Controls.Add(cardTotalUnit);
             panelDashboard.Controls.Add(cardKapasitas);
             panelDashboard.Controls.Add(cardSuhu);
@@ -1499,6 +1502,21 @@
             panelDashboard.Size = new Size(960, 585);
             panelDashboard.TabIndex = 1;
             panelDashboard.Visible = false;
+            // 
+            // dgvKondisiRuangan
+            // 
+            dgvKondisiRuangan.AllowUserToAddRows = false;
+            dgvKondisiRuangan.BackgroundColor = Color.White;
+            dgvKondisiRuangan.BorderStyle = BorderStyle.None;
+            dgvKondisiRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKondisiRuangan.Location = new Point(20, 400);
+            dgvKondisiRuangan.Margin = new Padding(4, 5, 4, 5);
+            dgvKondisiRuangan.Name = "dgvKondisiRuangan";
+            dgvKondisiRuangan.ReadOnly = true;
+            dgvKondisiRuangan.RowHeadersVisible = false;
+            dgvKondisiRuangan.RowHeadersWidth = 62;
+            dgvKondisiRuangan.Size = new Size(920, 170);
+            dgvKondisiRuangan.TabIndex = 0;
             // 
             // cardTotalUnit
             // 
@@ -2390,12 +2408,12 @@
             panelKonten.ResumeLayout(false);
             panelMaster.ResumeLayout(false);
             tabMaster.ResumeLayout(false);
-            tabIkan.ResumeLayout(false);
-            tabIkan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvIkan).EndInit();
             tabGudang.ResumeLayout(false);
             tabGudang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGudang).EndInit();
+            tabIkan.ResumeLayout(false);
+            tabIkan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIkan).EndInit();
             tabUser.ResumeLayout(false);
             tabUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -2407,6 +2425,7 @@
             panelHeader.PerformLayout();
             panelDashboard.ResumeLayout(false);
             panelDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKondisiRuangan).EndInit();
             cardTotalUnit.ResumeLayout(false);
             cardTotalUnit.PerformLayout();
             cardKapasitas.ResumeLayout(false);
@@ -2627,5 +2646,6 @@
         private Button button7;
         private Button button6;
         private ComboBox comboBox8;
+        private DataGridView dgvKondisiRuangan;
     }
 }
