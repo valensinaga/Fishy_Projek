@@ -34,55 +34,56 @@ namespace Fishy_Projek
             panelLaporan.Parent = panelKonten;
             panelMaster.Parent = panelKonten;
 
-
-
-            // --- TAMBAHKAN BARIS INI UNTUK MENGAMANKAN TABEL YANG HILANG ---
-            // 1. Paksa tabel masuk ke kandang panelnya
             dgvStok.Parent = panelStok;
             dgvLaporan.Parent = panelLaporan;
 
-
-            // 2. Paksa tabelnya muncul ke depan
             dgvStok.BringToFront();
-
-            // 3. Paksa ukurannya memenuhi panel putih tersebut
             dgvStok.Dock = DockStyle.Fill;
 
-            // (Lakukan hal yang sama untuk tabel di panel lain kalau ada yang hilang)
-
             txtIdMasuk.Name = "txtIdMasuk";
-            txtIdMasuk.Location = new Point(150, 200); // Sesuaikan angka ini agar pas di panel Pengiriman
+            txtIdMasuk.Location = new Point(150, 200);
             txtIdMasuk.Size = new Size(200, 30);
-
-            // Masukkan ke dalam panelPengiriman
             panelPengiriman.Controls.Add(txtIdMasuk);
 
-            // Tambahkan label biar operator tahu itu buat apa
             Label lblIdMasuk = new Label();
             lblIdMasuk.Text = "ID Batch Masuk:";
             lblIdMasuk.Location = new Point(20, 200);
             panelPengiriman.Controls.Add(lblIdMasuk);
 
+            // Event Handler untuk komponen Master
+            btnUpdateIkan.Click += btnUpdateIkan_Click;
+
+            button1.Click += button1_Click; // Update Gudang
+            button2.Click += button2_Click; // Hapus Gudang
+            btnTambahGudang.Click += btnTambahGudang_Click; // Tambah Gudang
+
+            button3.Click += button3_Click; // Bisa difungsikan untuk simpan ruang alternatif
+            btnTambahRuang.Click += btnTambahRuang_Click; // Tambah Ruang
+            button4.Click += button4_Click; // Update Ruang
+            button5.Click += button5_Click; // Hapus Ruang
+
+            button6.Click += button6_Click; // Tambah User
+            button7.Click += button7_Click; // Update User
+            button8.Click += button8_Click; // Hapus User
         }
 
+        // ==========================================
+        // MENU & NAVIGASI LOGIC
+        // ==========================================
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // 1. Validasi awal
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 lblError.Text = "Username dan password tidak boleh kosong!";
                 return;
-                panelTitleBar.BringToFront();
             }
 
             try
             {
-                // 2. Tambahkan indikator agar tahu sistem sedang memproses
                 Cursor = Cursors.WaitCursor;
-
                 _userLogin = _opsRepo.Login(username, password);
 
                 if (_userLogin != null)
@@ -91,38 +92,31 @@ namespace Fishy_Projek
                     lblNamaUser.Text = "Halo, " + _userLogin.Nama;
                     lblRoleUser.Text = _userLogin.IdRole == 1 ? "Manajer" : "Operator";
 
-                    // 1. Sembunyikan Login, Munculkan Sidebar & Konten
                     panelLogin.Visible = false;
                     panelSidebar.Visible = true;
                     panelKonten.Visible = true;
 
-                    // 2. PASTI-KAN panel ini muncul di depan
                     panelSidebar.BringToFront();
                     panelKonten.BringToFront();
 
-                    // 3. Logika pindah panel: Ini bagian terpenting agar tidak kosong
                     if (_userLogin.IdRole == 1)
                     {
-                        // Tampilkan Dashboard untuk Manajer
                         TampilkanPanel(panelDashboard, btnDashboard, "Dashboard");
-                        LoadDashboard(); // Panggil fungsi ini agar datanya terisi!
+                        LoadDashboard();
                     }
                     else
                     {
-                        // Tampilkan Stok untuk Operator
                         TampilkanPanel(panelStok, btnStok, "Stok & Ruangan");
-                        LoadStok(); // Panggil fungsi ini agar datanya terisi!
+                        LoadStok();
                     }
                 }
             }
             catch (Exception ex)
             {
-                // 3. Menangkap error database agar tidak bikin aplikasi stuck
                 MessageBox.Show("Terjadi kesalahan sistem: " + ex.Message, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                // 4. Pastikan kursor balik normal apapun hasilnya
                 Cursor = Cursors.Default;
             }
         }
@@ -137,16 +131,17 @@ namespace Fishy_Projek
             panelMaster.Visible = false;
 
             btnDashboard.BackColor = Color.Transparent;
-            btnDashboard.ForeColor = Color.MidnightBlue;
             btnStok.BackColor = Color.Transparent;
-            btnStok.ForeColor = Color.MidnightBlue;
             btnInputSuhu.BackColor = Color.Transparent;
-            btnInputSuhu.ForeColor = Color.MidnightBlue;
             btnPengiriman.BackColor = Color.Transparent;
-            btnPengiriman.ForeColor = Color.MidnightBlue;
             btnLaporan.BackColor = Color.Transparent;
-            btnLaporan.ForeColor = Color.MidnightBlue;
             btnMaster.BackColor = Color.Transparent;
+
+            btnDashboard.ForeColor = Color.MidnightBlue;
+            btnStok.ForeColor = Color.MidnightBlue;
+            btnInputSuhu.ForeColor = Color.MidnightBlue;
+            btnPengiriman.ForeColor = Color.MidnightBlue;
+            btnLaporan.ForeColor = Color.MidnightBlue;
             btnMaster.ForeColor = Color.MidnightBlue;
 
             panelTitleBar.BringToFront();
@@ -216,6 +211,9 @@ namespace Fishy_Projek
             }
         }
 
+        // ==========================================
+        // LOAD DATA LOGIC
+        // ==========================================
         private void LoadDashboard()
         {
             try
@@ -228,7 +226,7 @@ namespace Fishy_Projek
                 lblKapasitas.Text = totalKg.ToString("N0") + " kg";
 
                 dgvRingkasanStok.DataSource = stokList;
-                dgvKondisiRuangan.DataSource = stokList;
+                
             }
             catch (Exception ex)
             {
@@ -272,9 +270,9 @@ namespace Fishy_Projek
         {
             try
             {
-                var stokList = _opsRepo.GetRingkasanStok(); // FIX: _opsRepo (model Stok punya IdIkan), bukan _laporanRepo (model MutasiView gak punya IdIkan)
+                var stokList = _opsRepo.GetRingkasanStok();
                 cmbStokKirim.DisplayMember = "NamaIkan";
-                cmbStokKirim.ValueMember = "IdIkan"; // Karena IdIkan adalah string
+                cmbStokKirim.ValueMember = "IdIkan";
                 cmbStokKirim.DataSource = stokList;
             }
             catch (Exception ex)
@@ -294,12 +292,10 @@ namespace Fishy_Projek
                 var mutasiList = _laporanRepo.GetRiwayatMutasi("SEMUA");
                 dgvLaporan.DataSource = mutasiList;
 
-                // Grafik mutasi cuma muncul buat Manajer (IdRole == 1)
                 bool isManajer = _userLogin != null && _userLogin.IdRole == 1;
                 lblGrafikTitle.Visible = isManajer;
                 formsPlotMutasi.Visible = isManajer;
 
-                // Operator: tabel pakai lebar penuh karena chart disembunyikan
                 dgvLaporan.Width = isManajer ? 540 : 920;
 
                 if (isManajer)
@@ -341,14 +337,11 @@ namespace Fishy_Projek
                     });
 
                     ticks.Add(new ScottPlot.Tick(posisi + 0.5, d.Tanggal.ToString("dd/MM")));
-
-                    posisi += 3; // jarak antar grup tanggal
+                    posisi += 3;
                 }
 
                 formsPlotMutasi.Plot.Add.Bars(bars);
-
-                formsPlotMutasi.Plot.Axes.Bottom.TickGenerator =
-                    new ScottPlot.TickGenerators.NumericManual(ticks.ToArray());
+                formsPlotMutasi.Plot.Axes.Bottom.TickGenerator = new ScottPlot.TickGenerators.NumericManual(ticks.ToArray());
                 formsPlotMutasi.Plot.Axes.Bottom.TickLabelStyle.Rotation = 45;
                 formsPlotMutasi.Plot.Axes.Margins(bottom: 0.15);
 
@@ -356,20 +349,11 @@ namespace Fishy_Projek
                 formsPlotMutasi.Plot.Axes.Bottom.Label.Text = "Tanggal";
                 formsPlotMutasi.Plot.Axes.Left.Label.Text = "Kg";
 
-                // Legend manual karena warnanya per-jenis, bukan per-series otomatis
                 formsPlotMutasi.Plot.Legend.IsVisible = true;
                 formsPlotMutasi.Plot.Legend.Alignment = ScottPlot.Alignment.UpperLeft;
                 formsPlotMutasi.Plot.Legend.ManualItems.Clear();
-                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem
-                {
-                    LabelText = "Masuk",
-                    FillColor = ScottPlot.Colors.SteelBlue
-                });
-                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem
-                {
-                    LabelText = "Keluar",
-                    FillColor = ScottPlot.Colors.IndianRed
-                });
+                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem { LabelText = "Masuk", FillColor = ScottPlot.Colors.SteelBlue });
+                formsPlotMutasi.Plot.Legend.ManualItems.Add(new ScottPlot.LegendItem { LabelText = "Keluar", FillColor = ScottPlot.Colors.IndianRed });
 
                 formsPlotMutasi.Refresh();
             }
@@ -383,16 +367,279 @@ namespace Fishy_Projek
         {
             try
             {
+                // Load Tabel Data
                 dgvIkan.DataSource = _masterRepo.GetAllIkan();
                 dgvGudang.DataSource = _masterRepo.GetAllGudang();
                 dgvRuang.DataSource = _masterRepo.GetAllRuang();
+                dataGridView1.DataSource = _masterRepo.GetAllUser();
+
+                // Load Data ComboBox untuk Update IKAN
+                var listIkan = _masterRepo.GetAllIkan();
+                comboBox1.DataSource = listIkan; comboBox1.DisplayMember = "IdIkan"; comboBox1.ValueMember = "IdIkan";
+              
+                // Load Data ComboBox untuk Update/Delete GUDANG
+                var listGudang = _masterRepo.GetAllGudang();
+                comboBox2.DataSource = listGudang; comboBox2.DisplayMember = "IdGudang"; comboBox2.ValueMember = "IdGudang";
+                comboBox3.DataSource = listGudang; comboBox3.DisplayMember = "IdGudang"; comboBox3.ValueMember = "IdGudang";
+                comboBox4.DataSource = listGudang; comboBox4.DisplayMember = "IdGudang"; comboBox4.ValueMember = "IdGudang"; // Di Tab Ruang (Tambah)
+                comboBox6.DataSource = listGudang; comboBox6.DisplayMember = "IdGudang"; comboBox6.ValueMember = "IdGudang"; // Di Tab Ruang (Update)
+
+                // Load Data ComboBox untuk Update/Delete RUANG
+                var listRuang = _masterRepo.GetAllRuang();
+                comboBox5.DataSource = listRuang; comboBox5.DisplayMember = "IdRuang"; comboBox5.ValueMember = "IdRuang";
+                comboBox7.DataSource = listRuang; comboBox7.DisplayMember = "IdRuang"; comboBox7.ValueMember = "IdRuang";
+
+                // Load Data ComboBox untuk Update/Delete USER
+                var listUser = _masterRepo.GetAllUser();
+                comboBox9.DataSource = listUser; comboBox9.DisplayMember = "IdUser"; comboBox9.ValueMember = "IdUser";
+                comboBox11.DataSource = listUser; comboBox11.DisplayMember = "IdUser"; comboBox11.ValueMember = "IdUser";
+                
+                // Load Data ComboBox untuk ROLE (Langsung pakai DataTable dari SQL)
+                var dtRole = _masterRepo.GetRolesDataTable();
+
+                // Untuk Tambah User (comboBox8)
+                comboBox8.DataSource = dtRole;
+                comboBox8.DisplayMember = "nama_role"; // Pastikan ini sesuai dengan nama kolom di databasemu
+                comboBox8.ValueMember = "id_role";     // Pastikan ini sesuai dengan nama kolom di databasemu
+
+                // Untuk Update User (comboBox10)
+                // Gunakan .Copy() agar pilihan di comboBox8 tidak ikut berubah saat comboBox10 dipilih (mencegah bentrok)
+                comboBox10.DataSource = dtRole.Copy();
+                comboBox10.DisplayMember = "nama_role";
+                comboBox10.ValueMember = "id_role";
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error load master: " + ex.Message);
+                MessageBox.Show("Error load data master: " + ex.Message);
             }
         }
 
+        // ==========================================
+        // CUD TAB IKAN
+        // ==========================================
+        private void btnTambahIkan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtIdIkan.Text) || string.IsNullOrWhiteSpace(txtNamaIkan.Text)) return;
+
+                Ikan ikanBaru = new Ikan
+                {
+                    IdIkan = txtIdIkan.Text.Trim(),
+                    NamaIkan = txtNamaIkan.Text.Trim(),
+                    SuhuIdeal = double.Parse(txtSuhuIdeal.Text),
+                    BatasSuhu = double.Parse(txtBatasSuhu.Text)
+                };
+
+                _masterRepo.TambahIkan(ikanBaru);
+
+                MessageBox.Show("Data Ikan berhasil ditambahkan!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Tambah Ikan: " + ex.Message); }
+        }
+
+        private void btnUpdateIkan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.SelectedValue == null) return;
+
+                _masterRepo.UpdateIkan(
+                    comboBox1.Text,
+                    textBox1.Text,
+                    double.Parse(textBox2.Text),
+                    double.Parse(textBox3.Text)
+                );
+
+                MessageBox.Show("Data Ikan berhasil diupdate!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Update Ikan: " + ex.Message); }
+        }
+
+        
+
+        // ==========================================
+        // CUD TAB GUDANG
+        // ==========================================
+        private void btnTambahGudang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox4.Text)) return;
+
+                _masterRepo.TambahGudang(
+                    int.Parse(textBox4.Text),
+                    textBox5.Text,
+                    textBox6.Text
+                );
+
+                MessageBox.Show("Data Gudang berhasil ditambahkan!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Tambah Gudang: " + ex.Message); }
+        }
+
+        private void button1_Click(object sender, EventArgs e) // Update Gudang
+        {
+            try
+            {
+                if (comboBox2.SelectedValue == null) return;
+
+                _masterRepo.UpdateGudang(
+                    int.Parse(comboBox2.Text),
+                    textBox7.Text,
+                    textBox8.Text
+                );
+
+                MessageBox.Show("Data Gudang berhasil diupdate!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Update Gudang: " + ex.Message); }
+        }
+
+        private void button2_Click(object sender, EventArgs e) // Hapus Gudang
+        {
+            try
+            {
+                if (comboBox3.SelectedValue == null) return;
+
+                _masterRepo.HapusGudang(int.Parse(comboBox3.Text));
+
+                MessageBox.Show("Data Gudang berhasil dihapus!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Hapus Gudang: " + ex.Message); }
+        }
+
+        // ==========================================
+        // CUD TAB RUANG COOLER
+        // ==========================================
+        private void btnTambahRuang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox9.Text)) return;
+
+                _masterRepo.TambahRuang(
+                    textBox9.Text,
+                    int.Parse(comboBox4.Text),
+                    textBox10.Text,
+                    double.Parse(textBox11.Text)
+                );
+
+                MessageBox.Show("Data Ruang berhasil ditambahkan!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Tambah Ruang: " + ex.Message); }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Alternatif Button Tambah Ruang
+            btnTambahRuang_Click(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e) // Update Ruang
+        {
+            try
+            {
+                if (comboBox5.SelectedValue == null) return;
+
+                _masterRepo.UpdateRuang(
+                    comboBox5.Text,
+                    int.Parse(comboBox6.Text),
+                    textBox12.Text,
+                    double.Parse(textBox13.Text)
+                );
+
+                MessageBox.Show("Data Ruang berhasil diupdate!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Update Ruang: " + ex.Message); }
+        }
+
+        private void button5_Click(object sender, EventArgs e) // Hapus Ruang
+        {
+            try
+            {
+                if (comboBox7.SelectedValue == null) return;
+
+                _masterRepo.HapusRuang(comboBox7.Text);
+
+                MessageBox.Show("Data Ruang berhasil dihapus!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Hapus Ruang: " + ex.Message); }
+        }
+
+        // ==========================================
+        // CUD TAB USER
+        // ==========================================
+        private void button6_Click(object sender, EventArgs e) // Tambah User
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox14.Text)) return;
+
+                // 1. Ini untuk memastikan TextBox Id User (angka 5) diubah jadi tipe Integer
+                int idUserDb = int.Parse(textBox14.Text);
+
+                // 2. Ini mengambil angka 1 atau 2 dari ComboBox (di layar tetap muncul "Manager")
+                int idRoleDb = Convert.ToInt32(comboBox8.SelectedValue);
+
+                // 3. Kirim data yang sudah di-convert tadi ke Repository
+                _masterRepo.TambahUser(
+                    idUserDb,                  // <--- SEKARANG SUDAH INTEGER, BUKAN TEKS!
+                    textBox15.Text,            // Nama
+                    textBox17.Text,            // Username
+                    textBox16.Text,            // Password
+                    idRoleDb                   // Id Role
+                );
+
+                MessageBox.Show("Data User berhasil ditambahkan!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Tambah User: " + ex.Message); }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox9.SelectedValue == null) return;
+
+                int idRole = Convert.ToInt32(comboBox10.SelectedValue);
+
+                _masterRepo.UpdateUser(
+                    int.Parse(comboBox9.Text), textBox18.Text, textBox20.Text, textBox19.Text, idRole
+                );
+
+                MessageBox.Show("Data User berhasil diupdate!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Update User: " + ex.Message); }
+        }
+
+        private void button8_Click(object sender, EventArgs e) // Hapus User
+        {
+            try
+            {
+                if (comboBox11.SelectedValue == null) return;
+
+                _masterRepo.HapusUser(comboBox11.SelectedIndex);
+
+                MessageBox.Show("Data User berhasil dihapus!");
+                LoadMaster();
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal Hapus User: " + ex.Message); }
+        }
+
+        // ==========================================
+        // WINDOW CONTROLS & OTHERS
+        // ==========================================
         private void btnSimpanSuhu_Click(object sender, EventArgs e)
         {
             try
@@ -403,8 +650,6 @@ namespace Fishy_Projek
                 string catatan = txtCatatanSuhu.Text;
 
                 _opsRepo.InputSuhu(idRuang, suhu, grade, catatan, _userLogin.IdUser);
-
-
                 string statusSuhu = _laporanRepo.GetStatusSuhuRuang(idRuang, suhu);
 
                 if (statusSuhu.Contains("PERINGATAN"))
@@ -430,18 +675,16 @@ namespace Fishy_Projek
             try
             {
                 string idKeluar = txtIdPengiriman.Text;
-                string idMasuk = txtIdMasuk.Text; // Tambahkan TextBox txtIdMasuk di Design
-                int idPihak = _opsRepo.GetIdPihakByNama(txtTujuan.Text.Trim()); // FIX: lookup nama -> id, bukan int.Parse langsung
+                string idMasuk = txtIdMasuk.Text;
+                int idPihak = _opsRepo.GetIdPihakByNama(txtTujuan.Text.Trim());
                 string armada = txtNoArmada.Text;
                 double kuantitas = double.Parse(txtKuantitasKirim.Text);
 
-                // Memanggil fungsi baru di Repository yang sudah kita buat sebelumnya
                 _opsRepo.ProsesPengiriman(idKeluar, idMasuk, idPihak, armada, kuantitas, _userLogin.IdUser);
 
                 lblStatusKirim.ForeColor = Color.Green;
                 lblStatusKirim.Text = "Pengiriman berhasil diproses!";
 
-                // Bersihkan form
                 txtIdPengiriman.Text = "TX-" + DateTime.Now.ToString("yyyyMMddHHmmss");
                 txtIdMasuk.Clear();
                 txtTujuan.Clear();
@@ -478,7 +721,6 @@ namespace Fishy_Projek
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -497,14 +739,8 @@ namespace Fishy_Projek
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            var konfirmasi = MessageBox.Show(
-            "Yakin ingin keluar?",
-            "Konfirmasi",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            if (konfirmasi == DialogResult.Yes)
-                Application.Exit();
+            var konfirmasi = MessageBox.Show("Yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (konfirmasi == DialogResult.Yes) Application.Exit();
         }
 
         protected override void OnResize(EventArgs e)
@@ -512,62 +748,5 @@ namespace Fishy_Projek
             base.OnResize(e);
             panelTitleBar.Width = this.Width;
         }
-
-        private void panelStok_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnTambahIkan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // 1. Cek jangan sampai ada kotak yang masih kosong
-                if (string.IsNullOrWhiteSpace(txtIdIkan.Text) || string.IsNullOrWhiteSpace(txtNamaIkan.Text) ||
-                    string.IsNullOrWhiteSpace(txtSuhuIdeal.Text) || string.IsNullOrWhiteSpace(txtBatasSuhu.Text))
-                {
-                    MessageBox.Show("Semua kolom harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // 2. Ambil data dari kotak-kotak tadi
-                Ikan ikanBaru = new Ikan
-                {
-                    IdIkan = txtIdIkan.Text.Trim(),
-                    NamaIkan = txtNamaIkan.Text.Trim(),
-                    SuhuIdeal = double.Parse(txtSuhuIdeal.Text),
-                    BatasSuhu = double.Parse(txtBatasSuhu.Text)
-                };
-
-                // 3. Simpan ke database
-                _masterRepo.TambahIkan(ikanBaru);
-
-                MessageBox.Show("Data Ikan berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // 4. Bersihkan kotak isian setelah sukses
-                txtIdIkan.Clear();
-                txtNamaIkan.Clear();
-                txtSuhuIdeal.Clear();
-                txtBatasSuhu.Clear();
-
-                // 5. Refresh tabel biar ikan barunya langsung muncul
-                LoadMaster();
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Kolom Suhu Ideal dan Batas Suhu harus diisi dengan ANGKA (misal: -5), bukan huruf!", "Error Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal menyimpan data: " + ex.Message, "Error Sistem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void but_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-
-
 }
