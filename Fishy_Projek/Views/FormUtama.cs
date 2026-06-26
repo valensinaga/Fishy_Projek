@@ -9,12 +9,17 @@ namespace Fishy_Projek
 {
     public partial class FormUtama : Form
     {
-
         private User _userLogin;
+
+        // -- Pertahankan Repo untuk keperluan Get Data (Read-only ke UI) --
         private LaporanRepository _laporanRepo = new LaporanRepository();
         private MasterRepository _masterRepo = new MasterRepository();
         private OperasionalRepository _opsRepo = new OperasionalRepository();
 
+        // -- Tambahkan Controller untuk logika transaksi (Write/Process) --
+        private Fishy_Projek.Controllers.AuthController _authController = new Fishy_Projek.Controllers.AuthController();
+        private Fishy_Projek.Controllers.OperasionalController _opsController = new Fishy_Projek.Controllers.OperasionalController();
+        private Fishy_Projek.Controllers.MasterController _masterController = new Fishy_Projek.Controllers.MasterController();
 
         public FormUtama()
         {
@@ -42,10 +47,6 @@ namespace Fishy_Projek
             dgvStok.Dock = DockStyle.Fill;
 
 
-
-
-
-            // Event Handler untuk komponen Master
             btnUpdateIkan.Click += btnUpdateIkan_Click;
 
             button1.Click += button1_Click; // Update Gudang
@@ -79,7 +80,7 @@ namespace Fishy_Projek
             try
             {
                 Cursor = Cursors.WaitCursor;
-                _userLogin = _opsRepo.Login(username, password);
+                _userLogin = _authController.ValidasiLogin(username, password);
 
                 if (_userLogin != null)
                 {
@@ -90,12 +91,17 @@ namespace Fishy_Projek
                     panelLogin.Visible = false;
                     panelSidebar.Visible = true;
                     panelKonten.Visible = true;
-
                     panelSidebar.BringToFront();
                     panelKonten.BringToFront();
 
+                    // 1. EKSEKUSI POLIMORFISME
+                    // Objek akan secara dinamis menjalankan metode dari Manager.cs atau Operator.cs
+                    _userLogin.AturHakAksesMenu(this);
+
+                    // 2. Navigasi Awal Berdasarkan Role
                     if (_userLogin.IdRole == 1)
                     {
+
                         TampilkanPanel(panelDashboard, btnDashboard, "Dashboard");
                         LoadDashboard();
                     }
