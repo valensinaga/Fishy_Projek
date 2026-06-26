@@ -170,6 +170,7 @@ namespace Fishy_Projek
         {
             TampilkanPanel(panelPengiriman, btnPengiriman, "Pengiriman");
             LoadStokComboBox();
+            cmbIdMasuk.DataSource = _opsRepo.GetIdMasukAktif();
             txtIdPengiriman.Text = "TX-" + DateTime.Now.ToString("yyyyMMddHHmmss");
         }
 
@@ -422,7 +423,6 @@ namespace Fishy_Projek
                 comboBox10.DisplayMember = "nama_role";
                 comboBox10.ValueMember = "id_role";
 
-                cmbIdMasuk.DataSource = _opsRepo.GetIdMasukAktif();
 
             }
             catch (Exception ex)
@@ -688,6 +688,12 @@ namespace Fishy_Projek
 
         private void btnProsesKirim_Click(object sender, EventArgs e)
         {
+            if (cmbIdMasuk.SelectedItem == null)
+            {
+                lblStatusKirim.ForeColor = Color.Red;
+                lblStatusKirim.Text = "Pilih Id Masuk terlebih dahulu!";
+                return;
+            }
             try
             {
                 string idKeluar = txtIdPengiriman.Text;

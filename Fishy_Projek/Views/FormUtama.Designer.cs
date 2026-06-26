@@ -57,6 +57,7 @@
             txtIdPengiriman = new TextBox();
             label11 = new Label();
             label10 = new Label();
+            lblStatusKirim = new Label();
             panelDashboard = new Panel();
             dgvKondisiRuangan = new DataGridView();
             cardTotalUnit = new Panel();
@@ -425,6 +426,7 @@
             panelPengiriman.Controls.Add(txtIdPengiriman);
             panelPengiriman.Controls.Add(label11);
             panelPengiriman.Controls.Add(label10);
+            panelPengiriman.Controls.Add(lblStatusKirim);
             panelPengiriman.Location = new Point(0, 80);
             panelPengiriman.Name = "panelPengiriman";
             panelPengiriman.Size = new Size(960, 585);
@@ -433,6 +435,7 @@
             // 
             // cmbIdMasuk
             // 
+            cmbIdMasuk.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbIdMasuk.FormattingEnabled = true;
             cmbIdMasuk.Location = new Point(24, 171);
             cmbIdMasuk.Name = "cmbIdMasuk";
@@ -578,6 +581,13 @@
             label10.Size = new Size(235, 29);
             label10.TabIndex = 0;
             label10.Text = "Proses Pengiriman";
+            // 
+            // lblStatusKirim
+            // 
+            lblStatusKirim.Location = new Point(34, 555);
+            lblStatusKirim.Name = "lblStatusKirim";
+            lblStatusKirim.Size = new Size(300, 25);
+            lblStatusKirim.TabIndex = 0;
             // 
             // panelDashboard
             // 
